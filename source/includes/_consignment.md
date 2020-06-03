@@ -20,7 +20,7 @@
 + **externalCode** - Внешний код Серии
 + **label** - Метка Серии. `Необходимое`
 + **barcodes** - Штрихкоды серии
-+ **image** - Изображение товара, к которому относится данная серия
++ **images** - Изображение товара, к которому относится данная серия
 + **assortment** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye), представляющие с собой ссылку на товар или модификацию `Необходимое`
 
 #### Атрибуты вложенных сущностей
@@ -106,9 +106,9 @@ curl -X GET
           "code128": "code128 barcode"
         }
       ],
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/image",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
           "type": "image",
           "mediaType": "application/json",
           "size": 1,
@@ -550,9 +550,9 @@ curl -X GET
       "code128": "code128 barcode"
     }
   ],
-  "image": {
+  "images": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/image",
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
       "type": "image",
       "mediaType": "application/json",
       "size": 1,
