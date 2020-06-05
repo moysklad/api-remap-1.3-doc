@@ -1313,7 +1313,7 @@ curl -X GET
     -H "Content-Type: application/json"
       -d '{
             "name": "testimage",
-            "image": [
+            "images": [
               {
                 "filename": "birdimage.png",
                 "content": "imageBase64"
