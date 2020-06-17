@@ -13,7 +13,6 @@ includes:
   - assortment
   - currency
   - images
-  - files
   - pricetypes
   - product
   - service

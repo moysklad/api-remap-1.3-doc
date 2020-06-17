@@ -46,7 +46,6 @@
   + **UNIFIED_AGRICULTURAL_TAX** - ЕСХН
   + **PRESUMPTIVE_TAX_SYSTEM** - ЕНВД
   + **PATENT_BASED** - Патент
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
 
 #### Позиции Предоплаты
 Позиции Предоплаты - это список товаров/услуг/модификаций/серий.
