@@ -1,38 +1,38 @@
 ## Файлы
 
-### Работа с файлами в рамках отдельных Операции, Товара или Контаргента
+### Работа с Файлами в рамках отдельных Операции, Товара или Контаргента
 При создании и обновлении Операции, Товара или Контаргента можно указать поле files со списком элементов, имеющих следующие атрибуты:
 
-+ **filename** - имя файла с расширением. Например - "doc.pdf"
++ **filename** - имя Файла с расширением. Например - "doc.pdf"
 + **content** - Файл, закодированное в формате Base64.
 
-В таком случае, массив файлов воспринимается как множество всех файлов объекта и полностью заменяет (в случае запроса на обновление) все 
-уже существующие файлы в объекте. В случае запроса на обновление, все файлы, которые существовали ранее в объекте будут удалены, 
-а новые файлы будут добавлены в список файлов.
+В таком случае, массив Файлов воспринимается как множество всех Файлов объекта и полностью заменяет (в случае запроса на обновление) все 
+уже существующие Файлы в объекте. В случае запроса на обновление, все Файлы, которые существовали ранее в объекте будут удалены, 
+а новые Файлы будут добавлены в список Файлов.
 Если в запросе на обновление files будет содержать пустой массив элементов, то все Файлы у Операции, Товара или Контаргента будут удалены, т.к. 
 сервер посчитает, что пользователь хочет обновить список Файлов Операции, Товара или Контаргента.
 
-Лимит файлов сохраняемых вместе с объектом равен 10, если вам нужно загрузить больше файлов для одного объекта, нужно использовать способ описанный ниже. 
+Лимит Файлов сохраняемых вместе с объектом равен 10, если вам нужно загрузить больше Файлов для одного объекта, нужно использовать способ описанный ниже. 
 
 
-### Работа с файлами Операции, Товара или Контаргента с помощью специальных ресурсов
+### Работа с Файлами Операции, Товара или Контаргента с помощью специальных ресурсов
 Средствами JSON API можно создавать и обновлять сведения по Файлам для всех типов операций, товаров и контаргентов, запрашивать списки Файлов, 
 а также сведения по отдельным Файлам. 
 
 Операции, товары и контрагенты могут содержать множество одинаковых Файлов. Файлы считаются одинаковыми, если при добавлении Файлов 
 у них совпадало `filename` и `content`. У одинаковых Файлов одинаковое значение параметра `id`. 
-У объекта может быть не более 100 файлов.
+У объекта может быть не более 100 Файлов.
 
 #### Атрибуты сущности
 + **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) объекта
 + **title** - Название Файла
-+ **filename** - Имя файла
-+ **size** - Размер файла в байтах
-+ **created** - Время загрузки файла на сервер
-+ **createdBy** - Ссылка на сотрудника, загрузившего файл, в формате Метеданных
-+ **download** - Ссылка на файл в формате Метаданных
-+ **miniature** - Ссылка на миниатюру изображения в формате Метаданных (поле передается только для файлов изображений)
-+ **tiny** - Ссылка на уменьшенное изображение в формате Метаданных (поле передается только для файлов изображений)
++ **filename** - Имя Файла
++ **size** - Размер Файла в байтах
++ **created** - Время загрузки Файла на сервер
++ **createdBy** - Ссылка на сотрудника, загрузившего Файл, в формате Метеданных
++ **download** - Ссылка на Файл в формате Метаданных
++ **miniature** - Ссылка на миниатюру изображения в формате Метаданных (поле передается только для Файлов изображений)
++ **tiny** - Ссылка на уменьшенное изображение в формате Метаданных (поле передается только для Файлов изображений)
 
 ### Получить список Файлов Операции, Товара или Контаргента
 Запрос на получение всех Файлов Операции, Товара или Контаргента для данной учетной записи.
@@ -55,7 +55,7 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files"
+  "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -64,15 +64,15 @@ curl -X GET
     "context": {
         "employee": {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.3/context/employee",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
                 "type": "employee",
                 "mediaType": "application/json"
             }
         }
     },
     "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files",
         "type": "files",
         "mediaType": "application/json",
         "size": 2,
@@ -82,10 +82,9 @@ curl -X GET
     "rows": [
         {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+                "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",
                 "type": "files",
                 "mediaType": "application/json",
-                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
             },
             "title": "birdimage",
             "filename": "birdimage.png",
@@ -93,15 +92,20 @@ curl -X GET
             "created": "2019-01-24 16:55:24.567",
             "createdBy": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
                   "type": "employee",
                   "mediaType": "application/json",
                   "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=69f5683e-a49b-11ea-ac15-000e000000cf"
                 }
             },
+            "download" : {
+                "downloadHref" : "http://localhost/api/remap/1.3/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+                "type" : "file",
+                "mediaType" : "application/octet-stream"
+            },
             "miniature": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+                "href": "https://online.moysklad.ru/api/remap/1.3/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
                 "type": "files",
                 "mediaType": "image/png"
             },
@@ -113,10 +117,9 @@ curl -X GET
         },
         {
             "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/933e41ac-1946-4bf0-9b21-51f2051f3e9d",
+                "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/933e41ac-1946-4bf0-9b21-51f2051f3e9d",
                 "type": "files",
                 "mediaType": "application/json",
-                "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9d"
             },
             "title": "doc",
             "filename": "doc.pdf",
@@ -124,13 +127,18 @@ curl -X GET
             "created": "2019-01-25 17:30:25.021",
             "createdBy": {
                 "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
                   "type": "employee",
                   "mediaType": "application/json",
                   "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=69f5683e-a49b-11ea-ac15-000e000000cf"
                 }
             },
+            "download" : {
+                "downloadHref" : "http://localhost/api/remap/1.3/download/933e41ac-1946-4bf0-9b21-51f2051f3e9d",
+                "type" : "file",
+                "mediaType" : "application/octet-stream"
+            }
         }
     ]
 }
@@ -146,9 +154,9 @@ curl -X GET
 необходимо и достаточно указать в url запросе `id` сущности, к которой добавляется Файла, и указать не пустые поля 
 `filename` и `content` в переданном объекте.
 
-В поле `content` нужно указать изображение, закодированное в Base64, в поле `filename` - имя файла с расширением.
+В поле `content` нужно указать изображение, закодированное в Base64, в поле `filename` - имя Файла с расширением.
 
-В одном запросе можно добавить максимум 10 файлов.
+В одном запросе можно добавить максимум 10 Файлов.
 
 **Параметры**
 
@@ -160,7 +168,7 @@ curl -X GET
   
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files"
+    "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
     -d '{  
@@ -176,10 +184,10 @@ curl -X GET
 [
   {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/f2728180-6afd-4d37-8a13-f3b48069bbb6",
           "type": "files",
           "mediaType": "application/json",
-          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.3/download/f2728180-6afd-4d37-8a13-f3b48069bbb6"
       },
       "title": "birdimage",
       "filename": "birdimage.png",
@@ -187,15 +195,20 @@ curl -X GET
       "created": "2019-01-24 16:55:24.567",
       "createdBy": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
             "type": "employee",
             "mediaType": "application/json",
             "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=69f5683e-a49b-11ea-ac15-000e000000cf"
           }
       },
+      "download" : {
+          "downloadHref" : "http://localhost/api/remap/1.3/download/f2728180-6afd-4d37-8a13-f3b48069bbb6",
+          "type" : "file",
+          "mediaType" : "application/octet-stream"
+      },
       "miniature": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
+          "href": "https://online.moysklad.ru/api/remap/1.3/download/f2728180-6afd-4d37-8a13-f3b48069bbb6?miniature=true",
           "type": "files",
           "mediaType": "image/png"
       },
@@ -207,10 +220,10 @@ curl -X GET
   },
   {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
           "type": "files",
           "mediaType": "application/json",
-          "downloadHref": "https://online.moysklad.ru/api/remap/1.2/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f"
+          "downloadHref": "https://online.moysklad.ru/api/remap/1.3/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f"
       },
       "title": "doc",
       "filename": "doc.pdf",
@@ -218,12 +231,17 @@ curl -X GET
       "created": "2019-01-25 17:30:25.021",
       "createdBy": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/69f5683e-a49b-11ea-ac15-000e000000cf",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
             "type": "employee",
             "mediaType": "application/json",
             "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=69f5683e-a49b-11ea-ac15-000e000000cf"
           }
+      },
+      "download" : {
+          "downloadHref" : "http://localhost/api/remap/1.3/download/933e41ac-1946-4bf0-9b21-51f2051f3e9f",
+          "type" : "file",
+          "mediaType" : "application/octet-stream"
       }
   }
 ]
@@ -231,7 +249,7 @@ curl -X GET
 
 ### Удалить Файл
 
-При удалении файла удаляется первый найденный с данным идентификатором файла у Операции, Товара или Контаргента.
+При удалении Файла удаляется первый найденный с данным идентификатором Файла у Операции, Товара или Контаргента.
 
 **Параметры**
 
@@ -244,7 +262,7 @@ curl -X GET
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.2/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/19f1edc0-fc42-4001-94cb-c9ec9c62ec10"
+  "https://online.moysklad.ru/api/remap/1.3/entity/product/7944ef04-f831-11e5-7a69-971500188b19/files/19f1edc0-fc42-4001-94cb-c9ec9c62ec10"
   -H "Authorization: Basic <Credentials>"
 ```
 > Response 200 (application/json)
