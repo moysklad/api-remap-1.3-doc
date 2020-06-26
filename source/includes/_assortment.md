@@ -163,9 +163,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/image",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/35427052-36e7-11e7-8a7f-40d0000000d1/images",
           "type": "image",
           "mediaType": "application/json",
           "size": 0,
@@ -403,9 +403,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.3/entity/bundle/4f75d130-36e7-11e7-8a7f-40d0000000ef/image",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/bundle/4f75d130-36e7-11e7-8a7f-40d0000000ef/images",
           "type": "image",
           "mediaType": "application/json",
           "size": 0,
@@ -506,9 +506,9 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "image": {
+      "images": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/6830a346-36e7-11e7-8a7f-40d0000000f8/image",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/6830a346-36e7-11e7-8a7f-40d0000000f8/images",
           "type": "image",
           "mediaType": "application/json",
           "size": 0,
