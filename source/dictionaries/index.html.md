@@ -13,6 +13,7 @@ includes:
   - assortment
   - currency
   - images
+  - files
   - pricetypes
   - product
   - service
@@ -44,6 +45,7 @@ includes:
   - bonus_operation
   - bonus_program
   - states  
+  - characteristic
   
 search: true
 ---  
