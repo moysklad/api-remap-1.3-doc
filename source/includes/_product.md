@@ -153,13 +153,24 @@
 
 Структуры объектов отдельных коллекций:
 
-##### Штрих коды:
+##### Штрихкоды:
 При создании штрихкода требуется описать объект с полем, являющимся форматом представления штрихкода в нижнем регистре, со строковым значением самого штрихкода. Наименование полей отдельного объекта, представляющего штрихкод:
 
 + **ean13** - штрихкод в формате EAN13, если требуется создать штрихкод в формате EAN13
 + **ean8** - штрихкод в формате EAN8, если требуется создать штрихкод в формате EAN8
 + **code128** - штрихкод в формате Code128, если требуется создать штрихкод в формате Code128
-+ **gtin** - штрихкод в формате GTIN, если требуется создать штрихкод в формате GTIN
++ **gtin** - штрихкод в формате GTIN, если требуется создать штрихкод в формате GTIN. Валидируется на соответствие формату GS1
+
+Для обновления списка штрихкодов необходимо передавать их полный список, включающий как старые, так и новые значения. 
+Отсутствующие значения штрихкодов при обновлении будут удалены. При обновлении списка штрихкодов валидируются только новые значения. 
+Ранее сохраненные штрихкоды не валидируются. То есть, если один из старых штрихкодов не соответствует требованиям к валидации, то ошибки при обновлении списка не будет. 
+Если на вход передан пустой список штрихкодов или список из пустых значений, то ранее созданные штрихкоды будут удалены.
+
+Особенности создания списка штрихкодов при создании товара:
+
++ Если передать список штрихкодов на вход, то полученные значения штрихкодов сохраняются, а пустые значения игнорируются.
++ Если передать список из пустых значений штрихкодов на вход, то для продукции не будет создано ни одного штрихкода.
++ Если не передать на вход атрибут barcodes или передать пустой список в нем, то по умолчанию будет создан один случайный штрихкод типа EAN13 для продукции.
 
 О работе с доп. полями Товаров можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
@@ -633,8 +644,8 @@ curl -X GET
     },
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/26b36824-2c83-11e6-8a84-bae50000031b",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/26b36824-2c83-11e6-8a84-bae50000031b",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json"
       },
@@ -642,8 +653,8 @@ curl -X GET
       "accountId": "6270cd18-2c7f-11e6-8a84-bae500000001",
       "owner": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json"
         }
@@ -651,8 +662,8 @@ curl -X GET
       "shared": false,
       "group": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/group/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/group/metadata",
           "type": "group",
           "mediaType": "application/json"
         }
@@ -669,8 +680,8 @@ curl -X GET
       "discountProhibited": false,
       "uom": {
         "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/uom/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/uom/19f1edc0-fc42-4001-94cb-c9ec9c62ec10",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/uom/metadata",
           "type": "uom",
           "mediaType": "application/json"
         }
@@ -680,15 +691,15 @@ curl -X GET
           "value": 2600,
           "currency": {
             "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500000255",
-              "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+              "href": "https://online.moysklad.ru/api/remap/1.3/entity/currency/6314188d-2c7f-11e6-8a84-bae500000255",
+              "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/currency/metadata",
               "type": "currency",
               "mediaType": "application/json"
             }
           },
           "priceType": {
             "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.2/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f23fd",
+              "href": "https://online.moysklad.ru/api/remap/1.3/context/companysettings/pricetype/672559f1-cbf3-11e1-9eb9-889ffa6f23fd",
               "type": "pricetype",
               "mediaType": "application/json"
             },
@@ -702,8 +713,8 @@ curl -X GET
         "value": 12,
         "currency": {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/currency/6314188d-2c7f-11e6-8a84-bae500002255",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/currency/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/currency/6314188d-2c7f-11e6-8a84-bae500002255",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/currency/metadata",
             "type": "currency",
             "mediaType": "application/json"
           }
