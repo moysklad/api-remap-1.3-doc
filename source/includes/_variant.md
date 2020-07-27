@@ -101,14 +101,14 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |Meta|Метаданные объекта|&mdash;|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
 |**title**               |String(255)|Название Изображения|&mdash;|да
 |**filename**               |String(255)|Имя файла|&mdash;|да
 |**size**               |Int|Размер файла в байтах|&mdash;|да
 |**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
 |**download**               |Object|Ссылка на скачивание изображения в формате Метаданных|&mdash;|да
-|**miniature**               |Meta|Метаданные миниатюры изображения|&mdash;|да
-|**tiny**               |Meta|Метаданные уменьшенного изображения|&mdash;|да
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
+|**tiny**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные уменьшенного изображения|&mdash;|да
 
 <h4>Загрузка</h4>
 Для загрузки изображений нужно в теле запроса на [создание](../dictionaries/#suschnosti-modifikaciq-sozdat-modifikaciu) или [обновление](../dictionaries/#suschnosti-modifikaciq-izmenit-modifikaciu) модификации
@@ -130,7 +130,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
 |**value**   |Float|Значение цены| &mdash; | да
-|**currency**|Meta| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+|**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 |**priceType**   |Object|Тип цены| &mdash; | да
 
 ##### Минимальная цена
@@ -138,7 +138,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:---------------|:-----------------------|
 **value**   |Float|Значение цены| &mdash; | да
-**currency**|Meta|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
+**currency**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на валюту в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)| &mdash; | да
 
 ### Получить список Модификаций 
 Запрос на получение списка всех Модификаций на данной учетной записи.
