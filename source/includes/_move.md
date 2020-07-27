@@ -4,33 +4,33 @@
 #### Атрибуты сущности
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Списания|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Списания|&mdash;|да
 |**id**                 |UUID|ID Списания|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
 |**updated**            |DateTime|Момент последнего обновления Списания|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|нет
-|**name**               |String(255)|Наименование Списания|---|да
-|**description**        |String(4096)|Комментарий Списания|---|нет
-|**externalCode**       |String(255)|Внешний код Списания|---| да
-|**moment**             |DateTime|Дата Списания|---|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
+|**name**               |String(255)|Наименование Списания|&mdash;|да
+|**description**        |String(4096)|Комментарий Списания|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Списания|&mdash;| да
+|**moment**             |DateTime|Дата Списания|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
 |**sum**                |Int|Сумма Перемещения в копейках|Только для чтения|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**rate**               |Object|Валюта|---|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-peremeschenie-peremescheniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-peremeschenie-peremescheniq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Перемещения|---|да
-|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-peremeschenie-peremescheniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|нет
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Перемещения|&mdash;|да
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-peremeschenie-peremescheniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
 |**sourceStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, с которого совершается перемещение|Необходимое при создании|да
 |**targetStore**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада, на который совершается перемещение|Необходимое при создании|да
-|**internalOrder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Внутреннего заказа, связанного с Перемещением|---|нет
+|**internalOrder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Внутреннего заказа, связанного с Перемещением|&mdash;|нет
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
@@ -48,8 +48,8 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**sum**                |Int|Сумма Оприходования в копейках|---|да
-|**distribution**                |Enum|Распределение накладных расходов `[weight, volume, price]` -> `[по весу, по объему, по цене]`|---|да
+|**sum**                |Int|Сумма Оприходования в копейках|&mdash;|да
+|**distribution**                |Enum|Распределение накладных расходов `[weight, volume, price]` -> `[по весу, по объему, по цене]`|&mdash;|да
 
 #### Позиции Перемещения
 Позиции Перемещения - это список товаров/услуг/модификаций/серий.
@@ -59,12 +59,12 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
-|**price**          |Float|Цена товара/услуги в копейках|---|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
-|**pack**            |String(255)|Упаковка товара|---|нет
-|**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|---|нет
-|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|---|да
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет
+|**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-oprihodowanie-oprihodowaniq-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|да
 
 Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
 В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.
@@ -746,7 +746,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
   
 > Запрос на удаление Перемещения с указанным id.
@@ -1097,7 +1097,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -1132,7 +1132,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 
 > Запрос на получение отдельного Перемещения с указанным id.
@@ -1247,7 +1247,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 
 > Пример запроса на обновление отдельного Перемещения.
@@ -1445,7 +1445,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -1816,7 +1816,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 
 > Пример создания позиций в Перемещении.
@@ -1913,7 +1913,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 |   **positionID**|   `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id Перемещения.|
  
@@ -1959,7 +1959,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 |   **positionID**|   `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id Перемещения.|
 
@@ -2008,7 +2008,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Перемещения.|
 |   **positionID**|   `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b20* id Перемещения.|
  

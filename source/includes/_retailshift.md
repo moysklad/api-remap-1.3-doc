@@ -34,7 +34,7 @@
 |**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|Только для чтения|нет
 |**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|Только для чтения|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да|
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**closeDate**          |DateTime|Дата закрытия смены|Только для чтения|нет
 |**proceedsNoCash**     |Float|Выручка безнал|Только для чтения|да
@@ -391,7 +391,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной смены.|
 
 > Запрос на удаление Розничной смены с указанным id.
@@ -545,7 +545,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
  
 #### Отдельное доп. поле
@@ -580,7 +580,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной смены.|
 
 ### Получить Розничную смену 

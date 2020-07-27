@@ -4,9 +4,9 @@
 #### Атрибуты сущности
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек компании|---|да
-|**currency**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные стандартной валюты|---|да
-|**priceTypes**          |Array(Object)|Коллекция всех существующих типов цен. [Подробнее тут](../dictionaries/#suschnosti-nastrojki-kompanii-izmenit-proekt-tip-ceny)|---|да
+|**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек компании|&mdash;|да
+|**currency**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные стандартной валюты|&mdash;|да
+|**priceTypes**          |Array(Object)|Коллекция всех существующих типов цен. [Подробнее тут](../dictionaries/#suschnosti-nastrojki-kompanii-izmenit-proekt-tip-ceny)|&mdash;|да
 |**discountStrategy**    |Enum|Cовместное применение скидок. [Подробнее тут](../dictionaries/#suschnosti-nastrojki-kompanii-izmenit-proekt-sowmestnoe-primenenie-skidok)|Необходимое при создании|да
 
 ##### Тип цены:
@@ -17,7 +17,7 @@
 |**meta**             |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Типа цены|Только для чтения|да
 |**id**               |UUID|ID Типа цены|Только для чтения|да
 |**name**             |String(255)|Наименование Типа цены|Необходимое при создании|да
-|**externalCode**     |String(255)|Внешний код Типа цены|---|да
+|**externalCode**     |String(255)|Внешний код Типа цены|&mdash;|да
 
 
 #### Совместное применение скидок
@@ -36,7 +36,7 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Пользовательского справочника|Только для чтения|да
 |**entityMeta**               |URL|Ссылка на список сущностей данного пользовательского справочника|нет
-|**name**               |String(255)|Наименование справочника|---|нет
+|**name**               |String(255)|Наименование справочника|&mdash;|нет
 
 ### Получить Настройки компании 
 > Запрос на получение Настроек компании.

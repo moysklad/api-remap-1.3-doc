@@ -5,39 +5,39 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Прайс-листа|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Прайс-листа|&mdash;|да
 |**id**                 |UUID|ID Прайс-листа|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
 |**updated**            |DateTime|Момент последнего обновления Прайс-листа|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Прайс-листа|Только для чтения|нет
-|**name**               |String(255)|Наименование Прайс-листа|---|да
-|**description**        |String(4096)|Комментарий Прайс-листа |---|нет
-|**externalCode**       |String(255)|Внешний код Прайс-листа |---| да
+|**name**               |String(255)|Наименование Прайс-листа|&mdash;|да
+|**description**        |String(4096)|Комментарий Прайс-листа |&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Прайс-листа |&mdash;| да
 |**priceType**          |Object|Объект типа цены|Только для чтения|да
 |**columns**            |Array(Object)|Массив столбцов описания таблицы|Необходимое при создании. После создания изменить нельзя|да
-|**moment**             |DateTime|Дата Прайс-листа|---|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
-|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|---|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Прайс-листа---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prajs-list-prajs-listy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
+|**moment**             |DateTime|Дата Прайс-листа|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Прайс-листа&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prajs-list-prajs-listy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Прайс-листа|---|да
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Прайс-листа|&mdash;|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|---|нет
-|**moment**          |DateTime|Дата печати|---|да
-|**href**            |URL|Ссылка на файл печатной формы|---|да
-|**fileName**        |String(255)|Название файла печатной формы|---|нет
-|**updated**         |DateTime|Момент последнего обновления|---|да
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Тип цены
 | Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
@@ -45,7 +45,7 @@
 |**meta**               |Meta|Метаданные Типа цены|Только для чтения|да
 |**id**               |UUID|ID типа цены|Только для чтения|да
 |**name**               |String(255)|Наименование Типа цены|Необходимое при создании|да
-|**externalCode**       |String(255)|Внешний код Типа цены|---|да
+|**externalCode**       |String(255)|Внешний код Типа цены|&mdash;|да
 
 #### Позиции Прайс-листа
 Позиции Прайс-листа - это список товаров/услуг/модификаций.
@@ -55,9 +55,9 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|нет
-|**pack**               |String(255)|Упаковка товара|---|нет
-|**cells**               |Array(Object)|Массив значений столбцов в позиции Прайс-листа|---|да
+|**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|нет
+|**pack**               |String(255)|Упаковка товара|&mdash;|нет
+|**cells**               |Array(Object)|Массив значений столбцов в позиции Прайс-листа|&mdash;|да
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Прайс-листа](../documents/#dokumenty-prajs-list-pozicii-prajs-lista),
 а также в составе отдельного Прайс-листа. При работе в составе отдельного Прайс-листа,
@@ -76,7 +76,7 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**name**               |String(255)|Наименование Прайс-листа|Необходимое при создании|да
-|**percentageDiscount**     |Int| Процентная наценка или скидка по умолчанию для столбца|---|нет
+|**percentageDiscount**     |Int| Процентная наценка или скидка по умолчанию для столбца|&mdash;|нет
 
 На столбцы налагаются следующие ограничения:
 
@@ -894,7 +894,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 
 > Запрос на удаление Прайс-листа с указанным id.
@@ -1014,7 +1014,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |   **id**|   `666f86f9-afec-11e6-8af5-581e00000087` (required, string) - id Доп. поля|
  
 #### Отдельное доп. поле 
@@ -1050,7 +1050,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
  
 > Запрос на получение отдельного Прайс-листа с указанным id.
@@ -1145,7 +1145,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 
 > Пример запроса на обновление отдельного Прайс-листа.
@@ -1606,7 +1606,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -1705,7 +1705,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 
 > Пример создания одной позиции в Прайс-листе.
@@ -1871,7 +1871,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа.|
  
@@ -1921,7 +1921,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа.|
 
@@ -1977,7 +1977,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа.|
  

@@ -18,22 +18,22 @@
 #### Атрибуты запроса
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**organization** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|---|да
-|**count**        |Int|Количество ценников/термоэтикеток. Максимальное количество - `1000`|---|да
-|**salePrice**    |Object|Цена продажи. [Подробнее тут](../dictionaries/#suschnosti-pechat-atiketok-i-cennikow-zapros-na-pechat-atiketok-i-cennikow-atributy-zaprosa-cena-prodazhi)|---|да
-|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|---|да
+|**organization** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да
+|**count**        |Int|Количество ценников/термоэтикеток. Максимальное количество - `1000`|&mdash;|да
+|**salePrice**    |Object|Цена продажи. [Подробнее тут](../dictionaries/#suschnosti-pechat-atiketok-i-cennikow-zapros-na-pechat-atiketok-i-cennikow-atributy-zaprosa-cena-prodazhi)|&mdash;|да
+|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|&mdash;|да
 
 ##### Цена продажи
 Атрибуты вложенной сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**priceType**    |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные типа цены|---|да
+|**priceType**    |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные типа цены|&mdash;|да
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**type**|  `string` (required) *Example: product* тип сущности, для которой запрашивается печать.|
 |**id** |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
 

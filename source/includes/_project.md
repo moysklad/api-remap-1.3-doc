@@ -11,19 +11,19 @@
 #### Атрибуты сущности
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта|&mdash;|да
 |**id**                |UUID|ID проекта|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|---|да
-|**shared**         |Boolean|Общий доступ|---|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|---|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
 |**name**         |String(255)|Наименование Проекта|Необходимое при создании|да
-|**description**        |String(4096)|Описание Проекта|---|нет
-|**code**         |String(255)|Код Проекта|---|нет
-|**externalCode**         |String(255)|Внешний код Проекта|---|да
-|**archived**        |Boolean|Добавлен ли Проект в архив|---|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
+|**description**        |String(4096)|Описание Проекта|&mdash;|нет
+|**code**         |String(255)|Код Проекта|&mdash;|нет
+|**externalCode**         |String(255)|Внешний код Проекта|&mdash;|да
+|**archived**        |Boolean|Добавлен ли Проект в архив|&mdash;|да
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
 
 О работе с доп. полями Проектов можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
@@ -422,7 +422,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Проекта.|
 
 > Запрос на удаление Проекта с указанным id.
@@ -485,9 +485,9 @@ curl -X POST
 
 | Название  | Тип | Описание                    | Поле в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта|---|да
-|**attributes**         |Array(Meta)|Коллекция доп. полей|---|нет
-|**createShared**        |Boolean|Создавать новые Проекты с меткой "Общий"|---|да
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Проекта|&mdash;|да
+|**attributes**         |Array(Meta)|Коллекция доп. полей|&mdash;|нет
+|**createShared**        |Boolean|Создавать новые Проекты с меткой "Общий"|&mdash;|да
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -527,7 +527,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 5290a290-0313-11e6-9464-e4de00000020* id Доп. поля.|
 
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -560,7 +560,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Проекта.|
 
 ### Получить Проект 
@@ -630,7 +630,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Проекта.|
 
 > Пример запроса на обновление существующего проекта.

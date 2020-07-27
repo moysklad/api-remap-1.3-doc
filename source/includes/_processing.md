@@ -13,19 +13,19 @@
 |**updated**            |DateTime|Момент последнего обновления Тех. операции |Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Тех. операции |Только для чтения|нет
 |**name**               |String(255)|Наименование Тех. операции |Необходимое при создании|да
-|**description**        |String(4096)|Комментарий Тех. операции |---|нет
+|**description**        |String(4096)|Комментарий Тех. операции |&mdash;|нет
 |**externalCode**       |String(255)|Внешний код Тех. операции |Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |---|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-teh-operaciq-teh-operacii-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Тех. операции |&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-teh-operaciq-teh-operacii-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**quantity**               |Int|Объем производства|Необходимое при создании|да
 |**processingSum**              |Int|Затраты на производство|Необходимое при создании|да
@@ -40,11 +40,11 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|---|нет
-|**moment**          |DateTime|Дата печати|---|да
-|**href**            |URL|Ссылка на файл печатной формы|---|да
-|**fileName**        |String(255)|Название файла печатной формы|---|нет
-|**updated**         |DateTime|Момент последнего обновления|---|да
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Связи с другими документами
 
@@ -60,8 +60,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Тех. операции |Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|да
-|**quantity**          |Int|Количество товаров данного вида в позиции|---|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**quantity**          |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 #### Продукты Тех. операции
 Продукты Тех. операции - это список товаров/модификаций/серий, получаемых при производстве согласно тех. карте.
@@ -71,8 +71,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Тех. операции |Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|---|да
-|**quantity**          |Int|Количество товаров данного вида в позиции|---|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**quantity**          |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. операции](../documents/#dokumenty-teh-operaciq-izmenit-teh-operaciu-materialy-teh-operacii),
 а также в составе отдельной Тех. операции. При работе в составе отдельной Тех. операции,
@@ -1565,7 +1565,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. операции.|
  
 > Запрос на удаление Тех. операции с указанным id.
@@ -1768,7 +1768,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -2059,7 +2059,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. операции.|
  
 > Запрос на получение отдельной Тех. операции с указанным id.
@@ -2186,7 +2186,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. операции.|
 
 > Пример запроса на обновление отдельной Тех. операции.
@@ -2326,7 +2326,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. операции.|
 |**limit**|  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -2410,7 +2410,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. операции.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. операции.|
  
@@ -2453,7 +2453,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. операции.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. операции.|
 
@@ -2523,7 +2523,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. операции.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -2609,7 +2609,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. операции.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id продукта Тех. операции.|
  
@@ -2653,7 +2653,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. операции.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id продукта Тех. операции.|
 

@@ -8,8 +8,8 @@
 |**meta**                |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Кассира|Только для чтения|да
 |**id**                 |UUID|ID Кассира|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да
-|**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|---|да
-|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|---|да
+|**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|&mdash;|да
+|**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|&mdash;|да
 
 
 
@@ -128,7 +128,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**retailStoreId** |  `string` (required) *Example: ea05e0c9-8667-11e7-8a7f-40d000000060* id Точки продаж.|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Кассира.|
 

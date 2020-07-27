@@ -5,42 +5,42 @@
 #### Атрибуты сущности
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Счета поставщика|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Счета поставщика|&mdash;|да
 |**id**                 |UUID|ID Счете поставщика|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|---|нет
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
 |**updated**            |DateTime|Момент последнего обновления Счета поставщика|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Счета поставщика|Только для чтения|нет
-|**name**               |String(255)|Наименование Счета поставщика|---|да
-|**description**        |String(4096)|Комментарий Счета поставщика|---|нет
-|**externalCode**       |String(255)|Внешний код Счета поставщика|---| да
-|**moment**             |DateTime|Дата Счета|---|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
-|**vatEnabled**         |Boolean|Учитывается ли НДС|---|да
-|**vatIncluded**        |Boolean| Включен ли НДС в цену|---|да
+|**name**               |String(255)|Наименование Счета поставщика|&mdash;|да
+|**description**        |String(4096)|Комментарий Счета поставщика|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Счета поставщика|&mdash;| да
+|**moment**             |DateTime|Дата Счета|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
 |**sum**                |Int|Сумма Счета в установленной валюте|Только для чтения|да
-|**rate**               |Object|Валюта|---|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
-|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|---|да
-|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|---|нет
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса счета|---|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
-|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|---|нет
-|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-postawschika-scheta-postawschikow-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |---|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|&mdash;|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса счета|&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-schet-postawschika-scheta-postawschikow-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**vatSum**             |Float|Сумма НДС |Только для чтения|да
-|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Счета поставщика|---|да
-|**paymentPlannedMoment**          |DateTime|Планируемая дата оплаты|---|нет
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Счета поставщика|&mdash;|да
+|**paymentPlannedMoment**          |DateTime|Планируемая дата оплаты|&mdash;|нет
 |**payedSum**            |Float|Сумма входящих платежей по Счету поставщика |Только для чтения|да
 |**shippedSum**             |Float|Сумма отгруженного |Только для чтения|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**incomingNumber**             |Float|Входящий номер |---|нет
-|**incomingDate**         |DateTime| Входящая дата|---|нет
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**incomingNumber**             |Float|Входящий номер |&mdash;|нет
+|**incomingDate**         |DateTime| Входящая дата|&mdash;|нет
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
@@ -68,12 +68,12 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
-|**price**          |Float|Цена товара/услуги в копейках|---|да
-|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|---|да
-|**vat**        |Int|НДС, которым облагается текущая позиция|---|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
-|**pack**            |String(255)|Упаковка товара|---|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Счета,
 а также в составе отдельного Счета поставщика. При работе в составе отдельного Счета поставщика,
@@ -1335,7 +1335,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 
 > Запрос на удаление Счета поставщика с указанным id.
@@ -1446,7 +1446,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -1796,7 +1796,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
  
 > Запрос на получение отдельного Счета поставщика с указанным id.
@@ -1937,7 +1937,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 
 > Пример запроса на обновление отдельного Счета поставщика.
@@ -2555,7 +2555,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -2696,7 +2696,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 
 > Пример создания позиции в Счете поставщика.
@@ -2757,7 +2757,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 |**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Счета поставщика.|
 
@@ -2805,7 +2805,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 |**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Счета поставщика.|
  
@@ -2865,7 +2865,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Счета поставщика.|
 |**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Счета поставщика.| 
 

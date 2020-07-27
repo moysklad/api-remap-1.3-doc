@@ -6,19 +6,19 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. карты|---|да
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. карты|&mdash;|да
 |**id**                 |UUID|ID Тех. карты|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**updated**            |DateTime|Момент последнего обновления Тех. карты|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Тех. карты|Только для чтения|нет
 |**name**               |String(255)|Наименование Тех. карты|Необходимое при создании|да
-|**externalCode**       |String(255)|Внешний код Тех. карты|---| да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
-|**shared**             |Boolean|Общий доступ|---|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**externalCode**       |String(255)|Внешний код Тех. карты|&mdash;| да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**pathName**       |String(unlimited)|Наименование группы, в которую входит Тех. карта|Только для чтения| да
-|**parent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Тех. карты|---|да
-|**cost**                |Int| Стоимость производства|---|нет
+|**parent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Тех. карты|&mdash;|да
+|**cost**                |Int| Стоимость производства|&mdash;|нет
 |**materials**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных материалов Тех. карты|Необходимое при создании|да
 |**products**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных готовых продуктов Тех. карты|Необходимое при создании|да
 
@@ -30,8 +30,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Материала|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|---|нет
-|**quantity**               |Int|Количество товаров данного вида в позиции|---|да
+|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет
+|**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 #### Продукты Тех. карты
 Продукты Тех. карты - это список товаров, получаемых при производстве.
@@ -41,8 +41,8 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Продукта|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|---|нет
-|**quantity**               |Int|Количество товаров данного вида в позиции|---|да
+|**products**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет
+|**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. карты](../documents/#dokumenty-teh-karta-materialy-teh-karty),
 а также в составе отдельной Тех. карты. При работе в составе отдельной Тех. карты,
@@ -584,7 +584,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
  
 > Запрос на удаление Тех. карты с указанным id.
@@ -648,7 +648,7 @@ curl -X POST
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
  
 > Запрос на получение отдельной Тех. карты с указанным id.
@@ -726,7 +726,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
 
 > Пример запроса на обновление отдельной Тех. карты.
@@ -815,7 +815,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -884,7 +884,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
 
 > Пример создания одного материала в Тех. карте.
@@ -1019,7 +1019,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.|
 |**positionID** |  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. карты.|
  
@@ -1062,7 +1062,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.|
 |**positionID** |  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. карты.|
 
@@ -1109,7 +1109,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.|
 |**positionID** |  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Тех. карты.|
 
@@ -1139,7 +1139,7 @@ curl -X DELETE
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -1208,7 +1208,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Тех. карты.|
 
 > Пример создания одного продукта в Тех. карте.
@@ -1343,7 +1343,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.|
 |**positionID** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Тех. карты.|
  
@@ -1388,7 +1388,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.|
 |**positionID** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Тех. карты.|
 
@@ -1436,7 +1436,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Тех. карты.|
 |**positionID** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id продукта Тех. карты.|
  

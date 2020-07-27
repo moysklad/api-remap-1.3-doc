@@ -12,36 +12,36 @@
 |**updated**            |DateTime|Момент последнего обновленияЗаказа на производство|Только для чтения|да
 |**deleted**            |DateTime|Момент последнего удаления Заказа на производство|Только для чтения|нет
 |**name**               |String(255)|Наименование Заказа на производство|Необходимое при создании|да
-|**description**        |String(4096)|Комментарий Заказа на производство|---|нет
+|**description**        |String(4096)|Комментарий Заказа на производство|&mdash;|нет
 |**externalCode**       |String(255)|Внешний код Заказа на производство|Только для чтения| да
 |**moment**             |DateTime|Дата смены|Только для чтения|да
-|**applicable**         |Boolean|Отметка о проведении|---|да
-|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|---|нет
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|---|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
 |**shared**             |Boolean|Общий доступ|Только для чтения|да
-|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|---|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
 |**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Заказа на производство|---|нет
-|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|---|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Заказа на производство|&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-na-proizwodstwo-zakazy-na-proizwodstwo-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
-|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|---|да
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
 |**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа на производство|Необходимое при создании|да
-|**deliveryPlannedMoment**            |DateTime|Планируемая дата производства|---|нет
-|**quantity**            |Int|Объем производства|---|да
+|**deliveryPlannedMoment**            |DateTime|Планируемая дата производства|&mdash;|нет
+|**quantity**            |Int|Объем производства|&mdash;|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**name**            |String(255)|Номер документа|---|нет
-|**moment**          |DateTime|Дата печати|---|да
-|**href**            |URL|Ссылка на файл печатной формы|---|да
-|**fileName**        |String(255)|Название файла печатной формы|---|нет
-|**updated**         |DateTime|Момент последнего обновления|---|да
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Связи с другими документами
 |Название          | Описание  |
@@ -56,10 +56,10 @@
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID позиции|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|---|да
-|**reserve**           |Int|Резерв данной позиции|---|да
-|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|---|да
-|**pack**            |String(255)|Упаковка товара|---|нет
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**reserve**           |Int|Резерв данной позиции|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Заказа,
 а также в составе отдельного Заказа на производство. При работе в составе отдельного Заказа на производство,
@@ -1190,7 +1190,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
  
 > Запрос на удаление Заказа на производство с указанным id.
@@ -1395,7 +1395,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
 
  
@@ -1525,7 +1525,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
  
 > Запрос на получение отдельного Заказа на производство с указанным id.
@@ -1628,7 +1628,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 
 > Пример запроса на обновление отдельного Заказа на производство.
@@ -2015,7 +2015,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -2104,7 +2104,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
  
@@ -2150,7 +2150,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
 
@@ -2212,7 +2212,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
  
