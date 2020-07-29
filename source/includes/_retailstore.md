@@ -69,7 +69,9 @@
 |**enableReturnsWithNoReason**|Boolean|Разрешить возвраты без основания|&mdash;| да
 |**createOrderWithState**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса, который будет указан при создании заказа|&mdash;| нет
 |**reservePrepaidGoods**|Boolean|Резервировать товары, за которые внесена предоплата|&mdash;| да
-|**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да|
+|**fiscalType**     |Enum| Тип формирования чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-formirowaniq-chekow)|&mdash;|да
+|**minionToMasterType**|Enum|Стратегия выбора кассы для фискализации облачных чеков. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-strategiq-wybora-kassy-dlq-fiskalizacii-oblachnyh-chekow)|&mdash;|да
+|**masterRetailStores**|Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Ссылка на точки продаж, которые могут фискализировать операции с текущей точки продаж, если `minionToMaster` = `CHOSEN`|&mdash;|нет|
  
 ##### Код системы налогообложения по умолчанию
 
@@ -102,6 +104,14 @@
 | **MASTER** | Стандартное с обработкой облачных операций
 | **CLOUD** | Облачное  
  
+##### Стратегия выбора кассы для фискализации облачных чеков
+  
+| Название               | Описание  |
+| ------------------------------ |:---------------------------|
+| **ANY** | Любая мастер касса
+| **SAME_GROUP** | Только кассы из того же отдела
+| **CHOSEN** | Выбранные кассы из списка в поле `masterRetailStores`  
+
 ##### Приоритет отправки электронного чека
 
 | Название               | Описание  |
@@ -484,7 +494,8 @@ curl -X GET
       "reservePrepaidGoods" : true,
       "defaultTaxSystem": "GENERAL_TAX_SYSTEM",
       "orderTaxSystem": "GENERAL_TAX_SYSTEM",
-      "fiscalType": "STANDARD"
+      "fiscalType": "STANDARD",
+      "minionToMasterType": "ANY"
     },
     {
       "meta": {
@@ -683,7 +694,8 @@ curl -X GET
         }
       },
       "reservePrepaidGoods" : true,
-      "fiscalType": "MASTER"  
+      "fiscalType": "MASTER",
+      "minionToMasterType": "ANY"  
     }
   ]
 }
@@ -799,7 +811,17 @@ curl -X GET
                 }
               },
               "reservePrepaidGoods" : true,
-              "fiscalType": "STANDARD"
+              "fiscalType": "STANDARD",
+              "fiscalType": "CLOUD",
+              "minionToMasterType": "CHOSEN",
+              "masterRetailStores": [{
+                "meta": {
+                  "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d",
+                  "metadataHref" : "http://online.moysklad.ru/api/remap/1.2/entity/retailstore/metadata",
+                  "type": "retailstore",
+                  "mediaType": "application/json"
+                }
+              }]
           }'
 ```
 
@@ -960,7 +982,19 @@ curl -X GET
       "mediaType" : "application/json"
     }
   },
-  "reservePrepaidGoods" : true
+  "reservePrepaidGoods" : true,
+  "fiscalType": "CLOUD",
+  "minionToMasterType": "CHOSEN",
+  "masterRetailStores": [{
+    "meta": {
+      "href": "http://localhost/api/remap/1.2/entity/retailstore/31b6349e-137a-11e6-9464-e4de0000005d/masterRetailStores",
+      "type": "retailstore",
+      "mediaType" : "application/json",
+      "size" : 1,
+      "limit" : 1000,
+      "offset" : 0
+    }
+  }]
 }
 ```
 
@@ -1618,6 +1652,7 @@ curl -X GET
   "ofdEnabled": true,
   "allowCustomPrice": false,
   "fiscalType": "CLOUD",
+  "minionToMasterType": "SAME_GROUP",
   "environment": {
     "device": "Some device name",
     "os": "Linux",
@@ -1807,6 +1842,7 @@ curl -X PUT
   "returnFromClosedShiftEnabled" : false,
   "enableReturnsWithNoReason" : false,
   "reservePrepaidGoods" : false,
-  "fiscalType": "MASTER"
+  "fiscalType": "MASTER",
+  "minionToMasterType": "ANY"
 }
 ```
