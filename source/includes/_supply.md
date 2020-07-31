@@ -2,79 +2,90 @@
 Средствами JSON API можно создавать и обновлять сведения об Приемках, запрашивать списки Приемок и сведения по отдельным Приемкам. Позициями Приемок можно управлять как в составе отдельной Приемки, так и отдельно - с помощью специальных ресурсов для управления позициями Приемки. Кодом сущности для Приемки в составе JSON API является ключевое слово **supply**. Больше об Приемках и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325563-%D0%9F%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B0-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2).
 ### Приемки 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) об Приемке
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер Приемки
-+ **description** - Комментарий Приемки
-+ **externalCode** - Внешний код Приемки
-+ **moment** - Дата Приемки
-+ **applicable** - Отметка о проведении
-+ **vatEnabled** - Учитывается ли НДС
-+ **vatIncluded** - Включен ли НДС в цену
-+ **sum** - Сумма Приемки в копейках `Только для чтения`
-+ **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Приемки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
-<br>Поля при expand'е:</br>
-  - **name** - номер документа
-  - **moment** - дата печати
-  - **href** - ссылка на файл печатной формы
-  - **fileName** - название файла печатной формы
-  - **updated** - дата последнего изменения
-+ **created** - Дата создания `Только для чтения`
-+ **vatSum** - Сумма НДС `Только для чтения`
-+ **positions** - Ссылка на позиции в Приемке в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **overhead** - Накладные расходы. Если Позиции Приемки не заданы, то накладные расходы нельзя задать
-  - **sum** - сумма накладных расходов
-  - **distribution** - Распределение накладных расходов `` -> `[по весу, по объему, по цене]`
-+ **payedSum** - Сумма исходящих платежей по приемке
-+ **incomingNumber** - Входящий номер
-+ **incomingDate** - Входящая дата
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Приемки|&mdash;|да
+|**id**                 |UUID|ID Приемки|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
+|**updated**            |DateTime|Момент последнего обновления Приемки|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Приемки|Только для чтения|нет
+|**name**               |String(255)|Наименование Приемки|&mdash;|да
+|**description**        |String(4096)|Комментарий Приемки|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Приемки|&mdash;| да
+|**moment**             |DateTime|Дата Приемки|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
+|**sum**                |Int|Сумма Приемки в копейках|Только для чтения|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Приемки|&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-priemka-priemki-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**vatSum**             |Float|Сумма включая НДС|&mdash;|да
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Приемки|&mdash;|да
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-priemka-priemki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
+|**payedSum**           |Float|Сумма входящих платежей по Приемке |Только для чтения|да
+|**incomingNumber**     |Float|Входящий номер |&mdash;|нет
+|**incomingDate**         |DateTime| Входящая дата|&mdash;|нет
+
+##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**            |String(255)|Номер документа|Только для чтения|нет
+|**moment**          |DateTime|Дата печати|Только для чтения|да
+|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
+|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
+|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
+
+#### Накладные расходы
+Описание полей overhead
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**sum**                |Int|Сумма Оприходования в копейках|&mdash;|да
+|**distribution**       |Enum|Распределение накладных расходов по весу, по объему, по цене|&mdash;|да
 
 #### Связи с другими документами
-+ **purchaseOrder** - Ссылка на связанный заказ поставщику в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **factureIn** - Ссылка на Счет-фактуру полученный, с которым связана эта Приемка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **invoicesIn** - Массив ссылок на связанные счета поставщиков в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **returns** - Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+|Название          | Описание  |
+| ------------------------------ |:---------------------------|
+| **purchaseOrder** | Ссылка на связанный заказ поставщику в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **factureIn** | Ссылка на Счет-фактуру полученный, с которым связана эта Приемка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**invoicesIn** | Массив ссылок на связанные счета поставщиков в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **payments** | Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**returns** | Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 #### Позиции Приемки
 Позиции Приемки - это список товаров/услуг/модификаций/серий.
 Объект позиции Приемки содержит следующие поля:
 
-+ **id** - ID позиции в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
-+ **price** - Цена товара/услуги в копейках
-+ **discount** - Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%
-+ **vat** - НДС, которым облагается текущая позиция
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **pack** - Упаковка товара
-+ **things** - Серийные номера
-+ **trackingCodes** - Коды маркировки товаров и транспортных упаковок. Поддержаны в виде иерархической структуры JSON. 
-  Значение кода указывается в атрибуте **cis**. Для каждого кода указывается тип **type: trackingcode** (код маркировки товара), **consumerpack** (код маркировки потребительской упаковки) или **transportpack** (код транспортной упаковки). 
-  Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. 
-  Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. 
-  Количество кодов маркировки может отличаться от фактического количества единиц продукции.
-+ **gtd** - ГТД
-+ **country** - Ссылка на страну в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
-В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**quantity**           |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**price**              |Float|Цена товара/услуги в копейках|&mdash;|да
+|**discount**           |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
+|**vat**                |Boolean|НДС, которым облагается текущая позиция|&mdash;|да
+|**assortment**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**               |String(255)|Упаковка товара|&mdash;|нет
+|**things**             |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
+|**trackingCodes**      |Array(Object)|Коды маркировки товаров и транспортных упаковок. Поддержаны в виде иерархической структуры JSON. Значение кода указывается в атрибуте **cis**. Для каждого кода указывается тип **type: trackingcode** (код маркировки товара), **consumerpack** (код маркировки потребительской упаковки) или **transportpack** (код транспортной упаковки). Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. Количество кодов маркировки может отличаться от фактического количества единиц продукции.|&mdash;|нет
+|**gtd**                |Object|ГТД|&mdash;|нет
+|**country**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Приемки](../documents/#dokumenty-priemka-pozicii-priemki),
 а также в составе отдельной Приемки. При работе в составе отдельной Приемки,
@@ -85,26 +96,38 @@
 с включенным в тело запроса массивом позиций Приемки. При этом важно помнить, что коллекция позиций будет
 восприниматься как "все позиции Приемки" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
-+ **overhead** - Накладные расходы по позиции.
 
 О работе с доп. полями Приемок можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
+#### Коды маркировки и серийные номера для позиции документа
+
+При работе с позицией Приемки следует учитывать следующие особенности.
+
++ Количество кодов маркировки **trackingCodes** в позиции документа не влияет на количество единиц **quantity** в позиции.
++ Количество серийных номеров **things** в позиции документа строго соответствует количеству единиц **quantity** в позиции. 
+  Изменение **quantity** на значение, не соответствующее количеству серийных номеров, недопустимо. 
++ Для обновления списка кодов маркировки **trackingCodes** и списка серийных номеров **things** позиции Приемки, 
+  необходимо передавать их полный список, включающий как старые, так и новые значения. Отсутствующие значения при обновлении будут удалены.
+
+Недопустимо сохранение дублирующихся кодов маркировки и серийных номеров внутри документа Приемки. 
 
 ### Получить список Приемок 
 Запрос всех Приемок на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Приемки.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой Приемки.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.
 
 > Получить список Приемок
 
@@ -409,10 +432,12 @@ curl -X GET
 Запрос на создание новой Приемки.
 Обязательные для создания поля:
 
-+ **name** - номер Приемки (номер)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента (покупателя) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **name** | номер Приемки
+| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **agent** | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **store** | Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 
 > Пример создания новой Приемки.
@@ -833,118 +858,133 @@ curl -X GET
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
-            "name": "2000124",
-            "description": "Приемка от 909090",
-            "code": "776762312",
-            "externalCode": "77sea2as12",
-            "moment": "2016-02-22 22:22:53",
-            "applicable": true,
-            "vatEnabled": true,
-            "vatIncluded": true,
-            "rate": {
-              "currency": {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/currency/faf45b9a-2e58-11e6-8a84-bae500000055",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/currency/metadata",
-                  "type": "currency",
-                  "mediaType": "application/json"
-                }
-              },
-              "value": 71
-            },
-            "organization": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/organization/metadata",
-                "type": "organization",
-                "mediaType": "application/json"
-              }
-            },
-            "agent": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/metadata",
-                "type": "counterparty",
-                "mediaType": "application/json"
-              }
-            },
-            "store": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.3/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
-                "type": "store",
-                "mediaType": "application/json"
-              }
-            },
-            "state": {
-              "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/states/918e5abd-3f66-11e6-8a84-bae500000083",
-                "type": "state",
-                "mediaType": "application/json"
-              }
-            },
-            "incomingNumber": "12412412",
-            "incomingDate": "2012-12-12 12:12:12",
-            "attributes": [
-              {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/attributes/a31685ae-3f62-11e6-8a84-bae50000007b",
-                  "type": "attributemetadata",
-                  "mediaType": "application/json"
-                },
-                "value": "2017-02-22 02:12:53"
-              },
-              {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/attributes/c16fd9aa-3f62-11e6-8a84-bae50000007e",
-                  "type": "attributemetadata",
-                  "mediaType": "application/json"
-                },
-                "value": 47
-              },
-              {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/attributes/c16fe013-3f62-11e6-8a84-bae50000007f",
-                  "type": "attributemetadata",
-                  "mediaType": "application/json"
-                },
-                "value": "Пример удачной сделки"
-              }
-            ],
-            "positions": [
-              {
-                "quantity": 10,
-                "price": 100,
-                "discount": 0,
-                "vat": 0,
-                "assortment": {
-                  "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.3/entity/variant/7a7daa6b-3c64-11e6-8a84-bae50000000a",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/variant/metadata",
-                    "type": "variant",
-                    "mediaType": "application/json"
+   "name":"2000124",
+   "description":"Приемка от 909090",
+   "code":"776762312",
+   "externalCode":"77sea2as12",
+   "moment":"2016-02-22 22:22:53",
+   "applicable":true,
+   "vatEnabled":true,
+   "vatIncluded":true,
+   "rate":{
+      "currency":{
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/currency/faf45b9a-2e58-11e6-8a84-bae500000055",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/currency/metadata",
+            "type":"currency",
+            "mediaType":"application/json"
+         }
+      },
+      "value":71
+   },
+   "organization":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e",
+         "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/organization/metadata",
+         "type":"organization",
+         "mediaType":"application/json"
+      }
+   },
+   "agent":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004",
+         "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/counterparty/metadata",
+         "type":"counterparty",
+         "mediaType":"application/json"
+      }
+   },
+   "store":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/store/faf3ff5b-2e58-11e6-8a84-bae500000050",
+         "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
+         "type":"store",
+         "mediaType":"application/json"
+      }
+   },
+   "state":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/states/918e5abd-3f66-11e6-8a84-bae500000083",
+         "type":"state",
+         "mediaType":"application/json"
+      }
+   },
+   "incomingNumber":"12412412",
+   "incomingDate":"2012-12-12 12:12:12",
+   "attributes":[
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/attributes/a31685ae-3f62-11e6-8a84-bae50000007b",
+            "type":"attributemetadata",
+            "mediaType":"application/json"
+         },
+         "value":"2017-02-22 02:12:53"
+      },
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/attributes/c16fd9aa-3f62-11e6-8a84-bae50000007e",
+            "type":"attributemetadata",
+            "mediaType":"application/json"
+         },
+         "value":47
+      },
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata/attributes/c16fe013-3f62-11e6-8a84-bae50000007f",
+            "type":"attributemetadata",
+            "mediaType":"application/json"
+         },
+         "value":"Пример удачной сделки"
+      }
+   ],
+   "positions":[
+      {
+         "quantity":10,
+         "price":100,
+         "discount":0,
+         "vat":0,
+         "assortment":{
+            "meta":{
+               "href":"https://online.moysklad.ru/api/remap/1.3/entity/variant/7a7daa6b-3c64-11e6-8a84-bae50000000a",
+               "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/variant/metadata",
+               "type":"variant",
+               "mediaType":"application/json"
+            }
+         },
+         "overhead":10
+      },
+      {
+         "quantity":20,
+         "price":200,
+         "discount":0,
+         "vat":21,
+         "assortment":{
+            "meta":{
+               "href":"https://online.moysklad.ru/api/remap/1.3/entity/variant/7a81082f-3c64-11e6-8a84-bae50000000e",
+               "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/variant/metadata",
+               "type":"variant",
+               "mediaType":"application/json"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"012345678912345672",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf2111111",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf2111114",
+                     "type":"trackingcode"
                   }
-                },
-                "overhead": 10
-              },
-              {
-                "quantity": 20,
-                "price": 200,
-                "discount": 0,
-                "vat": 21,
-                "assortment": {
-                  "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.3/entity/variant/7a81082f-3c64-11e6-8a84-bae50000000e",
-                    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/variant/metadata",
-                    "type": "variant",
-                    "mediaType": "application/json"
-                  }
-                },
-                "overhead": 20
-              }
-            ]
-          }
-'  
+               ]
+            }
+         ],
+         "overhead":20
+      }
+   ]
+}'  
 ```
 
 > Response 200 (application/json)
@@ -1537,8 +1577,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
 
 > Запрос на удаление Приемки с указанным id.
 
@@ -1598,10 +1638,12 @@ curl -X POST
 #### Метаданные Приемок 
 Запрос на получение метаданных Приемок. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Приемок
-+ **attributes** - Массив объектов доп. полей Приемок в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов Приемок
-+ **createShared** - создавать новые Приемки с меткой "Общий"
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **meta**         | Ссылка на метаданные Приемок|
+| **attributes**   | Массив объектов доп. полей Приемок в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
+| **states**       | Массив статусов Приемок|
+| **createShared** | создавать новые Приемки с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -1961,7 +2003,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -1996,7 +2038,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
  
 > Запрос на получение отдельной Приемки с указанным id.
@@ -2112,7 +2154,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
 
 > Пример запроса на обновление отдельной Приемки.
@@ -2380,17 +2422,19 @@ curl -X GET
 ### Получить позиции Приемки 
 Запрос на получение списка всех позиций данной Приемки.
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой позиции Приемки.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих позиции Приемки.
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить позиции Приемки
 
@@ -2496,6 +2540,204 @@ curl -X GET
 }
 ```
 
+> Пример с кодами маркировки
+
+```shell
+curl --location --request GET 'https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f?expand=positions' \
+--header 'Authorization: Basic <Credentials>'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка позиций отдельной Приемки.
+
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f?expand=positions",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/supply/metadata",
+    "type": "supply",
+    "mediaType": "application/json",
+    "uuidHref": "https://online.moysklad.ru/app/#supply/edit?id=63918a49-886e-11ea-0a80-151b0000007f"
+  },
+  "id": "63918a49-886e-11ea-0a80-151b0000007f",
+  "accountId": "de6b5113-8491-11ea-0a80-134500000014",
+  "owner": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/de79b4a8-8491-11ea-0a80-037a00000271",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
+      "type": "employee",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=de79b4a8-8491-11ea-0a80-037a00000271"
+    }
+  },
+  "shared": false,
+  "group": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/group/de6baafa-8491-11ea-0a80-134500000015",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/group/metadata",
+      "type": "group",
+      "mediaType": "application/json"
+    }
+  },
+  "updated": "2020-04-28 15:53:04.288",
+  "name": "00008",
+  "description": "Импорт приемки из ЭДО от 25.09.2017",
+  "externalCode": "k-nV33MtgVIeGt7S-XY4R3",
+  "moment": "2020-04-27 13:03:00.000",
+  "applicable": true,
+  "rate": {
+    "currency": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/currency/de8b754f-8491-11ea-0a80-037a000002b4",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/currency/metadata",
+        "type": "currency",
+        "mediaType": "application/json",
+        "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=de8b754f-8491-11ea-0a80-037a000002b4"
+      }
+    }
+  },
+  "sum": 244200.0,
+  "store": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/store/de8b4d0e-8491-11ea-0a80-037a000002af",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
+      "type": "store",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#warehouse/edit?id=de8b4d0e-8491-11ea-0a80-037a000002af"
+    }
+  },
+  "agent": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/de965214-8491-11ea-0a80-037a000002c1",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/metadata",
+      "type": "counterparty",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#company/edit?id=de965214-8491-11ea-0a80-037a000002c1"
+    }
+  },
+  "organization": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/de8a609d-8491-11ea-0a80-037a000002ad",
+      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/organization/metadata",
+      "type": "organization",
+      "mediaType": "application/json",
+      "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=de8a609d-8491-11ea-0a80-037a000002ad"
+    }
+  },
+  "created": "2020-04-27 13:03:48.649",
+  "positions": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions",
+      "type": "supplyposition",
+      "mediaType": "application/json",
+      "size": 2,
+      "limit": 1000,
+      "offset": 0
+    },
+    "rows": [
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions/6391a58a-886e-11ea-0a80-151b00000080",
+          "type": "supplyposition",
+          "mediaType": "application/json"
+        },
+        "id": "6391a58a-886e-11ea-0a80-151b00000080",
+        "accountId": "de6b5113-8491-11ea-0a80-134500000014",
+        "quantity": 10.0,
+        "price": 11100.0,
+        "discount": 0.0,
+        "vat": 0,
+        "assortment": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+          }
+        },
+        "trackingCodes": [
+          {
+            "cis": "012345678912345678",
+            "type": "transportpack"
+          },
+          {
+            "cis": "012345678912345678",
+            "type": "transportpack",
+            "trackingCodes": [
+              {
+                "cis": "010463003759026521uHpIIf-nXIH>0",
+                "type": "trackingcode"
+              },
+              {
+                "cis": "010463003759026521uHpIIf-nXIH>4",
+                "type": "trackingcode"
+              },
+              {
+                "cis": "010463003759026521uHpIIf-111114",
+                "type": "trackingcode"
+              }
+            ]
+          },
+          {
+            "cis": "010463003759026521uHpIIf-111114",
+            "type": "trackingcode"
+          },
+          {
+            "cis": "010463003759026521uHpIIf-nXIH>4",
+            "type": "trackingcode"
+          },
+          {
+            "cis": "010463003759026521uHpIIf-nXIH>0",
+            "type": "trackingcode"
+          }
+        ],
+        "overhead": 0.0
+      },
+      {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions/639235ac-886e-11ea-0a80-151b000000ad",
+          "type": "supplyposition",
+          "mediaType": "application/json"
+        },
+        "id": "639235ac-886e-11ea-0a80-151b000000ad",
+        "accountId": "de6b5113-8491-11ea-0a80-134500000014",
+        "quantity": 12.0,
+        "price": 11100.0,
+        "discount": 0.0,
+        "vat": 0,
+        "assortment": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+            "type": "product",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+          }
+        },
+        "trackingCodes": [
+          {
+            "cis": "123456123456123456",
+            "type": "transportpack"
+          },
+          {
+            "cis": "012345678901234567",
+            "type": "transportpack"
+          }
+        ],
+        "overhead": 0.0
+      }
+    ]
+  },
+  "vatEnabled": true,
+  "vatIncluded": false,
+  "vatSum": 0.0,
+  "payedSum": 0.0,
+  "incomingNumber": "1",
+  "incomingDate": "2017-09-25 00:00:00.000"
+}
+```
+
 ### Создать позицию Приемки 
 Запрос на создание новой позиции в Приемке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
@@ -2510,8 +2752,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
 
 > Пример создания одной позиции в Приемке.
 
@@ -2731,6 +2973,132 @@ curl -X GET
 ]
 ```
 
+> Пример с кодами маркировки
+
+```shell
+curl --location --request POST 'https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions' \
+--header 'Authorization: Basic <Credentials>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "quantity":10.0,
+   "price":11100.0,
+   "discount":0.0,
+   "vat":0,
+   "assortment":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+         "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+         "type":"product",
+         "mediaType":"application/json",
+         "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+      }
+   },
+   "trackingCodes":[
+      {
+         "cis":"012345678912345671",
+         "type":"transportpack"
+      },
+      {
+         "cis":"012345678912345678",
+         "type":"transportpack",
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-111114",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>4",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>0",
+               "type":"trackingcode"
+            }
+         ]
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>1",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>2",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"010463003759026521uHpIIf-111122",
+         "type":"trackingcode"
+      }
+   ]
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции отдельной Приемки.
+
+```json
+[
+   {
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/supply/63918a49-886e-11ea-0a80-151b0000007f/positions/94d7af93-894f-11ea-0a80-05770000000d",
+         "type":"supplyposition",
+         "mediaType":"application/json"
+      },
+      "id":"94d7af93-894f-11ea-0a80-05770000000d",
+      "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+      "quantity":10.0,
+      "price":11100.0,
+      "discount":0.0,
+      "vat":0,
+      "assortment":{
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+            "type":"product",
+            "mediaType":"application/json",
+            "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+         }
+      },
+      "trackingCodes":[
+         {
+            "cis":"012345678912345678",
+            "type":"transportpack",
+            "trackingCodes":[
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>4",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-111114",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>0",
+                  "type":"trackingcode"
+               }
+            ]
+         },
+         {
+            "cis":"010463003759026521uHpIIf-111122",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>2",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345671",
+            "type":"transportpack"
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>1",
+            "type":"trackingcode"
+         }
+      ],
+      "overhead":0.0
+   }
+]
+```
+
 ### Позиция Приемки
  
 ### Получить позицию
@@ -2738,7 +3106,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
+|:&mdash;|:&mdash;|
 |id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
 |positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки.|
  
@@ -2782,13 +3150,16 @@ curl -X GET
 ### Изменить позицию 
 Запрос на обновление отдельной позиции Приемки. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+ 
+При обновлении списка кодов маркировки учитывать, что их количество может отличаться от фактического количества единиц продукции. 
+ Для изменения количества единиц продукции необходимо использовать параметр **quantity**.
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки.|
  
 > Пример запроса на обновление отдельной позиции в Приемке.
 
@@ -2848,9 +3219,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приемки.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Приемки.|
  
 > Запрос на удаление отдельной позиции Приемки с указанным id.
 
