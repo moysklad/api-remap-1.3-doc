@@ -17,6 +17,8 @@ includes:
   - workbook_publication
   - workbook_attributes_crud
   - workbook_attributes
+  - workbook_images
+  - workbook_files
   
 search: true
 ---  
