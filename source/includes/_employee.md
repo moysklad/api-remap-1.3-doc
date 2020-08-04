@@ -34,7 +34,7 @@
 |**shortFio**           |String(255)|Краткое ФИО|Только для чтения| нет
 |**cashiers**           |Array(Object)|Массив кассиров.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-kassir)|Только для чтения| нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Дополнительные поля Сотрудника|&mdash;| нет
-|**image**              |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет
+|**avatar**             |Object|Фотография сотрудника.  [Подробнее тут](../dictionaries/#suschnosti-sotrudnik-sotrudniki-atributy-wlozhennyh-suschnostej-fotografiq-sotrudnika-struktura-i-zagruzka)|&mdash;| нет
 |**inn**                |String(255)|ИНН сотрудника (в формате ИНН физического лица)|&mdash;| нет
 |**position**           |String(255)|Должность сотрудника |&mdash;| нет
 
@@ -46,12 +46,12 @@
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**id**                 |UUID|ID Кассира|Только для чтения|да
-|**accountId**          |UUID| ID учетной записи Кассира|Только для чтения|да
+|**accountId**          |UUID|ID учетной записи Кассира|Только для чтения|да
 |**employee**           |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные сотрудника, которого представляет собой кассир|Только для чтения|да
 |**retailStore**        |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные точки продаж, к которой прикреплен кассир|Только для чтения|да
 
 ##### Фотография сотрудника: структура и загрузка.
-Структура поля **image**, которое вы получите при запросе сотрудника с фотографией:
+Структура поля **avatar**, которое вы получите при запросе сотрудника с фотографией:
 
 | Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
@@ -66,14 +66,14 @@
 
 #### Загрузка
 Для загрузки фотографии сотрудника необходимо сформировать запрос на [обновление](../dictionaries/#suschnosti-sotrudnik-izmenit-sotrudnika) сотрудника (PUT) и в теле запроса
-указать поле **image** со следующими атрибутами:
+указать поле **avatar** со следующими атрибутами:
 
 | Название              | Описание  |
 | --------------------- |:----------|
 |**filename** | имя файла с расширением. Например - "cashier.png"
 |**content** | Изображение, закодированное в формате Base64
 
-Если в запросе на обновление не будет полей **filename** и **content**, то весь объект **image**, если он присутствует в Body,
+Если в запросе на обновление не будет полей **filename** и **content**, то весь объект **avatar**, если он присутствует в Body,
 будет проигнорирован, т.к. сервер посчитает, что его обновление не требуется.
 
 О работе с доп. полями Сотрудников можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
