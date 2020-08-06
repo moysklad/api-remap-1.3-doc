@@ -16,7 +16,7 @@
 
 ## 22-07-2020
 ### Добавлено
- - Поле `factureIn` для возврата поставщику, представляющее собой ссылку на связанный с возвратом счет-фактуру полученный
+ - Поле `factureIn` для [возврата поставщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-postawschiku), представляющее собой ссылку на связанный с возвратом [счет-фактуру полученный](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-faktura-poluchennyj)
  
 ## 09-07-2020
 ### Добавлено
