@@ -14,6 +14,10 @@
 - Новая ошибка 1083 - ошибка формирования ответа на стороне сервера
 - Новый формат описания атрибутов сущностей с помощью таблиц
 
+## 22-07-2020
+### Добавлено
+ - Поле `factureIn` для [возврата поставщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-postawschiku), представляющее собой ссылку на связанный с возвратом [счет-фактуру полученный](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-faktura-poluchennyj)
+ 
 ## 09-07-2020
 ### Добавлено
  - Описание кодов маркировки пользовательской упаковки (КМ ПУ) в сущностях [`Отгрузка`](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka) и [`Приемка`](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-priemka)
