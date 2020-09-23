@@ -65,10 +65,10 @@
 |**utmUrl**           |String(255)|IP-адрес УТМ|&mdash;|нет
 |**director**         |String(255)|Руководитель|&mdash;|нет
 |**directorPosition** |String(255)|Должность руководителя|&mdash;|нет
-|**directorSign**     |Object|Подпись руководителя|&mdash;|нет
+|**directorSign**     |Object|Подпись руководителя. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat)|&mdash;|нет
 |**chiefAccountant**  |String(255)|Главный бухгалтер|&mdash;|нет
-|**chiefAccountSign** |Object|Подпись главного бухгалтера|&mdash;|нет
-|**stamp**            |Object|Печать|&mdash;|нет
+|**chiefAccountSign** |Object|Подпись главного бухгалтера. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
+|**stamp**            |Object|Печать. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
 
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
@@ -429,7 +429,20 @@ curl -X GET
   "payerVat":true,
   "utmUrl":"10.250.110.81",
   "director":"Кипелова Александра",
-  "chiefAccountant":"Подкупников Иван"
+  "directorPosition":"Руководитель отдела",
+    "directorSign" : {
+        "filename": "directorSignTest.png",
+        "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+    },
+    "chiefAccountant":"Подкупников Иван",
+    "chiefAccountSign" : {
+        "filename": "chiefAccountSignTest.png",
+        "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
+    },
+    "stamp" : {
+      "filename": "stampTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+    }
 }'  
 ```
 
@@ -545,7 +558,61 @@ curl -X GET
   "isEgaisEnable": true,
   "fsrarId": "1963703",
   "payerVat": true,
-  "utmUrl": "10.250.110.81"
+  "utmUrl": "10.250.110.81",
+  "director":"Кипелова Александра",
+  "directorPosition":"Руководитель отдела",
+  "directorSign" : {
+      "title" : "directorSignTest",
+      "filename" : "directorSignTest.png",
+      "size" : 70,
+      "updated" : "2020-09-23 07:38:57.107",
+      "download" : {
+        "downloadHref" : "http://localhost/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
+        "type" : "file",
+        "mediaType" : "application/octet-stream"
+      },
+      "miniature" : {
+        "downloadHref" : "http://localhost/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402?miniature=true",
+        "type" : "file",
+        "mediaType" : "image/png"
+      }
+  },
+  "chiefAccountant":"Подкупников Иван",
+  "chiefAccountSign" : {
+      "title" : "chiefAccountSignTest",
+      "filename" : "chiefAccountSignTest.png",
+      "size" : 70,
+      "updated" : "2020-09-23 07:38:57.125",
+      "download" : {
+        "downloadHref" : "http://localhost/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639",
+        "type" : "file",
+        "mediaType" : "application/octet-stream"
+      },
+      "miniature" : {
+        "downloadHref" : "http://localhost/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639?miniature=true",
+        "type" : "file",
+        "mediaType" : "image/png"
+      }
+  },
+  "stamp" : {
+     "meta" : {
+       "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
+       "mediaType" : "application/octet-stream"
+     },
+     "title" : "stampTest",
+     "filename" : "stampTest.png",
+     "size" : 70,
+     "updated" : "2020-09-23 07:37:26.443",
+     "download" : {
+         "downloadHref" : "http://localhost/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
+         "type" : "file",
+         "mediaType" : "application/octet-stream"
+     },
+     "miniature" : {
+       "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+       "mediaType" : "image/png"
+     }
+  }
 }
 ```
 
