@@ -1,9 +1,17 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+### 22-09-2020
+#### Исправлено
+- Описание поля `productFolder` у [Групп товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow)
+
 ### 20-09-2020
 #### Изменено
 - Изменено описание установленных ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
+
+### 08-09-2020
+#### Добавлено
+- Добавлена информация об ошибке **1090**
 
 ## 01-09-2020
 ### Добавлено
