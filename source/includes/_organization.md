@@ -562,54 +562,65 @@ curl -X GET
   "director":"Кипелова Александра",
   "directorPosition":"Руководитель отдела",
   "directorSign" : {
+      "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/55366a29-01fc-11eb-ac12-000800000010/document/2c98d335-913c-4fe3-b3ac-d8bf87520528",
+         "type": "document",
+         "mediaType": "application/json"
+      },
       "title" : "directorSignTest",
       "filename" : "directorSignTest.png",
       "size" : 70,
       "updated" : "2020-09-23 07:38:57.107",
       "download" : {
-        "downloadHref" : "http://localhost/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
         "type" : "file",
         "mediaType" : "application/octet-stream"
       },
       "miniature" : {
-        "downloadHref" : "http://localhost/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402?miniature=true",
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402?miniature=true",
         "type" : "file",
         "mediaType" : "image/png"
       }
   },
   "chiefAccountant":"Подкупников Иван",
   "chiefAccountSign" : {
+      "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/55366a29-01fc-11eb-ac12-000800000010/document/2c98d335-913c-4fe3-b3ac-d8bf87520528",
+         "type": "document",
+         "mediaType": "application/json"
+      },
       "title" : "chiefAccountSignTest",
       "filename" : "chiefAccountSignTest.png",
       "size" : 70,
       "updated" : "2020-09-23 07:38:57.125",
       "download" : {
-        "downloadHref" : "http://localhost/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639",
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639",
         "type" : "file",
         "mediaType" : "application/octet-stream"
       },
       "miniature" : {
-        "downloadHref" : "http://localhost/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639?miniature=true",
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639?miniature=true",
         "type" : "file",
         "mediaType" : "image/png"
       }
   },
   "stamp" : {
-     "meta" : {
-       "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383",
-       "mediaType" : "application/octet-stream"
+     "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/55366a29-01fc-11eb-ac12-000800000010/document/2c98d335-913c-4fe3-b3ac-d8bf87520528",
+         "type": "document",
+         "mediaType": "application/json"
      },
      "title" : "stampTest",
      "filename" : "stampTest.png",
      "size" : 70,
      "updated" : "2020-09-23 07:37:26.443",
      "download" : {
-         "downloadHref" : "http://localhost/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
+         "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
          "type" : "file",
          "mediaType" : "application/octet-stream"
      },
      "miniature" : {
-       "href" : "http://localhost/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+       "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
        "mediaType" : "image/png"
      }
   }
