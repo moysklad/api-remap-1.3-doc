@@ -99,6 +99,7 @@
 |**filename**               |String(255)|Имя файла|&mdash;|да
 |**size**               |Int|Размер файла в байтах|&mdash;|да
 |**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
+|**download**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка для скачивания изображения|&mdash;|да
 |**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
 
 ##### Счета юрлица
