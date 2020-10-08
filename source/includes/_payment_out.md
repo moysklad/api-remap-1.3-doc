@@ -405,10 +405,12 @@ curl -X GET
 Запрос на создание нового Исходящего платежа .
 Обязательные для создания поля:
 
-+ **name** - номер Исходящего платежа
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента  в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **expenseItem** - Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **name** | номер Исходящего платежа
+| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **agent** | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **expenseItem** | Статья расходов в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания нового Исходящего платежа  с телом запроса, содержащим только необходимые поля.
 

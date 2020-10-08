@@ -2,32 +2,41 @@
 Средствами JSON API можно создавать и обновлять сведения о Инвентаризации, запрашивать списки Инвентаризаций и сведения по отдельным Инвентаризациям. Позициями Инвентаризации можно управлять как в составе отдельной Инвентаризации, так и отдельно - с помощью специальных ресурсов для управления позициями Инвентаризации. Кодом сущности для Инвентаризации в составе JSON API является ключевое слово **inventory**. Больше о Инвентаризациях можно прочитать [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203309933-%D0%98%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2).
 ### Инвентаризация 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о Инвентаризации
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер Инвентаризации
-+ **externalCode** - Внешний код Инвентаризации
-+ **moment** - Дата Инвентаризации
-+ **sum** - Сумма Инвентаризации в копейках `Только для чтения`
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **state** - Статус Инвентаризации в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
-<br>Поля при expand'е:</br>
-  - **name** - номер документа
-  - **moment** - дата печати
-  - **href** - ссылка на файл печатной формы
-  - **fileName** - название файла печатной формы
-  - **updated** - дата последнего изменения
-+ **created** - Дата создания `Только для чтения`
-+ **positions** - Ссылка на позиции Инвентаризации в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Инвентаризации|&mdash;|да
+|**id**                 |UUID|ID Инвентаризации|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
+|**updated**            |DateTime|Момент последнего обновления Инвентаризации|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Инвентаризации|Только для чтения|нет
+|**name**               |String(255)|Наименование выданного Инвентаризации|&mdash;|да
+|**description**        |String(4096)|Комментарий Входящего платежа|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код выданного Инвентаризации|&mdash;| да
+|**moment**             |DateTime|Дата Инвентаризации|&mdash;|да
+|**sum**                |Int|Сумма Инвентаризации в копейках|Только для чтения|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Инвентаризации|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-inwentarizaciq-inwentarizaciq-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Инвентаризации|&mdash;|да
+
+##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**            |String(255)|Номер документа|&mdash;|нет
+|**moment**          |DateTime|Дата печати|&mdash;|да
+|**href**            |URL|Ссылка на файл печатной формы|&mdash;|да
+|**fileName**        |String(255)|Название файла печатной формы|&mdash;|нет
+|**updated**         |DateTime|Момент последнего обновления|&mdash;|да
 
 #### Позиции Инвентаризации
 Позиции Инвентаризации - это список товаров/модификаций/серий.
