@@ -2,82 +2,99 @@
 Средствами JSON API можно создавать и обновлять сведения об Отгрузках, запрашивать списки Отгрузок и сведения по отдельным Отгрузкам. Позициями Отгрузок можно управлять как в составе отдельной Отгрузки, так и отдельно - с помощью специальных ресурсов для управления позициями Отгрузки. Кодом сущности для Отгрузки в составе JSON API является ключевое слово **demand**. Больше об Отгрузках и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325463-%D0%9E%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D0%BE%D0%B2).
 ### Отгрузки 
 #### Атрибуты сущности
-+ **meta** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) об Отгрузке
-+ **id** - ID в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **syncId** - ID синхронизации. После заполнения недоступен для изменения.
-+ **updated** - Момент последнего обновления сущности `Только для чтения`
-+ **deleted** - Момент последнего удаления сущности `Только для чтения`
-+ **name** - номер Отгрузки
-+ **description** - Комментарий Отгрузки
-+ **externalCode** - Внешний код Отгрузки
-+ **moment** - Дата Отгрузки
-+ **applicable** - Отметка о проведении
-+ **vatEnabled** - Учитывается ли НДС
-+ **vatIncluded** - Включен ли НДС в цену
-+ **sum** - Сумма Отгрузки в копейках `Только для чтения`
-+ **rate** - Валюта
-+ **owner** - Ссылка на Владельца (Сотрудника) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **shared** - Общий доступ
-+ **group** - Отдел сотрудника в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) `Необходимое`
-+ **contract** - Ссылка на договор в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **project** - Ссылка на проект в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **state** - Статус Отгрузки в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **organizationAccount** - Ссылка на счет вашего юрлица в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agentAccount** - Ссылка на счет контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **attributes** - Коллекция доп. полей в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **files** - [Файлы] (../dictionaries/#suschnosti-fajly) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye) (Максимальное количество файлов - 100)
-<br>Поля при expand'е:</br>
-  - **name** - номер документа
-  - **moment** - дата печати
-  - **href** - ссылка на файл печатной формы
-  - **fileName** - название файла печатной формы
-  - **updated** - дата последнего изменения
-+ **created** - Дата создания `Только для чтения`
-+ **vatSum** - Сумма НДС `Только для чтения`
-+ **positions** - Ссылка на позиции в Отгрузке в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **overhead** - Накладные расходы. Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать
-  - **sum** - сумма накладных расходов
-  - **distribution** - Распределение накладных расходов `[weight, volume, price]` -> `[по весу, по объему, по цене]`
-+ **payedSum** - Сумма входящих платежей по Отгрузке
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Отгрузки|&mdash;|да
+|**id**                 |UUID|ID Отгрузки|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет
+|**updated**            |DateTime|Момент последнего обновления Отгрузки|Только для чтения|да
+|**deleted**            |DateTime|Момент последнего удаления Отгрузки|Только для чтения|нет
+|**name**               |String(255)|Наименование Отгрузки|&mdash;|да
+|**description**        |String(4096)|Комментарий Отгрузки|&mdash;|нет
+|**externalCode**       |String(255)|Внешний код Отгрузки|&mdash;| да
+|**moment**             |DateTime|Дата Счета|&mdash;|да
+|**applicable**         |Boolean|Отметка о проведении|&mdash;|да
+|**vatEnabled**         |Boolean|Учитывается ли НДС|&mdash;|да
+|**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|да
+|**sum**                |Int|Сумма Отгрузки в копейках|Только для чтения|да
+|**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет
+|**rate**               |Object|Валюта|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**shared**             |Boolean|Общий доступ|&mdash;|да
+|**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
+|**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да
+|**agent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные контрагента|Необходимое при создании|да
+|**store**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные склада|Необходимое при создании|да
+|**contract**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные договора|&mdash;|нет
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Отгрузки|&mdash;|нет
+|**organizationAccount**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета юрлица|&mdash;|нет
+|**agentAccount**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные счета контрагента|&mdash;|нет
+|**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
+|**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
+|**created**            |DateTime|Дата создания|Только для чтения|да
+|**vatSum**                |Float|Сумма включая НДС|&mdash;|да
+|**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Отгрузки|&mdash;|да
+|**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет
+|**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да
+
+##### Поля при expand'е доп. полей
+Описание полей при expand'е attributes
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**name**            |String(255)|Номер документа|Только для чтения|нет
+|**moment**          |DateTime|Дата печати|Только для чтения|да
+|**href**            |URL|Ссылка на файл печатной формы|Только для чтения|да
+|**fileName**        |String(255)|Название файла печатной формы|Только для чтения|нет
+|**updated**         |DateTime|Момент последнего обновления|Только для чтения|да
+
+#### Накладные расходы
+Описание полей overhead
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**sum**                |Int|Сумма Оприходования в копейках|&mdash;|да
+|**distribution**                |Enum|Распределение накладных расходов `[weight, volume, price]` -> `[по весу, по объему, по цене]`|&mdash;|да
 
 #### Связи с другими документами
-+ **customerOrder** - Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **factureOut** - Ссылка на Счет-фактуру выданный, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **returns** - Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **payments** - Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **invoicesOut** - Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|Название          | Описание  |
+| ------------------------------ |:---------------------------|
+|**customerOrder** | Ссылка на Заказ Покупателя, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **factureOut** | Ссылка на Счет-фактуру выданный, с которым связана эта Отгрузка в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **returns** | Массив ссылок на связанные возвраты в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **payments** |Массив ссылок на связанные платежи в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **invoicesOut** | Массив ссылок на связанные счета покупателям в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 ####  Другие поля 
-+ **consignee** - Грузополучатель в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **transportFacilityNumber** - Номер автомобиля
-+ **shippingInstructions** - Указания грузоотправителя
-+ **cargoName** - Наименование груза
-+ **transportFacility** - Транспортное средство
-+ **goodPackQuantity** - Всего мест
-+ **carrier**  - Перевозчик в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **stateContractId** - Идентификатор государственного контракта, договора (соглашения)
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**consignee**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные грузополучателя|&mdash;|нет
+|**transportFacilityNumber**              |String(255)|Номер автомобиля|&mdash;|нет
+|**shippingInstructions**               |String(255)|Указания грузоотправителя|&mdash;|нет
+|**cargoName**              |String(255)|Наименование груза|&mdash;|нет
+|**transportFacility**               |String(255)|Транспортное средство|&mdash;|нет
+|**goodPackQuantity**               |String(255)|Всего мест|&mdash;|нет
+|**carrier**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные перевозчика|&mdash;|нет
+|**stateContractId**              |String(255)|Идентификатор государственного контракта, договора (соглашения)|&mdash;|нет
 
 #### Позиции Отгрузки
 Позиции Отгрузки - это список товаров/услуг/модификаций/серий.
 Объект позиции Отгрузки содержит следующие поля:
 
-+ **id** - ID позиции в формате UUID `Только для чтения`
-+ **accountId** - ID учетной записи `Только для чтения`
-+ **quantity** - Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.
-+ **price** - Цена товара/услуги в копейках
-+ **discount** - Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%
-+ **vat** - НДС, которым облагается текущая позиция
-+ **assortment** - Ссылка на товар/услугу/серию/модификацию, которую представляет собой позиция, в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **pack** - Упаковка товара
-+ **things** - Серийные номера
-Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете.
-В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.
-
-+ **cost** - Себестоимость (только для услуг)
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**id**                 |UUID|ID позиции|Только для чтения|да
+|**accountId**          |UUID| ID учетной записи|Только для чтения|да
+|**quantity**          |Int|Количество товаров/услуг данного вида в позиции. Если позиция - товар, у которого включен учет по серийным номерам, то значение в этом поле всегда будет равно количеству серийных номеров для данной позиции в документе.|&mdash;|да
+|**price**          |Float|Цена товара/услуги в копейках|&mdash;|да
+|**discount**          |Int|Процент скидки или наценки. Наценка указывается отрицательным числом, т.е. -10 создаст наценку в 10%|&mdash;|да
+|**vat**        |Int|НДС, которым облагается текущая позиция|&mdash;|да
+|**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да
+|**pack**            |String(255)|Упаковка товара|&mdash;|нет
+|**things**            |Array(String)|Серийные номера. Значение данного атрибута игнорируется, если товар позиции не находится на серийном учете. В ином случае количество товаров в позиции будет равно количеству серийных номеров, переданных в значении атрибута.|&mdash;|нет
+|**trackingCodes**          |Array(Object)|Коды маркировки товаров и транспортных упаковок. Поддержаны в виде иерархической структуры JSON. Значение кода указывается в атрибуте **cis**. Для каждого кода указывается тип **type: trackingcode** (код маркировки товара), **consumerpack** (код маркировки потребительской упаковки) или **transportpack** (код транспортной упаковки). Допустима вложенность кодов маркировки товаров в транспортные упаковки. Транспортные упаковки не могут иметь вложенных упаковок. Коды упаковок могут отсутствовать - в этом случае структура не будет вложенной. Если продукция не является маркированной, то коды маркировки для позиции не будут сохранены. Количество кодов маркировки может отличаться от фактического количества единиц продукции.|&mdash;|нет
+|**cost**          |Int|Себестоимость (только для услуг)|&mdash;|нет
 
 С позициями можно работать с помощью [специальных ресурсов для управления позициями Отгрузки](../documents/#dokumenty-otgruzka-pozicii-otgruzki),
 а также в составе отдельной Отгрузки. При работе в составе отдельной Отгрузки,
@@ -89,26 +106,38 @@
 восприниматься как "все позиции Отгрузки" и полностью заменит уже существующую коллекцию при обновлении объекта - лишние
 позиции будут удалены, новые добавлены, существующие - изменены.
 
-+ **overhead** - Накладные расходы по позиции.
-
 О работе с доп. полями Отгрузок можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+
+#### Коды маркировки и серийные номера для позиции документа
+
+При работе с позицией Отгрузки следует учитывать следующие особенности.
+
++ Количество кодов маркировки **trackingCodes** в позиции документа не влияет на количество единиц **quantity** в позиции.
++ Количество серийных номеров **things** в позиции документа строго соответствует количеству единиц **quantity** в позиции. 
+  Изменение **quantity** на значение, не соответствующее количеству серийных номеров, недопустимо. 
++ Для обновления списка кодов маркировки **trackingCodes** и списка серийных номеров **things** позиции Отгрузки, 
+  необходимо передавать их полный список, включающий как старые, так и новые значения. Отсутствующие значения при обновлении будут удалены.
+  
+Недопустимо сохранение дублирующихся кодов маркировки и серийных номеров внутри документа Отгрузки. 
 
 
 ### Получить список Отгрузок 
 Запрос всех Отгрузок на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой Отгрузки.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой Отгрузки.
 
 **Параметры**
 
 | Параметр                | Описание  |
 | ------------------------------ |:---------------------------|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
-|search |  `string` (optional) *Example: 0001* URL Параметр для поиска по имени документа. Фильтр документов по указанной поисковой строке. Фильтрация происходит по полю name.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.|
 
 > Получить список Отгрузок
 
@@ -369,10 +398,12 @@ curl -X GET
 Запрос на создание новой Отгрузки.
 Обязательные для создания поля:
 
-+ **name** - номер Отгрузки (номер)
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **agent** - Ссылка на контрагента (покупателя) в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **store** - Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **name** | номер Отгрузки
+| **organization** | Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **agent** | Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+| **store** | Ссылка на склад в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 
 > Пример создания новой Отгрузки с телом запроса, содержащим только необходимые поля.
 
@@ -900,6 +931,22 @@ curl -X GET
                     "mediaType": "application/json"
                   }
                 },
+                "trackingCodes": [
+                {
+                  "cis": "012345678912345672",
+                  "type": "transportpack",
+                    "trackingCodes": [
+                     {
+                      "cis": "010463003759026521uHpIIf2111114",
+                      "type": "trackingcode"
+                      },
+                      {
+                       "cis": "010463003759026521uHpIIf2111111",
+                       "type": "trackingcode"
+                      }
+                    ]
+                  }
+                ],
                 "reserve": 10,
                 "overhead": 20
               },
@@ -1367,8 +1414,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
 
 > Запрос на удаление Отгрузки с указанным id.
 
@@ -1428,10 +1475,12 @@ curl -X POST
 #### Метаданные Отгрузок 
 Запрос на получение метаданных Отгрузок. Результат - объект JSON, включающий в себя:
 
-+ **meta** - Ссылка на метаданные Отгрузок
-+ **attributes** - Массив объектов доп. полей Отгрузок в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
-+ **states** - Массив статусов Отгрузок
-+ **createShared** - создавать новые Отгрузки с меткой "Общий"
+| Параметр                | Описание  |
+| ------------------------------ |:---------------------------|
+| **meta**         | Ссылка на метаданные Отгрузок|
+| **attributes**   | Массив объектов доп. полей Отгрузок в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)|
+| **states**       | Массив статусов Отгрузок|
+| **createShared** | создавать новые Отгрузки  с меткой "Общий"|
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
 
@@ -1580,8 +1629,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
  
 > Запрос на получение информации по отдельному дополнительному полю.
 
@@ -1937,8 +1986,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
  
 > Запрос на получение отдельной Отгрузки с указанным id.
 
@@ -2113,9 +2162,19 @@ curl -X GET
 
 **Параметры**
 
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой позиции Отгрузки.
+
+**Параметры**
+
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Пример запроса на обновление отдельной Отгрузки.
 
@@ -2782,17 +2841,19 @@ curl -X GET
 ### Получить позиции Отгрузки 
 Запрос на получение списка всех позиций данной Отгрузки.
 
-- **meta** [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о выдаче,
-- **context** - [Метаданные](../#mojsklad-json-api-obschie-swedeniq-metadannye) о сотруднике, выполнившем запрос.
-- **rows** - Массив JSON объектов, представляющих собой позиции Отгрузки.
+| Название  | Тип | Описание                    |
+| --------- |:----|:----------------------------|
+**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные о выдаче,
+**context** | [Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye) | Метаданные о сотруднике, выполнившем запрос.
+**rows** |Array(Object)|Массив JSON объектов, представляющих собой позиции Отгрузки.
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
-|limit |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
-|offset |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
+|**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 
 > Получить позиции Отгрузки
 
@@ -2927,6 +2988,139 @@ curl -X GET
 }
 ```
 
+> Пример с кодами маркировки
+
+```shell
+curl --location --request GET 'https://online.moysklad.ru/api/remap/1.3/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions' \
+--header 'Authorization: Basic <Credentials>'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление списка позиций отдельной Отгрузки.
+
+```json
+{
+   "context":{
+      "employee":{
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/context/employee",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
+            "type":"employee",
+            "mediaType":"application/json"
+         }
+      }
+   },
+   "meta":{
+      "href":"https://online.moysklad.ru/api/remap/1.3/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions",
+      "type":"demandposition",
+      "mediaType":"application/json",
+      "size":2,
+      "limit":1000,
+      "offset":0
+   },
+   "rows":[
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions/8830b0fe-8a03-11ea-0a80-01cb00000041",
+            "type":"demandposition",
+            "mediaType":"application/json"
+         },
+         "id":"8830b0fe-8a03-11ea-0a80-01cb00000041",
+         "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+         "quantity":20.0,
+         "price":200.0,
+         "discount":0.0,
+         "vat":21,
+         "assortment":{
+            "meta":{
+               "href":"https://online.moysklad.ru/api/remap/1.3/entity/product/aa1b1814-8493-11ea-0a80-037a00000307",
+               "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+               "type":"product",
+               "mediaType":"application/json",
+               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=aa1b0d42-8493-11ea-0a80-037a00000305"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"012345678912345672",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf2111111",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf2111114",
+                     "type":"trackingcode"
+                  }
+               ]
+            }
+         ],
+         "overhead":0.0
+      },
+      {
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions/770f45b4-8a04-11ea-0a80-01cb00000060",
+            "type":"demandposition",
+            "mediaType":"application/json"
+         },
+         "id":"770f45b4-8a04-11ea-0a80-01cb00000060",
+         "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+         "quantity":10.0,
+         "price":0.0,
+         "discount":0.0,
+         "vat":0,
+         "assortment":{
+            "meta":{
+               "href":"https://online.moysklad.ru/api/remap/1.3/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+               "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+               "type":"product",
+               "mediaType":"application/json",
+               "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+            }
+         },
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>1",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"012345678912345671",
+               "type":"transportpack"
+            },
+            {
+               "cis":"012345678912345678",
+               "type":"transportpack",
+               "trackingCodes":[
+                  {
+                     "cis":"010463003759026521uHpIIf-nXIH>0",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf-nXIH>4",
+                     "type":"trackingcode"
+                  },
+                  {
+                     "cis":"010463003759026521uHpIIf-111114",
+                     "type":"trackingcode"
+                  }
+               ]
+            },
+            {
+               "cis":"010463003759026521uHpIIf-111122",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>2",
+               "type":"trackingcode"
+            }
+         ],
+         "overhead":0.0
+      }
+   ]
+}
+```
+
 ### Создать позицию Отгрузки 
 Запрос на создание новой позиции в Отгрузке.
 Для успешного создания необходимо в теле запроса указать следующие поля:
@@ -2941,8 +3135,8 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
 
 > Пример создания одной позиции в Отгрузке.
 
@@ -3141,6 +3335,133 @@ curl -X GET
 ]
 ```
 
+> Пример с кодами маркировки.
+
+```shell
+curl --location --request POST 'https://online.moysklad.ru/api/remap/1.3/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions' \
+--header 'Authorization: Basic <Credentials>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+   "quantity":10.0,
+   "price":100.0,
+   "discount":0.0,
+   "vat":0,
+   "assortment":{
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+         "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+         "type":"product",
+         "mediaType":"application/json",
+         "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+      }
+   },
+   "trackingCodes":[
+      {
+         "cis":"010463003759026521uHpIIf-111122",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"012345678912345671",
+         "type":"transportpack"
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>1",
+         "type":"trackingcode"
+      },
+      {
+         "cis":"012345678912345678",
+         "type":"transportpack",
+         "trackingCodes":[
+            {
+               "cis":"010463003759026521uHpIIf-111114",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>4",
+               "type":"trackingcode"
+            },
+            {
+               "cis":"010463003759026521uHpIIf-nXIH>0",
+               "type":"trackingcode"
+            }
+         ]
+      },
+      {
+         "cis":"010463003759026521uHpIIf-nXIH>2",
+         "type":"trackingcode"
+      }
+   ],
+   "overhead":0.0
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление созданной позиции отдельной Отгрузки.
+
+```json
+[
+   {
+      "meta":{
+         "href":"https://online.moysklad.ru/api/remap/1.3/entity/demand/8830a022-8a03-11ea-0a80-01cb00000040/positions/770f45b4-8a04-11ea-0a80-01cb00000060",
+         "type":"demandposition",
+         "mediaType":"application/json"
+      },
+      "id":"770f45b4-8a04-11ea-0a80-01cb00000060",
+      "accountId":"de6b5113-8491-11ea-0a80-134500000014",
+      "quantity":10.0,
+      "price":100.0,
+      "discount":0.0,
+      "vat":0,
+      "assortment":{
+         "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.3/entity/product/b20184da-8493-11ea-0a80-037a00000314",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+            "type":"product",
+            "mediaType":"application/json",
+            "uuidHref":"https://online.moysklad.ru/app/#good/edit?id=b20178fb-8493-11ea-0a80-037a00000312"
+         }
+      },
+      "trackingCodes":[
+         {
+            "cis":"010463003759026521uHpIIf-111122",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345671",
+            "type":"transportpack"
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>1",
+            "type":"trackingcode"
+         },
+         {
+            "cis":"012345678912345678",
+            "type":"transportpack",
+            "trackingCodes":[
+               {
+                  "cis":"010463003759026521uHpIIf-111114",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>4",
+                  "type":"trackingcode"
+               },
+               {
+                  "cis":"010463003759026521uHpIIf-nXIH>0",
+                  "type":"trackingcode"
+               }
+            ]
+         },
+         {
+            "cis":"010463003759026521uHpIIf-nXIH>2",
+            "type":"trackingcode"
+         }
+      ],
+      "overhead":0.0
+   }
+]
+```
+
 ### Позиция Отгрузки
  
 ### Получить позицию
@@ -3148,9 +3469,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Отгрузки.|
  
 > Запрос на получение отдельной позиции Отгрузки с указанным id.
 
@@ -3193,12 +3514,15 @@ curl -X GET
 Запрос на обновление отдельной позиции Отгрузки. Для обновления позиции нет каких-либо
  обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
+При обновлении списка кодов маркировки учитывать, что их количество может отличаться от фактического количества единиц продукции. 
+ Для изменения количества единиц продукции необходимо использовать параметр **quantity**.
+
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Отгрузки.|
  
 > Пример запроса на обновление отдельной позиции в Отгрузке.
 
@@ -3256,9 +3580,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|---|---|
-|id |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
-|positionID|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Отгрузки.|
+|:&mdash;|:&mdash;|
+|**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Отгрузки.|
+|**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Отгрузки.|
 
 > Запрос на удаление отдельной позиции Отгрузки с указанным id.
 
