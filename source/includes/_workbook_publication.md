@@ -141,7 +141,7 @@ curl
 
 ``` shell
 curl 
-    -X PUT 
+    -X POST
     -u login:password 
     -H "Content-Type: application/json" 
     -H "Lognex-Pretty-Print-JSON: true" 
