@@ -74,9 +74,8 @@
 **Параметры**
 
 | Параметр | Описание |
-| action | `enum` (optional) *Example: evaluate_discount, evaluate_price, evaluate_discount* Определяет какую 
-информацию нужно заполнить: цены (evaluate_price), ндс (evaluate_vat) или скидки 
-(evaluate_discount). `Допустимые значения: evaluate_price, evaluate_discount, evaluate_vat`. |
+|:---------|:---------|
+| action | `enum` (optional) *Example: evaluate_discount, evaluate_price, evaluate_discount* Определяет какую информацию нужно заполнить: цены (evaluate_price), ндс (evaluate_vat) или скидки (evaluate_discount). `Допустимые значения: evaluate_price, evaluate_discount, evaluate_vat`. |
 
 ### Запрос автозаполения цен
 
