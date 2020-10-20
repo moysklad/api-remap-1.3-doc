@@ -2,33 +2,33 @@
 
 Средствами JSON API можно рассчитать значение скидок, цен и ндс для позиций следующих документов:
 
-- [Опреходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
-- [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
-- [Закказ постовщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-postawschiku)
-- [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-pokupatelu)
-- [Счет поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-schet-postawschika)
-- [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-otgruzka)
-- [Приемка](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-priemka)
-- [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
-- [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
-- [Розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha)
-- [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
-- [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-pokupatelq)
-- [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vozwrat-postawschiku)
-- [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
-- [Полученный отчет комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-poluchennyj-otchet-komissionera)
-- [Выданный отчет комиссионера](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vydannyj-otchet-komissionera)
-- [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
+- [Опреходование](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-oprihodowanie)
+- [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-pokupatelq)
+- [Закказ постовщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-postawschiku)
+- [Счет покупателю](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-pokupatelu)
+- [Счет поставщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-postawschika)
+- [Отгрузка](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka)
+- [Приемка](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-priemka)
+- [Списание](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-spisanie)
+- [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-peremeschenie)
+- [Розничная продажа](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-prodazha)
+- [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnyj-wozwrat)
+- [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-pokupatelq)
+- [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-postawschiku)
+- [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-inwentarizaciq)
+- [Полученный отчет комиссионера](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-poluchennyj-otchet-komissionera)
+- [Выданный отчет комиссионера](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vydannyj-otchet-komissionera)
+- [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vnutrennij-zakaz)
 
 Заполнение скидок не поддерживает следующие типы:
 
-- [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
-- [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-peremeschenie)
-- [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-vnutrennij-zakaz)
-- [Опреходование](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-oprihodowanie)
-- [Списание](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-spisanie)
+- [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-inwentarizaciq)
+- [Перемещение](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-peremeschenie)
+- [Внутренний заказ](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vnutrennij-zakaz)
+- [Опреходование](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-oprihodowanie)
+- [Списание](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-spisanie)
 
-Заполнение цен не поддерживает [Инвентаризация.](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-inwentarizaciq)
+Заполнение цен не поддерживает [Инвентаризация](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-inwentarizaciq)
 
 
 ### Шаблон автозаполнения
@@ -40,7 +40,7 @@
 
 Ниже приводятся поля, которые влияют на заполнение скидок, цен и ндс.
 
-+ **organization** - Ссылка на ваше юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Обязателен со значением `evaluate_vat` параметра `action`
++ **organization** - Ссылка на юрлицо в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). Обязателен со значением `evaluate_vat` параметра `action`
 + **agent** - Ссылка на контрагента в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye). 
 Обязателен со значениями `evaluate_price`, `evaluate_discount` параметра `action`
 + **vatEnabled** - Учитывается ли НДС
@@ -73,8 +73,8 @@
 
 **Параметры**
 
-| Параметр | Описание |
-|:---------|:---------|
+| Параметр | Описание | 
+| --------- |:----|
 | action | `enum` (optional) *Example: evaluate_discount, evaluate_price, evaluate_discount* Определяет какую информацию нужно заполнить: цены (evaluate_price), ндс (evaluate_vat) или скидки (evaluate_discount). `Допустимые значения: evaluate_price, evaluate_discount, evaluate_vat`. |
 
 ### Запрос автозаполения цен
@@ -323,6 +323,18 @@
             "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=44055d92-bf76-11ea-c0a8-f01000000070"
         }
     },
+    "vatEnabled": "true",
+    "rate": {
+        "currency": {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/currency/44126ea6-bf76-11ea-c0a8-f01000000077",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/currency/metadata",
+            "type": "currency",
+            "mediaType": "application/json",
+            "uuidHref": "https://online.moysklad.ru/app/#currency/edit?id=44126ea6-bf76-11ea-c0a8-f01000000077"
+          }
+        }
+    },
     "positions": [
         {
             "assortment": {
@@ -379,7 +391,6 @@
   },
   "positions": [
     {
-      "vat": 10,
       "assortment": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/46628fb5-c1c8-11ea-c0a8-f00c0000001a",
@@ -389,7 +400,8 @@
           "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=466222d6-c1c8-11ea-c0a8-f00c00000018"
         }
       },
-      "quantity": 12.0
+      "quantity": 12.0,
+      "vat": 10
     },
     {
       "vat": 18,
