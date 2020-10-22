@@ -435,7 +435,7 @@
 
 ```shell
   curl -X POST
-  "https://online.moysklad.ru/api/remap/1.3/wizard/sales_return?action=evaluate_cost"
+  "https://online.moysklad.ru/api/remap/1.3/wizard/salesreturn?action=evaluate_cost"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
     -d '
