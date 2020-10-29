@@ -75,8 +75,8 @@
 |**qrAcquire**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Банка-эквайера по операциям по QR-коду|&mdash;|нет
 |**qrBankPercent**     |Int|Комиссия банка-эквайера по операция по QR-коду (в процентах)|&mdash;| нет
 |**qrPayEnabled**      |Boolean|Возможность оплаты по QR-коду на точке продаж|&mdash;| да |
-|**idQR**              |String(255)|Идентификатор устройства QR (IdQR) для приложения оплаты по QR|&mdash;| да |
-|**qrTerminalId**      |String(255)|Идентификатор терминала (TerminalID) для приложения оплаты по QR|&mdash;| да |
+|**idQR**              |String(255)|Идентификатор устройства QR (IdQR) для приложения оплаты по QR|&mdash;| нет |
+|**qrTerminalId**      |String(255)|Идентификатор терминала (TerminalID) для приложения оплаты по QR|&mdash;| нет |
  
 ##### Код системы налогообложения по умолчанию
 
@@ -1205,9 +1205,7 @@ curl -X GET
   "returnFromClosedShiftEnabled" : false,
   "enableReturnsWithNoReason" : false,
   "reservePrepaidGoods" : false,
-  "qrPayEnabled": false,
-  "idQR" : null,
-  "qrTerminalId" : null
+  "qrPayEnabled": false
 }
 ```
 
@@ -1380,9 +1378,7 @@ curl -X GET
     "returnFromClosedShiftEnabled" : false,
     "enableReturnsWithNoReason" : false,
     "reservePrepaidGoods" : false,
-    "qrPayEnabled": false,
-    "idQR" : null,
-    "qrTerminalId" : null
+    "qrPayEnabled": false    
   }
   ,{
     "meta" : {
@@ -1505,9 +1501,7 @@ curl -X GET
     "returnFromClosedShiftEnabled" : true,
     "enableReturnsWithNoReason" : true,
     "reservePrepaidGoods" : true,
-    "qrPayEnabled": false,
-    "idQR" : null,
-    "qrTerminalId" : null
+    "qrPayEnabled": false
   }
 ]
 ```
@@ -1918,8 +1912,6 @@ curl -X PUT
   "reservePrepaidGoods" : false,
   "fiscalType": "MASTER",
   "minionToMasterType": "ANY",
-  "qrPayEnabled": false,
-  "idQR" : null,
-  "qrTerminalId" : null
+  "qrPayEnabled": false
 }
 ```
