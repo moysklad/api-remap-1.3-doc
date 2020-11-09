@@ -3294,7 +3294,7 @@ curl -X DELETE
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Настроек справочника контрагентов|&mdash;|да
 |**uniqueCodeRules**    |Object|Настройки кодов контрагентов|&mdash;|да
-|**createdShared**      |Boolean|Создавать новые документы с меткой «Общий»|&mdash;|да
+|**createShared**      |Boolean|Создавать новые документы с меткой «Общий»|&mdash;|да
 
 #### Настройки кодов контрагентов
 
@@ -3327,7 +3327,7 @@ curl -X GET
     "checkUniqueCode" : true,
     "fillUniqueCode" : true
   },
-  "createdShared" : true
+  "createShared" : true
 }
 ```
 
@@ -3349,7 +3349,7 @@ curl -X PUT
     "checkUniqueCodeBoolean": true,
     "fillUniqueCode": true
   },
-  "createdShared": false
+  "createShared": false
 }'
 ```
 
@@ -3367,6 +3367,6 @@ curl -X PUT
     "checkUniqueCodeBoolean": true,
     "fillUniqueCode": true
   },
-  "createdShared": false
+  "createShared": false
 }
 ```
