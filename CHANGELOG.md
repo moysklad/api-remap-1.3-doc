@@ -1,13 +1,17 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 29-10-2020
-### Добавлено
-- Исправлена ошибка регистра кода сущности в  [Группе товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
+### 18-11-2020
+#### Добавлено
+- Фильтрация по `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-dopolnitel-nye-fil-try)
 
 ### 02-11-2020
 #### Добавлено
 - добавлены коды [ошибкок 1083, 1084](/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata).
+
+## 29-10-2020
+### Добавлено
+- Исправлена ошибка регистра кода сущности в  [Группе товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow)
 
 ## 21-10-2020
 ### Добавлено
