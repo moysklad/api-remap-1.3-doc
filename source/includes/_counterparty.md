@@ -3346,7 +3346,7 @@ curl -X PUT
   -H "Content-Type: application/json"
   -d '{
   "uniqueCodeRules": {
-    "checkUniqueCodeBoolean": true,
+    "checkUniqueCode": true,
     "fillUniqueCode": true
   },
   "createShared": false
@@ -3364,7 +3364,7 @@ curl -X PUT
     "mediaType" : "application/json"
   },
   "uniqueCodeRules": {
-    "checkUniqueCodeBoolean": true,
+    "checkUniqueCode": true,
     "fillUniqueCode": true
   },
   "createShared": false
