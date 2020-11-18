@@ -1,9 +1,18 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+
 ## 05-11-2020
 ### Добавлено
 - Эндпоинт [Управления настройками справочника контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-nastrojki-sprawochnika-kontragentow)
+
+### 02-11-2020
+#### Добавлено
+- добавлены коды [ошибкок 1083, 1084](/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata).
+
+## 29-10-2020
+### Добавлено
+- Исправлена ошибка регистра кода сущности в  [Группе товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow)
 
 ## 21-10-2020
 ### Добавлено
