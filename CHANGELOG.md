@@ -1,13 +1,18 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+
 ### 18-11-2020
 #### Добавлено
 - Фильтрация по `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-dopolnitel-nye-fil-try)
 
-### 02-11-2020
-#### Добавлено
-- добавлены коды [ошибкок 1083, 1084](/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata).
+## 05-11-2020
+### Добавлено
+- Эндпоинт [Управления настройками справочника контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-nastrojki-sprawochnika-kontragentow)
+
+## 02-11-2020
+### Добавлено
+- добавлены коды [ошибкок 1083, 1084](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata).
 
 ## 29-10-2020
 ### Добавлено
@@ -17,40 +22,40 @@
 ### Добавлено
 - Информация о новых типах маркированной продукции (Альтернативная табачная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
-### 21-10-2020
-#### Изменено
+## 21-10-2020
+### Изменено
 - Добавлена возможность создавать, изменять и удалять [Отделы](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-otdel)
 
-### 20-10-2020
-#### Добавлено
-- Поля `qrPayEnabled`, `qrBankPercent` и `qrAcquire` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
-- Поля `qrSum` и `prepaymentQrSum` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazhai)
-- Поле `qrSum` в [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnyj-wozwrat)
+## 20-10-2020
+### Добавлено
+- Поля `qrPayEnabled`, `qrBankPercent` и `qrAcquire` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
+- Поля `qrSum` и `prepaymentQrSum` в [Розничную продажу](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-prodazhai)
+- Поле `qrSum` в [Розничный возврат](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnyj-wozwrat)
 - Ошибки `18005`, `18006`, `19003` и `19004`
-#### Изменено
-- Описание полей `acquire` и `bankPercent` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
-- Описание [работы с полями оплаты розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
+### Изменено
+- Описание полей `acquire` и `bankPercent` в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
+- Описание [работы с полями оплаты розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
 - Текст ошибок `18000` и `19002`
 
 ## 19-09-2020
 ### Добавлено
-- Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-towar)
+- Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 
-### 8-10-2020
-#### Изменено
+## 8-10-2020
+### Изменено
 - Исправлены опечатки
 
-### 22-09-2020
-#### Исправлено
+## 22-09-2020
+### Исправлено
 - Описание поля `productFolder` у [Групп товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow)
 
-### 20-09-2020
-#### Изменено
+## 20-09-2020
+### Изменено
 - Изменено описание установленных ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
 
-### 08-09-2020
-#### Добавлено
+## 08-09-2020
+### Добавлено
 - Добавлена информация об ошибке **1090**
 
 ## 16-09-2020
@@ -61,16 +66,16 @@
 ### Добавлено
 - Информация о новых типах маркированной продукции в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
-### 13-08-2020
-#### Изменено
+## 13-08-2020
+### Изменено
 - Обновлена информация об ошибке **17102**
 
-### 04-08-2020
-#### Добавлено
+## 04-08-2020
+### Добавлено
 - Дополнена информация об ошибке **17102**
 
-### 30-07-2020
-#### Изменено
+## 30-07-2020
+### Изменено
 Дополнительные поля Товаров, Услуг, Модификаций и Комплектов объединены и располагаются в метаданных Товаров.
 
 ## 28-07-2020
