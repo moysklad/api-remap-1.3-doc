@@ -705,7 +705,7 @@ assortment - параметр, принимающий href ассортимен�
 
 Пример запроса с использованием фильтра assortment:
 
-`https://online.moysklad.ru/api/remap/1.2/entity/demand?filter=assortment=https://online.moysklad.ru/api/remap/1.2/entity/product/166909e6-4a99-11e6-8a84-bae500000089`
+`https://online.moysklad.ru/api/remap/1.3/entity/demand?filter=assortment=https://online.moysklad.ru/api/remap/1.2/entity/product/166909e6-4a99-11e6-8a84-bae500000089`
 
 ### Фильтрация по сущностям, на которые нет права просмотра
 

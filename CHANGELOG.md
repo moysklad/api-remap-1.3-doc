@@ -2,8 +2,8 @@
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
 
-### 18-11-2020
-#### Добавлено
+## 18-11-2020
+### Добавлено
 - Фильтрация по `assortment` для [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter-poluchenie-nowogo-tokena-dopolnitel-nye-fil-try)
 
 ## 05-11-2020
