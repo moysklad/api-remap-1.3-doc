@@ -64,7 +64,11 @@
 |**payerVat**         |Boolean|Является ли данное юрлицо плательщиком НДС|&mdash;| нет
 |**utmUrl**           |String(255)|IP-адрес УТМ|&mdash;|нет
 |**director**         |String(255)|Руководитель|&mdash;|нет
+|**directorPosition** |String(255)|Должность руководителя|&mdash;|нет
+|**directorSign**     |Object|Подпись руководителя. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat)|&mdash;|нет
 |**chiefAccountant**  |String(255)|Главный бухгалтер|&mdash;|нет
+|**chiefAccountSign** |Object|Подпись главного бухгалтера. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
+|**stamp**            |Object|Печать. [Подробнее тут](../dictionaries/#suschnosti-jurlico-jurlica-attributy-suschnosti-adres-podpisi-i-pechat) |&mdash;|нет
 
 #### Атрибуты вложенных сущностей
 #### Аттрибуты сущности Адрес
@@ -85,6 +89,18 @@
 При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
 При передаче обоих адресов строковый будет игнорирован.
 При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
+
+##### Подписи и печать
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные объекта|&mdash;|да
+|**title**               |String(255)|Название Изображения|&mdash;|да
+|**filename**               |String(255)|Имя файла|&mdash;|да
+|**size**               |Int|Размер файла в байтах|&mdash;|да
+|**updated**               |DateTime|Время загрузки файла на сервер|&mdash;|да
+|**download**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка для скачивания изображения|&mdash;|да
+|**miniature**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные миниатюры изображения|&mdash;|да
 
 ##### Счета юрлица
 
@@ -414,7 +430,20 @@ curl -X GET
   "payerVat":true,
   "utmUrl":"10.250.110.81",
   "director":"Кипелова Александра",
-  "chiefAccountant":"Подкупников Иван"
+  "directorPosition":"Руководитель отдела",
+    "directorSign" : {
+        "filename": "directorSignTest.png",
+        "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+    },
+    "chiefAccountant":"Подкупников Иван",
+    "chiefAccountSign" : {
+        "filename": "chiefAccountSignTest.png",
+        "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg=="
+    },
+    "stamp" : {
+      "filename": "stampTest.png",
+      "content": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+    }
 }'  
 ```
 
@@ -530,7 +559,72 @@ curl -X GET
   "isEgaisEnable": true,
   "fsrarId": "1963703",
   "payerVat": true,
-  "utmUrl": "10.250.110.81"
+  "utmUrl": "10.250.110.81",
+  "director":"Кипелова Александра",
+  "directorPosition":"Руководитель отдела",
+  "directorSign" : {
+      "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/55366a29-01fc-11eb-ac12-000800000010/document/2c98d335-913c-4fe3-b3ac-d8bf87520528",
+         "type": "document",
+         "mediaType": "application/json"
+      },
+      "title" : "directorSignTest",
+      "filename" : "directorSignTest.png",
+      "size" : 70,
+      "updated" : "2020-09-23 07:38:57.107",
+      "download" : {
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
+        "type" : "file",
+        "mediaType" : "application/octet-stream"
+      },
+      "miniature" : {
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402?miniature=true",
+        "type" : "file",
+        "mediaType" : "image/png"
+      }
+  },
+  "chiefAccountant":"Подкупников Иван",
+  "chiefAccountSign" : {
+      "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/55366a29-01fc-11eb-ac12-000800000010/document/2c98d335-913c-4fe3-b3ac-d8bf87520528",
+         "type": "document",
+         "mediaType": "application/json"
+      },
+      "title" : "chiefAccountSignTest",
+      "filename" : "chiefAccountSignTest.png",
+      "size" : 70,
+      "updated" : "2020-09-23 07:38:57.125",
+      "download" : {
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639",
+        "type" : "file",
+        "mediaType" : "application/octet-stream"
+      },
+      "miniature" : {
+        "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/bcf10a53-82ec-41bd-9f5c-32c1a6328639?miniature=true",
+        "type" : "file",
+        "mediaType" : "image/png"
+      }
+  },
+  "stamp" : {
+     "meta": {
+         "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/55366a29-01fc-11eb-ac12-000800000010/document/2c98d335-913c-4fe3-b3ac-d8bf87520528",
+         "type": "document",
+         "mediaType": "application/json"
+     },
+     "title" : "stampTest",
+     "filename" : "stampTest.png",
+     "size" : 70,
+     "updated" : "2020-09-23 07:37:26.443",
+     "download" : {
+         "downloadHref" : "https://online.moysklad.ru/api/remap/1.3/download/2b5f05ce-7b87-472e-a5de-1d808045d402",
+         "type" : "file",
+         "mediaType" : "application/octet-stream"
+     },
+     "miniature" : {
+       "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+       "mediaType" : "image/png"
+     }
+  }
 }
 ```
 
