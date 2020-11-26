@@ -782,7 +782,7 @@ curl -X POST
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings"
+  "https://online.moysklad.ru/api/remap/1.3/entity/assortment/settings"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -792,7 +792,7 @@ curl -X GET
 ```json
 {
   "meta" : {
-    "href" : "http://localhost/api/remap/1.2/entity/assortment/settings",
+    "href" : "http://localhost/api/remap/1.3/entity/assortment/settings",
     "type" : "assortmentsettings",
     "mediaType" : "application/json"
   },
@@ -819,7 +819,7 @@ curl -X GET
 
 ```shell
 curl -X PUT
-  "https://online.moysklad.ru/api/remap/1.2/entity/assortment/settings"
+  "https://online.moysklad.ru/api/remap/1.3/entity/assortment/settings"
   -H "Authorization: Basic <Credentials>"
   -H "Content-Type: application/json"
   -d '{
@@ -841,7 +841,7 @@ curl -X PUT
 ```json
 {
   "meta" : {
-    "href" : "http://localhost/api/remap/1.2/entity/assortment/settings",
+    "href" : "http://localhost/api/remap/1.3/entity/assortment/settings",
     "type" : "assortmentsettings",
     "mediaType" : "application/json"
   },
