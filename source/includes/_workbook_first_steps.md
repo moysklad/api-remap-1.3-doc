@@ -730,24 +730,16 @@ curl -X PUT
   -u login:password 
   -H "Content-Type: application/json" 
   -H "Lognex-Pretty-Print-JSON: true" 
-  "https://online.moysklad.ru/api/remap/1.3/entity/product/a7404318-550f-11e8-56c0-000800000010" -d
+  "https://online.moysklad.ru/api/remap/1.3/entity/product/a7404318-550f-11e8-56c0-000800000010" 
+  -d {"country": {
+              "meta": {
+                  "mediaType": "application/json",
+                  "type": "country",
+                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/country/metadata",
+                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608"
+              }
+      }}
 ```
-
-> Ответ:
-
-```json
-{
-    "country": {
-        "meta": {
-            "mediaType": "application/json",
-            "type": "country",
-            "metadataHref": "<https://online.moysklad.ru/api/remap/1.1>[/entity/country/metadata](http://localhost:8081/api/remap/1.3/entity/country/metadata)",
-            "href": "<https://online.moysklad.ru/api/remap/1.1>/[entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608](http://localhost:8081/api/remap/1.3/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608)"
-        }
-    }
-}
-```
-
 > Ответ:
 
 ```json
