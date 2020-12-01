@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+### 1-11-2020
+#### Изменено
+- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq) и [воркбуке](https://dev.moysklad.ru/doc/api/remap/1.3/workbook/#workbook)
+
 ## 05-11-2020
 ### Добавлено
 - Эндпоинт [Управления настройками справочника контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-nastrojki-sprawochnika-kontragentow)
