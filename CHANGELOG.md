@@ -1,9 +1,17 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-### 1-11-2020
-#### Изменено
+## 04-12-2020
+### Документация
+- Исправлены неточности в разделе [Отчет остатки](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-ostatki)
+
+## 1-12-2020
+### Изменено
 - Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq) и [воркбуке](https://dev.moysklad.ru/doc/api/remap/1.3/workbook/#workbook)
+
+## 21-11-2020
+### Изменено
+- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
 
 ## 05-11-2020
 ### Добавлено
