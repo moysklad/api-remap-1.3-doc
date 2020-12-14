@@ -776,3 +776,85 @@ curl -X POST
 ]
 ```  
 
+### Получить Настройки справочника товаров
+
+> Запрос на получение настроек справочника товаров
+
+```shell
+curl -X GET
+  "https://online.moysklad.ru/api/remap/1.3/entity/assortment/settings"
+  -H "Authorization: Basic <Credentials>"
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление настроек компании.
+
+```json
+{
+  "meta" : {
+    "href" : "http://localhost/api/remap/1.3/entity/assortment/settings",
+    "type" : "assortmentsettings",
+    "mediaType" : "application/json"
+  },
+  "barcodeRules" : {
+    "fillEAN13Barcode" : true,
+    "weightBarcode" : true,
+    "weightBarcodePrefix" : 77
+  },
+  "uniqueCodeRules" : {
+    "checkUniqueCode" : true,
+    "fillUniqueCode" : true
+  },
+  "createdShared" : true
+}
+```
+
+### Изменить настройки справочника товаров 
+
+В теле запроса нужно передать объект, содержащий новый JSON настроек справочника.
+Изменять настройки можно частично, для этого в тело запроса нужно добавить лишь те поля, которые необходимо обновлять, остальные поля останутся прежними. Каждое поле является необязательным.
+В ответе придет полная сущность, даже если обновление было частичным. 
+
+> Запрос на изменение метаданных справочника товаров.
+
+```shell
+curl -X PUT
+  "https://online.moysklad.ru/api/remap/1.3/entity/assortment/settings"
+  -H "Authorization: Basic <Credentials>"
+  -H "Content-Type: application/json"
+  -d '{
+  "uniqueCodeRules": {
+    "checkUniqueCodeBoolean": true,
+    "fillUniqueCode": true
+  },
+  "barcodeRules": {
+    "fillEAN13Barcode": true,
+    "weightBarcodePrefix": 55
+  },
+  "createdShared": false
+}'
+```
+
+> Response 200 (application/json)
+Успешный запрос. Результат - JSON представление настроек справочника товаров.
+
+```json
+{
+  "meta" : {
+    "href" : "http://localhost/api/remap/1.3/entity/assortment/settings",
+    "type" : "assortmentsettings",
+    "mediaType" : "application/json"
+  },
+  "uniqueCodeRules": {
+    "checkUniqueCodeBoolean": true,
+    "fillUniqueCode": true
+  },
+  "barcodeRules": {
+    "fillEAN13Barcode": true,
+    "weightBarcodePrefix": 55
+  },
+  "createdShared": false
+}
+```
+
+
