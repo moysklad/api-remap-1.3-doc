@@ -3,7 +3,7 @@
 
 ## 15-12-2020
 ### Документация
-- Из параметров удален `states`, добавленные туда по ошибке в [метаданных Розничных смен](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-roznichnaq-smena-metadannye-roznichnyh-smen)
+- Из параметров удален `states`, добавленные туда по ошибке в [метаданных Розничных смен](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-metadannye-roznichnyh-smen)
 
 ### 26-11-2020
 #### Изменено
