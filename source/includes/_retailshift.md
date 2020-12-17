@@ -275,6 +275,9 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:48:04",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -393,7 +396,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:---|:---|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Розничной смены.|
 
 > Запрос на удаление Розничной смены с указанным id.
@@ -629,6 +632,9 @@ curl -X GET
     }
   },
   "moment": "2016-04-25 13:10:19",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "vatEnabled": true,
   "vatIncluded": true,
   "organization": {

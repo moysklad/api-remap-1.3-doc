@@ -148,6 +148,9 @@ curl -X GET
       "externalCode": "wWfQT10VjQztCieUrE72r2",
       "moment": "2016-07-04 09:31:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -245,6 +248,9 @@ curl -X GET
       "externalCode": "Q9wiyzIQiOhYhqpVkq6IE2",
       "moment": "2016-07-04 09:32:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -361,6 +367,9 @@ curl -X GET
       "externalCode": "Biim5OxdjUnFcC2saaU551",
       "moment": "2016-07-04 09:30:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -519,6 +528,9 @@ curl -X GET
   "name": "0721",
   "moment": "2012-06-27 16:52:24",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -683,6 +695,9 @@ curl -X GET
     "name": "0721",
     "moment": "2012-06-27 16:52:24",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -751,6 +766,9 @@ curl -X GET
     "externalCode": "unreal777slknf",
     "moment": "2016-06-27 16:52:24",
     "applicable": true,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -832,7 +850,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
 
 > Запрос на удаление Расходного ордера  с указанным id.
@@ -851,7 +869,7 @@ curl -X DELETE
 В теле запроса нужно передать массив, содержащий JSON метаданных Расходных ордеров, которые вы хотите удалить.
 
 
-> Запрос на массовое удаление Расходных ордеров. 
+> Запрос на массовое удаление Расходных ордеров.
 
 ```shell
 curl -X POST
@@ -1006,7 +1024,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
 
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -1052,6 +1070,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "sum": 0,
   "organization": {
     "meta": {
@@ -1102,6 +1123,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1179,6 +1203,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1256,6 +1283,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1333,6 +1363,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1428,6 +1461,9 @@ curl -X GET
   },
   "moment": "2016-11-25 18:17:38",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1501,7 +1537,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
 
 > Запрос на получение отдельного Расходного ордера с указанным id.
@@ -1548,6 +1584,9 @@ curl -X GET
   "externalCode": "Biim5OxdjUnFcC2saaU551",
   "moment": "2016-07-04 09:30:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1648,7 +1687,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Расходного ордера.|
 
 > Пример запроса на обновление отдельного Расходного ордера.
@@ -1742,6 +1781,9 @@ curl -X GET
   "externalCode": "unreal777slknf",
   "moment": "2016-06-27 16:52:24",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {

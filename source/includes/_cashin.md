@@ -3,6 +3,7 @@
 Средствами JSON API можно создавать и обновлять сведения о Приходном ордере, запрашивать списки Приходных ордеров и сведения по отдельным Приходным ордерам.Кодом сущности для Приходного ордера в составе JSON API является ключевое слово **cashin**.
 
 #### Атрибуты сущности
+
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Приходного ордера|&mdash;|да
@@ -147,6 +148,9 @@ curl -X GET
       "externalCode": "0fI6AjAHh-x1oYYNwBYeN1",
       "moment": "2016-07-04 08:57:00",
       "applicable": false,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -234,6 +238,9 @@ curl -X GET
       "externalCode": "E7vH1TaKii9bkuw2pekD22",
       "moment": "2016-07-04 08:54:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -330,6 +337,9 @@ curl -X GET
       "externalCode": "FEYR3meShqh5ICWNygGeq0",
       "moment": "2016-07-04 08:56:00",
       "applicable": true,
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "rate": {
         "currency": {
           "meta": {
@@ -662,6 +672,9 @@ curl -X GET
     "externalCode": "103kek312",
     "moment": "2016-06-10 09:52:24",
     "applicable": false,
+    "created": "2016-08-25 19:55:00",
+    "printed": true,
+    "published": true,
     "rate": {
       "currency": {
         "meta": {
@@ -734,7 +747,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приходного ордера.|
 
 > Запрос на удаление Приходного ордера с указанным id.
@@ -753,7 +766,7 @@ curl -X DELETE
 В теле запроса нужно передать массив, содержащий JSON метаданных Приходных ордеров, которые вы хотите удалить.
 
 
-> Запрос на массовое удаление Приходных ордеров. 
+> Запрос на массовое удаление Приходных ордеров.
 
 ```shell
 curl -X POST
@@ -917,12 +930,12 @@ curl -X GET
 
 ### Отдельное доп. поле
 
-#### Отдельное доп. поле
+
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
 
 > Запрос на получение информации по отдельному дополнительному полю.
@@ -1011,6 +1024,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1080,6 +1096,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1149,6 +1168,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1218,6 +1240,9 @@ curl -X GET
 ```json
 {
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1306,6 +1331,9 @@ curl -X GET
   },
   "moment": "2016-11-25 18:09:50",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1371,7 +1399,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приходного ордера.|
 
 > Запрос на получение отдельного Приходного ордера с указанным id.
@@ -1418,6 +1446,9 @@ curl -X GET
   "externalCode": "E7vH1TaKii9bkuw2pekD22",
   "moment": "2016-07-04 08:54:00",
   "applicable": true,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {
@@ -1497,7 +1528,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Приходного ордера.|
 
 > Пример запроса на обновление отдельного Приходного ордера.
@@ -1591,6 +1622,9 @@ curl -X GET
   "externalCode": "103kek312",
   "moment": "2016-06-10 09:52:24",
   "applicable": false,
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "rate": {
     "currency": {
       "meta": {

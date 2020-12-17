@@ -250,7 +250,9 @@ curl -X GET
           "offset": 0
         }
       },
-      "created": "2019-02-25 12:28:42",
+      "created": "2016-08-25 19:55:00",
+      "printed": true,
+      "published": true,
       "positions": {
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.3/entity/prepaymentreturn/bdf4e318-38df-11e9-ac12-000c0000004e/positions",
@@ -367,7 +369,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
 
 #### Отдельное доп. поле
@@ -401,9 +403,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Возврата предоплаты.|
- 
+
 > Запрос на получение отдельной Предоплаты с указанным id.
 
 ```shell
@@ -490,7 +492,9 @@ curl -X GET
       "offset": 0
     }
   },
-  "created": "2019-02-25 12:28:42",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/prepaymentreturn/7944ef04-f831-11e5-7a69-971500188b19/positions",
@@ -542,7 +546,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Возврата предоплаты.|
 
 > Запрос на удаление Возврата предоплаты с указанным id.
@@ -571,7 +575,7 @@ curl -X DELETE
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Возврата предоплаты.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -642,10 +646,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Возврата предоплаты.|
 |**positionID**|  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Возврата предоплаты.|
- 
+
 > Запрос на получение отдельной позиции Возврата предоплаты с указанным id.
 
 ```shell
