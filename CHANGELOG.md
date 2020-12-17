@@ -3,7 +3,7 @@
 
 ## 17-12-2020
 ### Изменено
-- Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
+- Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
 
 ### 26-11-2020
 #### Изменено
