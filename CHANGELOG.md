@@ -3,6 +3,10 @@
 
 ## 22-12-2020
 ### Документация
+- Из параметров удален `states`, добавленные туда по ошибке в [метаданных Розничных смен](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-metadannye-roznichnyh-smen)
+
+## 22-12-2020
+### Документация
 - Исправлены неточности в разделе [Отчет остатки](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-ostatki)
 
 ## 22-12-2020
