@@ -1,6 +1,14 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 22-12-2020
+### Документация
+- Исправлены неточности в разделе [Отчет остатки](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-ostatki)
+
+## 22-12-2020
+### Изменено
+- Описание ограничений в [воркбуке](https://dev.moysklad.ru/doc/api/remap/1.3/workbook/#workbook)
+
 ## 17-12-2020
 ### Изменено
 - Исправлен тип qrBankPercent с Int на Double в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
@@ -44,8 +52,8 @@
 - Описание [работы с полями оплаты розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
 - Текст ошибок `18000` и `19002`
 
-### 21-10-2020
-#### Добавлено
+## 21-10-2020
+### Добавлено
 - Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
 
 ## 16-10-2020
@@ -74,16 +82,16 @@
 ### Изменено
 - Изменено описание установленных ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
 
-### 18-09-2020
-#### Добавлены
+## 18-09-2020
+### Добавлены
 - Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
 
 ## 16-09-2020
 ### Добавлено
 - Информация о новых типах маркированной продукции (духи и фотокамеры) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
-### 08-09-2020
-#### Добавлено
+## 08-09-2020
+### Добавлено
 - Добавлена информация об ошибке **1090**
 
 ## 01-09-2020
