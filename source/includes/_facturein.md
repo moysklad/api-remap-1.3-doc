@@ -1156,10 +1156,6 @@ curl -X DELETE
 
 > Response 200 (application/json)
 Успешное удаление Счета-фактуры полученного.
-mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
-|**created**            |DateTime|Дата создания|Только для чтения|да
-|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
-|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 
 ##### Поля при expand'е доп. полей
 Описание полей при expand'е attributes
