@@ -40,6 +40,8 @@ includes:
   - pricelist
   - processingplan
   - processingorder
+  - processingprocess
+  - processingstage
   - processing
   - internalOrder  
   - autofill
