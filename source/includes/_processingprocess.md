@@ -3,8 +3,7 @@
 ### Процессы
 
 Средствами JSON API можно создавать и обновлять сведения о Процессах производства, запрашивать списки Процессов и
-сведения по отдельным Процессам. Кодом сущности для Процесса в составе JSON API является ключевое слово **
-processingprocess**.
+сведения по отдельным Процессам. Кодом сущности для Процесса в составе JSON API является ключевое слово **processingprocess**.
 
 #### Атрибуты сущности
 
@@ -13,8 +12,7 @@ processingprocess**.
 |**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Процесса|&mdash;|да
 |**id**                |UUID|ID процесса|Только для чтения|да
 |**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**
-owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash ;|да
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash ;|да
 |**shared**         |Boolean|Общий доступ|&mdash;|да
 |**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
 |**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
