@@ -58,7 +58,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да
 |**volume**          |Int|Объем производства|Изменение объема производства ведет за собой изменение всех связанных количественных характеристик по техкарте с множителем равным объему производства |да
-|**costDistribution**          |String|Тип распределения себестоимость для ряда продукции по техкарте. Может принимать 2 значения: "price" - распределение по ценам продаж или "percent" - процентное распределение. |&mdash;|да
+|**costDistribution**          |String|Тип распределения себестоимости для ряда продукции по техкарте. Может принимать 2 значения: "price" - распределение по ценам продаж или "percent" - процентное распределение. |&mdash;|да
 |**products**|Array(Object)|Список продукции по техкарте.|Доступны только количественные характеристики для изменения.|да
 |**stages**|Array(Object)|Список этапов производства. Включается в себя |Доступны только количественные характеристики для изменения.|да
 
@@ -347,7 +347,7 @@ curl -X GET
   },
   "productionRows": {
     "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/productionRows",
       "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
       "type": "processingorderposition",
       "mediaType": "application/json",
@@ -614,153 +614,6 @@ curl -X GET
 }
 ```
 
-> Пример запроса на обновление Заказа на производство с позициями в теле запроса.
-
-```shell
-  curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19"
-    -H "Authorization: Basic <Credentials>"
-    -H "Content-Type: application/json"
-      -d '{
-            "positions": [
-              {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/34efe2ee-015e-11e6-9464-e4de0000006b/positions/34f6344f-015e-11e6-9464-e4de0000006c",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
-                  "type": "processingorderposition",
-                  "mediaType": "application/json"
-                },
-                "id": "34f6344f-015e-11e6-9464-e4de0000006c",
-                "quantity": 10,
-                "assortment": {
-                  "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/8b382799-f7d2-11e5-8a84-bae5000003a5",
-                    "type": "product",
-                    "mediaType": "application/json"
-                  }
-                }
-              },
-              {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/34efe2ee-015e-11e6-9464-e4de0000006b/positions/34f6344f-015e-11e6-9464-e4de0000007c",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
-                  "type": "processingorderposition",
-                  "mediaType": "application/json"
-                },
-                "id": "34f6344f-015e-11e6-9464-e4de0000007c",
-                "quantity": 20,
-                "assortment": {
-                  "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/be903062-f504-11e5-8a84-bae50000019a",
-                    "type": "product",
-                    "mediaType": "application/json"
-                  }
-                }
-              },
-              {
-                "meta": {
-                  "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/34efe2ee-015e-11e6-9464-e4de0000006b/positions/34f6344f-015e-11e6-9464-e4de0000008c",
-                  "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
-                  "type": "processingorderposition",
-                  "mediaType": "application/json"
-                },
-                "id": "34f6344f-015e-11e6-9464-e4de0000008c",
-                "quantity": 30,
-                "assortment": {
-                  "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/c02e3a5c-007e-11e6-9464-e4de00000006",
-                    "type": "product",
-                    "mediaType": "application/json"
-                  }
-                }
-              }
-            ]
-          }'  
-```
-
-> Response 200 (application/json)
-Успешный запрос. Результат - JSON представление обновленного Заказа на производство.
-
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
-    "type": "processingorder",
-    "mediaType": "application/json"
-  },
-  "id": "c49e83b3-01af-11e6-9464-e4de00000026",
-  "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
-  "syncId": "734a9e26-45a2-4ead-849c-e144daeb854d",
-  "updated": "2016-04-14 13:08:58",
-  "name": "000034",
-  "externalCode": "DAD9peGij6sDNii49Dkam2",
-  "owner": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/faba7f37-2e58-11e6-8a84-bae500000028",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
-      "type": "employee",
-      "mediaType": "application/json"
-    }
-  },
-  "shared": false,
-  "group": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/group/f97aa1fb-2e58-11e6-8a84-bae500000002",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/group/metadata",
-      "type": "group",
-      "mediaType": "application/json"
-    }
-  },
-  "moment": "2016-04-19 13:50:24",
-  "applicable": false,
-  "sum": 0,
-  "organization": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/850c8195-f504-11e5-8a84-bae50000015e",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/organization/metadata",
-      "type": "organization",
-      "mediaType": "application/json"
-    }
-  },
-  "state": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata/states/fb56c504-2e58-11e6-8a84-bae500000069",
-      "type": "state",
-      "mediaType": "application/json"
-    }
-  },
-  "organizationAccount": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/850c8195-f504-11e5-8a84-bae50000015e/accounts/3a30e844-016f-11e6-9464-e4de00000068",
-      "type": "account",
-      "mediaType": "application/json"
-    }
-  },
-  "created": "2007-02-07 17:16:41",
-  "positions": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
-      "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
-      "type": "processingorderposition",
-      "mediaType": "application/json",
-      "size": 1,
-      "limit": 1000,
-      "offset": 0
-    }
-  },
-  "quantity": 5,
-  "processingPlan": {
-    "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/c38e50b0-acdc-11e6-5bed-427b0000009e",
-      "metadataHref": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/metadata",
-      "type": "processingplan",
-      "mediaType": "application/json"
-    }
-  }
-}
-```
-
 ### Позиции Заказа на производство 
 Отдельный ресурс для управления позициями Заказа на производство. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
@@ -786,7 +639,7 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions"
+  "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows"
   -H "Authorization: Basic <Credentials>"
 ```
 
@@ -806,7 +659,7 @@ curl -X GET
     }
   },
   "meta": {
-    "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions",
+    "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows",
     "type": "processingorderposition",
     "mediaType": "application/json",
     "size": 1,
@@ -994,7 +847,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows/34f6344f-015e-11e6-9464-e4de0000006c",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
     "type": "processingorderposition",
     "mediaType": "application/json"
@@ -1030,12 +883,12 @@ curl -X GET
 
 ```shell
   curl -X PUT
-    "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+    "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows/34f6344f-015e-11e6-9464-e4de0000006c"
     -H "Authorization: Basic <Credentials>"
     -H "Content-Type: application/json"
       -d '{
             "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+              "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows/34f6344f-015e-11e6-9464-e4de0000006c",
               "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
               "type": "processingorderposition",
               "mediaType": "application/json"
@@ -1058,7 +911,7 @@ curl -X GET
 ```json
 {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c",
+    "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows/34f6344f-015e-11e6-9464-e4de0000006c",
     "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/metadata",
     "type": "processingorderposition",
     "mediaType": "application/json"
@@ -1088,11 +941,11 @@ curl -X GET
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
  
-> Запрос на удаление позиции Заказа на производство с указанным id.
+> Запрос на удаление ряда продукции Заказа на производство с указанным id.
 
 ```shell
 curl -X DELETE
-  "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/positions/34f6344f-015e-11e6-9464-e4de0000006c"
+  "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/7944ef04-f831-11e5-7a69-971500188b19/productionRows/34f6344f-015e-11e6-9464-e4de0000006c"
   -H "Authorization: Basic <Credentials>"
 ```
 
