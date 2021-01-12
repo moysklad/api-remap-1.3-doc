@@ -209,6 +209,8 @@ curl -X GET
       "applicable": true,
       "vatEnabled": true,
       "vatIncluded": true,
+      "printed": true,
+      "published": true,
       "sum": 123000,
       "rate": {
         "currency": {
@@ -328,6 +330,8 @@ curl -X GET
       "applicable": false,
       "vatEnabled": true,
       "vatIncluded": true,
+      "printed": true,
+      "published": true,
       "sum": 123000,
       "rate": {
         "currency": {
@@ -528,7 +532,9 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "created": "2007-02-07 17:16:41",
+  "created": "2016-08-25 19:55:00",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/demand/2464c97a-030a-11e6-9464-e4de00000000/positions",
