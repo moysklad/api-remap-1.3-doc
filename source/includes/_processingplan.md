@@ -1,5 +1,5 @@
 ## Техкарта
-Средствами JSON API можно создавать и обновлять сведения о Техкартах, запрашивать списки Техкарт и сведения по отдельным Техкартам. Позициями Техкарт можно управлять как в составе отдельной Техкарты, так и отдельно - с помощью специальных ресурсов для управления материалами и продуктами Техкарты. Кодом сущности для Техкарты в составе JSON API является ключевое слово **processingplan**. Больше о Техкартах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по
+Средствами JSON API можно создавать и обновлять сведения о Техкартах, запрашивать списки Техкарт и сведения по отдельным Техкартам. Позициями Техкарт можно управлять как в составе отдельной Техкарты, так и отдельно - с помощью специальных ресурсов для управления этапами и продуктами Техкарты. Кодом сущности для Техкарты в составе JSON API является ключевое слово **processingplan**. Больше о Техкартах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по
 [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325613-%D0%A1%D0%B1%D0%BE%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B5-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8).
 ### Техкарты 
 #### Атрибуты сущности
@@ -20,7 +20,7 @@
 |**parent**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Тех. карты|&mdash;|да
 |**cost**                |Int| Стоимость производства|&mdash;|нет
 |**processingProcess**         |([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные процесса Техкарты|Необходимое при создании|да
-|**materials**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных материалов Техкарты|Необходимое при создании|да
+|**processingStages**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция этапов Техкарты|Необходимое при создании|да
 |**products**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных готовых продуктов Техкарты|Необходимое при создании|да
 |**costDistribution**         |String|Тип распределения себестоимости, может принимать значения "price" или "percent"|По умолчанию создается с типом распределения по ценам продаж|да
 
@@ -33,7 +33,6 @@
 |**id**                 |UUID|ID Материала|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**product**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет
-|**processingStage**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные этапа, на котором произойдет списание материала|&mdash;|нет
 |**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да
 
 #### Продукты Техкарты
@@ -46,7 +45,7 @@
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**product**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара позиции|&mdash;|нет
 |**quantity**               |Int|Количество товаров данного вида в позиции|&mdash;|да
-|**costShare**               |Int|Процентное распределение себестоимости в случае если выбран тип распределений себестоимости в процентах|&mdash;|да
+|**costShare**               |Int|Процентное распределение себестоимости в случае если выбран тип распределений себестоимости в процентах. Сумма всех costShare среди продуктов техкарты должна быть равна 100.|&mdash;|да
 
 #### Этапы Техкарты
 Этапы Техкарты — это список этапов Техкарты, из которых состоит связанный производственный процесс. Материалы привязываются к этапам
@@ -54,22 +53,23 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
 | --------- |:----|:----------------------------|:----------------|:------------------------|
-|**id**                 |UUID|ID Продукта|Только для чтения|да
+|**id**                 |UUID|ID этапа внутри техкарты|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
 |**processingStage**    |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные этапа|&mdash;|нет
+|**materials**          |Array(Object)|Массив JSON объектов, представляющих собой материалы используемых во время выполнения этапа производства.
 |**cost**               |Int|Материальные затраты на производстве|&mdash;|да
 |**salary**             |Int|Сумма сдельной заработанной платы за прохождение этапа исполнителем|&mdash;|нет
 |**personified**        |Boolean|Требование к тому, чтобы при прохождении этапа был указан пользователь, который этот этап реализовал|&mdash;|да
 
 С материалами и продуктами можно работать с помощью [специальных ресурсов для управления позициями Тех. карты](../documents/#dokumenty-teh-karta-materialy-teh-karty),
-а также в составе отдельной Тех. карты. При работе в составе отдельной Тех. карты,
-вы можете отправлять запросы на создание отдельной Тех. карты с включенными в тело запроса
-массивами материалов и продуктов Тех. карты. Если количество материалов или продуктов превышает максимально допустимое, то для
-дальнейшего пополнения материалов и продуктов нужно будет работать со специальнымы ресурсами "Материалы Тех. карты" и "Продукты Тех. карты".
-Также, при работе в составе отдельной Тех. карты, можно отправлять запросы на обновление списка материалов и продуктов
-с включенными в тело запроса массивами материалов и продуктов Тех. карты. При этом важно помнить, что коллекции материалов и продуктов
-полностью заменят уже существующие коллекции при обновлении объекта - лишние
-позиции будут удалены, новые добавлены, существующие - изменены.
+а также в составе отдельной Техкарты. При работе в составе отдельной Техкарты,
+вы можете отправлять запросы на создание отдельной Техкарты с включенными в тело запроса
+массивами материалов и продуктов Техкарты. Если количество материалов или продуктов превышает максимально допустимое, то для
+дальнейшего пополнения материалов и продуктов нужно будет работать со специальными ресурсами "Материалы Техкарты" и "Продукты Техкарты".
+Также, при работе в составе отдельной Техкарты, можно отправлять запросы на обновление списка материалов и продуктов
+с включенными в тело запроса массивами материалов и продуктов Техкарты. При этом важно помнить, что коллекции материалов и продуктов
+полностью заменят уже существующие коллекции при обновлении объекта — лишние
+позиции будут удалены, новые добавлены, существующие — изменены.
 
 ### Техкарта
 
@@ -132,10 +132,10 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "materials": {
+  "processingStages": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/materials",
-      "type": "processingplanmaterial",
+      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/1a18770e-ad9a-11e6-5bed-427b00000064/processingStages",
+      "type": "processingplanstage",
       "mediaType": "application/json",
       "size": 1,
       "limit": 1000,
@@ -182,17 +182,19 @@ curl -X GET
                    "mediaType": "application/json"
                }
             },
-            "materials": [
+            "processingStages": [
               {
-                "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                "product": {
-                  "meta": {
-                    "href": "http://online.moysklad.ru/api/remap/1.3/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-                    "metadataHref": "http://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
-                    "type": "product",
-                    "mediaType": "application/json"
+                "materials": [{
+                  "product": {
+                    "meta": {
+                      "href": "http://online.moysklad.ru/api/remap/1.3/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+                      "metadataHref": "http://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+                      "type": "product",
+                      "mediaType": "application/json"
+                    },
+                    "quantity": 1
                   }
-                },
+                }],
                 "processingStage": {
                   "meta": {
                     "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingstage/f60079a5-36c6-4f6c-9b37-433e185f14df",
@@ -201,7 +203,9 @@ curl -X GET
                     "mediaType": "application/json"
                   }
                 },
-                "quantity": 1
+                "cost": 10,
+                "salary": 20,
+                "personified": true
               }
             ],
             "products": [
@@ -275,10 +279,10 @@ curl -X GET
   "pathName": "",
   "cost": 1000,
   "costDistibution": "price",
-  "materials": {
+  "processingStages": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/materials",
-      "type": "processingplanmaterial",
+      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/processingStages",
+      "type": "processingplanstage",
       "mediaType": "application/json",
       "size": 1,
       "limit": 1000,
@@ -317,17 +321,19 @@ curl -X GET
                }
             },
             "costDistribution": "percent",
-            "materials": [
+            "processingStages": [
               {
-                "accountId": "d55cbfba-91f1-11e6-5bed-427b00000000",
-                "product": {
-                  "meta": {
-                    "href": "http://online.moysklad.ru/api/remap/1.3/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
-                    "metadataHref": "http://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
-                    "type": "product",
-                    "mediaType": "application/json"
+                "materials": [{
+                  "product": {
+                    "meta": {
+                      "href": "http://online.moysklad.ru/api/remap/1.3/entity/product/0de151c1-acdc-11e6-5bed-427b00000080",
+                      "metadataHref": "http://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
+                      "type": "product",
+                      "mediaType": "application/json"
+                    },
+                    "quantity": 1
                   }
-                },
+                }],
                 "processingStage": {
                   "meta": {
                     "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingstage/f60079a5-36c6-4f6c-9b37-433e185f14df",
@@ -336,7 +342,6 @@ curl -X GET
                     "mediaType": "application/json"
                   }
                 },
-                "quantity": 1
               }
             ],
             "products": [
@@ -412,10 +417,10 @@ curl -X GET
   "pathName": "",
   "cost": 1000,
   "costDistibution": "percent",
-  "materials": {
+  "processingStages": {
     "meta": {
-      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/materials",
-      "type": "processingplanmaterial",
+      "href": "http://online.moysklad.ru/api/remap/1.3/entity/processingplan/120a488b-b0bd-11e6-5bed-427b00000000/processingStages",
+      "type": "processingplanstage",
       "mediaType": "application/json",
       "size": 1,
       "limit": 1000,
