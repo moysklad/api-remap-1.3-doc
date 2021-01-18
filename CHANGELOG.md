@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 18-01-2021
+### Добавлено
+- Все разделы разпределены по соответствующим пакетам
+
 ## 23-12-2020
 ### Добавлено
 - Новый эндпоинт [Настроек пользователя](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-nastrojki-pol-zowatelq)
