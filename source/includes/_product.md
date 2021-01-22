@@ -30,6 +30,7 @@
 |**archived**        |Boolean|Добавлен ли Товар в архив|&mdash;|да
 |**pathName**         |String|Наименование группы, в которую входит Товар|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
+|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Товара|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
@@ -384,6 +385,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 18,
+      "useParentVat": false,
       "effectiveVat": 18,
       "discountProhibited": false,
       "uom": {
@@ -555,6 +557,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 18,
+      "useParentVat": false,
       "effectiveVat": 18,
       "discountProhibited": false,
       "uom": {
@@ -748,6 +751,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 20,
+      "useParentVat": false,
       "effectiveVat": 20,
       "discountProhibited": false,
       "uom": {
@@ -844,6 +848,7 @@ curl -X GET
             "externalCode": "456",
             "description": "Бананы, Африка",
             "vat": 18,
+            "useParentVat": false,
             "effectiveVat": 18,
             "discountProhibited": false,
             "uom": {
@@ -995,6 +1000,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "useParentVat": false,
   "effectiveVat": 18,
   "discountProhibited": false,
   "uom": {
@@ -1216,7 +1222,8 @@ curl -X GET
   "weight": 0,
   "volume": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "useParentVat": true
 }
 ```
 
@@ -1387,6 +1394,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "useParentVat": false,
   "effectiveVat": 18,
   "discountProhibited": false,
   "uom": {
@@ -1630,7 +1638,8 @@ curl -X GET
   ],
   "variantsCount": 0,
   "isSerialTrackable": false,
-  "trackingType": "NOT_TRACKED"
+  "trackingType": "NOT_TRACKED",
+  "useParentVat": true
 }
 ```
 
@@ -1759,7 +1768,8 @@ curl -X GET
     "weight": 0,
     "volume": 0,
     "isSerialTrackable": false,
-    "trackingType": "NOT_TRACKED"
+    "trackingType": "NOT_TRACKED",
+    "useParentVat": true
   },
   {
     "meta": {
@@ -1795,6 +1805,7 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 3,
+    "useParentVat": false,
     "effectiveVat": 3,
     "discountProhibited": false,
     "uom": {
@@ -2185,6 +2196,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 18,
+  "useParentVat": false,
   "effectiveVat": 18,
   "discountProhibited": false,
   "uom": {
@@ -2559,6 +2571,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "useParentVat": false,
   "effectiveVat": 3,
   "discountProhibited": false,
   "uom": {
@@ -2884,6 +2897,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "useParentVat": false,
   "effectiveVat": 3,
   "discountProhibited": false,
   "uom": {
@@ -3162,6 +3176,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "useParentVat": false,
   "effectiveVat": 3,
   "discountProhibited": false,
   "uom": {
