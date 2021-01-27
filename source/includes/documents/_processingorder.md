@@ -1,5 +1,5 @@
 ## Заказ на производство
-### Заказы на производство 
+### Заказы на производство
 Средствами JSON API можно создавать и обновлять сведения о Заказах на производство, запрашивать списки Заказов и сведения по отдельным Заказам на производство. Позициями Заказов можно управлять как в составе отдельного Заказа на производство, так и отдельно - с помощью специальных ресурсов для управления позициями Заказа. Кодом сущности для Заказа на производство в составе JSON API является ключевое слово **processingorder**. Больше о Заказах на производство и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203325613-%D0%A1%D0%B1%D0%BE%D1%80%D0%BE%D1%87%D0%BD%D1%8B%D0%B5-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8).
 #### Атрибуты сущности
 
@@ -27,6 +27,8 @@
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-zakaz-na-proizwodstwo-zakazy-na-proizwodstwo-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |Только для чтения|нет
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**processingPlan**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Тех. плана|Необходимое при создании|да
 |**positions**        |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Заказа на производство|Необходимое при создании|да
 |**deliveryPlannedMoment**            |DateTime|Планируемая дата производства|&mdash;|нет
@@ -70,7 +72,7 @@
 
 О работе с доп. полями Заказов на производство можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
-### Получить список Заказов на производство 
+### Получить список Заказов на производство
 Запрос всех Заказов на производство на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
@@ -153,6 +155,8 @@ curl -X GET
       "externalCode": "Tzn6ewsegfp90BCJ6xgWe2",
       "moment": "2016-11-18 19:30:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.3/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -248,6 +252,8 @@ curl -X GET
       "externalCode": "Tzn6ewsegfp90BCJ6xgWe2",
       "moment": "2016-11-18 19:30:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.3/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -324,6 +330,8 @@ curl -X GET
       "externalCode": "JZQBX9gshwrrTRcHkCcaR2",
       "moment": "2016-11-21 11:47:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.3/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -401,6 +409,8 @@ curl -X GET
       "externalCode": "wWAJXKZFgoOZVKd41Dzzz2",
       "moment": "2016-11-23 13:00:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.3/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -477,6 +487,8 @@ curl -X GET
       "externalCode": "5nSDOrCfjyxt0W1RbY7XZ3",
       "moment": "2016-11-21 12:27:00.000",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "store": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.3/entity/store/d5e311c0-91f1-11e6-5bed-427b00000053",
@@ -536,7 +548,7 @@ curl -X GET
 }
 ```
 
-### Создать Заказ на производство 
+### Создать Заказ на производство
 Запрос на создание нового Заказа на производство.
 Обязательные для создания поля:
 
@@ -643,6 +655,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -792,6 +806,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -924,6 +940,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -960,7 +978,7 @@ curl -X GET
 }
 ```
 
-### Массовое создание и обновление Заказов на производство 
+### Массовое создание и обновление Заказов на производство
 [Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Заказов на производство.
 В теле запроса нужно передать массив, содержащий JSON представления Заказов на производство, которые вы хотите создать или обновить.
 Обновляемые Заказы на производство должны содержать идентификатор в виде метаданных.
@@ -1084,6 +1102,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -1161,6 +1181,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -1190,9 +1212,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
- 
+
 > Запрос на удаление Заказа на производство с указанным id.
 
 ```shell
@@ -1209,7 +1231,7 @@ curl -X DELETE
 В теле запроса нужно передать массив, содержащий JSON метаданных Заказов на производство, которые вы хотите удалить.
 
 
-> Запрос на массовое удаление Заказов на производство. 
+> Запрос на массовое удаление Заказов на производство.
 
 ```shell
 curl -X POST
@@ -1247,8 +1269,8 @@ curl -X POST
 ]
 ``` 
 
-### Метаданные Заказов на производство 
-#### Метаданные Заказов на производство 
+### Метаданные Заказов на производство
+#### Метаданные Заказов на производство
 Запрос на получение метаданных Заказов на производство. Результат - объект JSON, включающий в себя:
 
 | Параметр                | Описание  |
@@ -1395,10 +1417,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Доп. поля.|
 
- 
+
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
@@ -1424,9 +1446,9 @@ curl -X GET
 }
 ```
 
-### Шаблон Заказа на производство 
+### Шаблон Заказа на производство
 
-#### Шаблон Заказа на производство на основе 
+#### Шаблон Заказа на производство на основе
 Запрос на получение предзаполненного заказа на основе другого документа.
 В результате запроса будет создан предзаполненный шаблон заказа на основе переданного документа.
 
@@ -1499,6 +1521,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "rows": [
       {
@@ -1525,9 +1549,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
- 
+
 > Запрос на получение отдельного Заказа на производство с указанным id.
 
 ```shell
@@ -1619,7 +1643,7 @@ curl -X GET
 }
 ```
 
-### Изменить Заказ на производство 
+### Изменить Заказ на производство
 Запрос на обновление Заказа на производство с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Заказа на производство, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Заказа на производство](../documents/#dokumenty-zakaz-na-proizwodstwo).
@@ -1628,7 +1652,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 
 > Пример запроса на обновление отдельного Заказа на производство.
@@ -1712,6 +1736,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -1816,6 +1842,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -1976,6 +2004,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/processingorder/c49e83b3-01af-11e6-9464-e4de00000026/positions",
@@ -1999,10 +2029,10 @@ curl -X GET
 }
 ```
 
-### Позиции Заказа на производство 
+### Позиции Заказа на производство
 Отдельный ресурс для управления позициями Заказа на производство. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
-### Получить позиции Заказа на производство 
+### Получить позиции Заказа на производство
 Запрос на получение списка всех позиций данного Заказа на производство.
 
 
@@ -2015,7 +2045,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -2096,7 +2126,7 @@ curl -X GET
 }
 ```
 
-### Позиция Заказа на производство 
+### Позиция Заказа на производство
 Отдельная позиция Заказа с указанным id позиции.
 
 ### Получить позицию Заказа на производство
@@ -2104,10 +2134,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
- 
+
 > Запрос на получение отдельной позиции Заказа с указанным id.
 
 ```shell
@@ -2143,14 +2173,14 @@ curl -X GET
 
 ```
 
-### Изменить позицию Заказа на производство 
+### Изменить позицию Заказа на производство
 Запрос на обновление отдельной позиции Заказа. Для обновления позиции нет каких-либо
- обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
 
@@ -2212,10 +2242,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Заказа на производство.|
 |**positionID** |  `string` (required) *Example: 34f6344f-015e-11e6-9464-e4de0000006c* id позиции Заказа на производство.|
- 
+
 > Запрос на удаление позиции Заказа на производство с указанным id.
 
 ```shell

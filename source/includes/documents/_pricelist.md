@@ -1,6 +1,6 @@
 ## Прайс-лист
 Средствами JSON API можно создавать и обновлять сведения о Прайс-листах, запрашивать списки Прайс-листов и сведения по отдельным Прайс-листам. Позициями Прайс-листов можно управлять как в составе отдельного Прайс-листа, так и отдельно - с помощью специальных ресурсов для управления позициями Прайс-листа. Кодом сущности для Прайс-листа в составе JSON API является ключевое слово **pricelist**. Больше о Прайс-листах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки по  [этой ссылке](https://support.moysklad.ru/hc/ru/articles/203025356-%D0%9F%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82%D1%8B).
-### Прайс-листы 
+### Прайс-листы
 #### Атрибуты сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
@@ -25,6 +25,8 @@
 |**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Прайс-листа&mdash;|нет
 |**attributes**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Коллекция метаданных доп. полей. [Поля при expand'е](../documents/#dokumenty-prajs-list-prajs-listy-atributy-suschnosti-polq-pri-expand-39-e-dop-polej) |&mdash;|нет
 |**created**            |DateTime|Дата создания|Только для чтения|да
+|**printed**            |Boolean|Напечатан ли документ|Только для чтения|да
+|**published**          |Boolean|Опубликован ли документ|Только для чтения|да
 |**positions**          |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные позиций Прайс-листа|&mdash;|да
 |**files**              |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да
 
@@ -99,7 +101,7 @@
 О работе с доп. полями Прайс-листов можно прочитать [здесь](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
 
 
-### Получить список Прайс-листов 
+### Получить список Прайс-листов
 Запрос всех Прайс-листов на данной учетной записи.
 Результат: Объект JSON, включающий в себя поля:
 
@@ -182,6 +184,8 @@ curl -X GET
       "externalCode": "m-9OZzfBiAjolWhnBjTff0",
       "moment": "2016-11-21 15:51:16",
       "applicable": true,
+      "printed": true,
+      "published": true,
       "organization": {
         "meta": {
           "href": "http://online.moysklad.ru/api/remap/1.3/entity/organization/95920812-9609-11e6-8af5-581e000000d4",
@@ -294,6 +298,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/7370448e-afe9-11e6-8af5-581e00000036/positions",
@@ -441,6 +447,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/c41abcd9-afea-11e6-8af5-581e0000003c/positions",
@@ -585,6 +593,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/a6d8eee9-afee-11e6-8af5-581e00000049/positions",
@@ -691,6 +701,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/d983f7fc-afef-11e6-8af5-581e00000050/positions",
@@ -709,7 +721,7 @@ curl -X GET
 }
 ```
 
-### Массовое создание и обновление Прайс-листов 
+### Массовое создание и обновление Прайс-листов
 [Массовое создание и обновление](../#mojsklad-json-api-obschie-swedeniq-sozdanie-i-obnowlenie-neskol-kih-ob-ektow) Прайс-листов.
 В теле запроса нужно передать массив, содержащий JSON представления Прайс-листов, которые вы хотите создать или обновить.
 Обновляемые Прайс-листы должны содержать идентификатор в виде метаданных.
@@ -799,6 +811,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/7370448e-afe9-11e6-8af5-581e00000036/positions",
@@ -856,6 +870,8 @@ curl -X GET
       }
     },
     "created": "2007-02-07 17:16:41",
+    "printed": true,
+    "published": true,
     "positions": {
       "meta": {
         "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/312cc207-afe9-11e6-8af5-581e0000002c/positions",
@@ -894,7 +910,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 
 > Запрос на удаление Прайс-листа с указанным id.
@@ -913,7 +929,7 @@ curl -X DELETE
 В теле запроса нужно передать массив, содержащий JSON метаданных Прайс-листов, которые вы хотите удалить.
 
 
-> Запрос на массовое удаление Прайс-листов. 
+> Запрос на массовое удаление Прайс-листов.
 
 ```shell
 curl -X POST
@@ -951,8 +967,8 @@ curl -X POST
 ]
 ``` 
 
-### Метаданные Прайс-листов 
-#### Метаданные Прайс-листов 
+### Метаданные Прайс-листов
+#### Метаданные Прайс-листов
 Запрос на получение метаданных Прайс-листов. Результат - объект JSON, включающий в себя:
 
 | Параметр                | Описание  |
@@ -1014,10 +1030,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |   **id**|   `666f86f9-afec-11e6-8af5-581e00000087` (required, string) - id Доп. поля|
- 
-#### Отдельное доп. поле 
+
+#### Отдельное доп. поле
 > Запрос на получение информации по отдельному дополнительному полю.
 
 ```shell
@@ -1050,9 +1066,9 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
- 
+
 > Запрос на получение отдельного Прайс-листа с указанным id.
 
 ```shell
@@ -1097,6 +1113,8 @@ curl -X GET
   "externalCode": "m-9OZzfBiAjolWhnBjTff0",
   "moment": "2016-11-21 15:51:16",
   "applicable": true,
+  "printed": true,
+  "published": true,
   "organization": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/organization/95920812-9609-11e6-8af5-581e000000d4",
@@ -1137,7 +1155,7 @@ curl -X GET
 }
 ```
 
-### Изменить Прайс-лист 
+### Изменить Прайс-лист
 Запрос на обновление Прайс-листа с указанным id.
 В теле запроса можно указать только те поля, которые необходимо изменить у Прайс-листа, кроме тех, что
 помечены `Только для чтения` в описании [атрибутов Прайс-листа](../documents/#dokumenty-prajs-list).
@@ -1145,7 +1163,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 
 > Пример запроса на обновление отдельного Прайс-листа.
@@ -1217,6 +1235,8 @@ curl -X GET
     }
   },
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/312cc207-afe9-11e6-8af5-581e0000002c/positions",
@@ -1372,6 +1392,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/28bd7720-afee-11e6-8af5-581e00000093/positions",
@@ -1527,6 +1549,8 @@ curl -X GET
     }
   ],
   "created": "2007-02-07 17:16:41",
+  "printed": true,
+  "published": true,
   "positions": {
     "meta": {
       "href": "http://online.moysklad.ru/api/remap/1.3/entity/pricelist/28bd7720-afee-11e6-8af5-581e00000093/positions",
@@ -1591,10 +1615,10 @@ curl -X GET
 
 ```
 
-### Позиции Прайс-листа 
+### Позиции Прайс-листа
 Отдельный ресурс для управления позициями Прайс-листа. С его помощью вы можете управлять позициями большого документа, количество строк в котором превышает лимит на количество строк, сохраняемых вместе с документом. Этот лимит равен 1000. Более подробно о лимитах на количество строк документа и работе с большими документами можно прочитать [тут](../#mojsklad-json-api-obschie-swedeniq-rabota-s-poziciqmi-dokumentow).
 
-### Получить позиции Прайс-листа 
+### Получить позиции Прайс-листа
 Запрос на получение списка всех позиций данного Прайс-листа.
 
 | Название  | Тип | Описание                    |
@@ -1606,7 +1630,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
@@ -1695,7 +1719,7 @@ curl -X GET
 }
 ```
 
-### Создать позицию Прайс-листа 
+### Создать позицию Прайс-листа
 Запрос на создание новой позиции в Прайс-листе.
 Для успешного создания необходимо в теле запроса указать следующие поля:
 
@@ -1705,7 +1729,7 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: 7944ef04-f831-11e5-7a69-971500188b19* id Прайс-листа.|
 
 > Пример создания одной позиции в Прайс-листе.
@@ -1871,10 +1895,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа.|
- 
+
 > Запрос на получение отдельной позиции Прайс-листа с указанным id.
 
 ```shell
@@ -1914,14 +1938,14 @@ curl -X GET
 
 ```
 
-### Изменить позицию 
+### Изменить позицию
 Запрос на обновление отдельной позиции Прайс-листа. Для обновления позиции нет каких-либо
- обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
+обязательных для указания в теле запроса полей. Только те, что вы желаете обновить.
 
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа.|
 
@@ -1977,10 +2001,10 @@ curl -X GET
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**id** |  `string` (required) *Example: d72b4281-b000-11e6-8af5-581e00000074* id Прайс-листа.|
 |**positionID**|  `string` (required) *Example: 9560e3e3-9609-11e6-8af5-581e00000008* id позиции Прайс-листа.|
- 
+
 > Запрос на удаление позиции Прайс-листа с указанным id.
 
 ```shell
