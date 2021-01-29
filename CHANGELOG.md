@@ -7,10 +7,11 @@
 ### Документация
 - Удалено описание полей объекта доп. полей из документов. 
   Его по-прежнему можно найти в разделе [Работа с доп. полями](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi)
+- Исправлен ряд опечаток в списке изменений
 
-### 20-01-2021
-#### Изменено
-- Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.2/documents/)
+## 20-01-2021
+### Изменено
+- Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.3/documents/)
 
 ## 18-01-2020
 ### Изменено
@@ -27,7 +28,7 @@
 - Исправлены неточности в разделе [Отчет остатки](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-ostatki)
 - Описание ограничений в [воркбуке](https://dev.moysklad.ru/doc/api/remap/1.3/workbook/#workbook)
 - Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
-  и тип полей `minPrice`, `buyPrice` c Double а Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
+  и тип полей `minPrice`, `buyPrice` c Double на Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 ## 17-12-2020
 ### Изменено
@@ -83,7 +84,7 @@
 
 ## 21-10-2020
 ### Изменено
-- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq)
+- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
 
 ## 19-09-2020
 ### Добавлено
@@ -104,7 +105,7 @@
 
 ## 18-09-2020
 ### Добавлены
-- Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-jurlico)
+- Новые поля `directorPosition`, `directorSign`, `chiefAccountSign`, `stamp` в [Юрлице](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-jurlico)
 
 ## 16-09-2020
 ### Добавлено
