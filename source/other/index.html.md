@@ -9,8 +9,8 @@ toc_footers:
   - <a href='https://github.com/moysklad/java-remap-1.3-doc/issues'>Сообщите об ошибке</a>
 
 includes:
-  - audit
-  - notification
+  - other/audit
+  - other/notification
   
 search: true
 ---  
