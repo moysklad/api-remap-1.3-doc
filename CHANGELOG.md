@@ -30,6 +30,10 @@
 - Исправлен http метод в запросе на удаление группы товаров с GET на DELETE в [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow-udalit-gruppu-towarow)
   и тип полей `minPrice`, `buyPrice` c Double на Object в [Товаре](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
+## 21-12-2020
+### Добавлено
+- добавлен код [ошибки 14012](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-dop-polq)
+
 ## 17-12-2020
 ### Изменено
 - Исправлен тип qrBankPercent с Int на Double в [Точке продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
