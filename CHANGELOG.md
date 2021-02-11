@@ -3,7 +3,7 @@
 
 ## 11-02-2021
 ### Изменено
-- Исправлены битые ссылки в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.2/#mojsklad-json-api-obschie-swedeniq)
+- Исправлены битые ссылки в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
 
 ## 04-02-2021
 ### Изменено
