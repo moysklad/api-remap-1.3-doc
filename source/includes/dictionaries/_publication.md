@@ -70,7 +70,7 @@ curl -X GET
           "mediaType": "application/json"
         }
       },
-      "href": "https://doc.moysklad.ru/board/f4917c19-2346-11e7-1542-821d00000001/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
+      "href": "https://mskld.ru/QEF5l9HF18"
     }
   ]
 }
@@ -122,7 +122,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "href": "https://doc.moysklad.ru/board/f4917c19-2346-11e7-1542-821d00000001/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
+  "href": "https://mskld.ru/QeOwcNUdqg"
 }
 ```
 
@@ -143,7 +143,7 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "href": "https://doc.moysklad.ru/board/f4917c19-2346-11e7-1542-821d00000001/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
+  "href": "https://mskld.ru/7J8k0xCNWk"
 }
 ```
 
@@ -205,6 +205,6 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "href": "https://doc.moysklad.ru/board/f4917c19-2346-11e7-1542-821d00000001/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
+  "href": "https://mskld.ru/QS6YOArOjJ"
 }
 ```
