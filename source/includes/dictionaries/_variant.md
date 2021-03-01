@@ -1040,6 +1040,7 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/variant/metadata",
             "type": "variant",
             "mediaType": "application/json"
+          }
         },
         {
           "meta": {
@@ -1047,6 +1048,7 @@ curl -X POST
             "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/variant/metadata",
             "type": "variant",
             "mediaType": "application/json"
+          }
         }
       ]'
 ```        
