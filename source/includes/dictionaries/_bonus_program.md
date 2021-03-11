@@ -18,6 +18,7 @@
 |**earnRateRoublesToPoint**              |Int| Курс начисления|&mdash;|нет
 |**spendRatePointsToRouble**              |Int|Курс списания|&mdash;|нет
 |**maxPaidRatePercents**             |Int|Максимальный процент оплаты баллами|&mdash;|нет
+|**earnWhileRedeeming**              |Boolean|Индикатор, означающий, что нужно производить начисление баллов при их списании|&mdash;|да
 
 ### Получить все Бонусные программы
 
@@ -84,7 +85,8 @@ curl -X GET
       "active": true,
       "earnRateRoublesToPoint": 1,
       "spendRatePointsToRouble": 1,
-      "maxPaidRatePercents": 100
+      "maxPaidRatePercents": 100,
+      "earnWhileRedeeming": true
     },
     {
       "meta": {
@@ -103,7 +105,8 @@ curl -X GET
       ],
       "earnRateRoublesToPoint": 7,
       "spendRatePointsToRouble": 4,
-      "maxPaidRatePercents": 50
+      "maxPaidRatePercents": 50,
+      "earnWhileRedeeming": true
     }
   ]
 }
@@ -148,7 +151,8 @@ curl -X GET
   ],
   "earnRateRoublesToPoint": 7,
   "spendRatePointsToRouble": 4,
-  "maxPaidRatePercents": 50
+  "maxPaidRatePercents": 50,
+  "earnWhileRedeeming": true
 }
 ```
 
