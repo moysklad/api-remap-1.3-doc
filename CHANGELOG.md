@@ -6,6 +6,10 @@
 - Флаг `partialDisposal` для сущностей `Товар` и `Комплект`
 - Ошибка `16112` с описанием
 
+## 01-03-2021
+### Документация
+- Исправлен запрос в примере на [массовое удаление модификаций](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-modifikaciq-massowoe-udalenie-modifikacij)
+
 ## 11-02-2021
 ### Изменено
 - Исправлены битые ссылки в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
