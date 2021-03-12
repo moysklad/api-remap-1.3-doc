@@ -4,6 +4,7 @@
 ## 11-03-2021
 ### Добавлено
 - Возможность выполнять запросы [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen) 
+- Описание ошибок [61000-61006](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-asinhronnogo-obmena)
 
 ## 01-03-2021
 ### Документация
