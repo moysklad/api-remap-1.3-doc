@@ -25,6 +25,15 @@
 |**bonusValue**             |Int|Количество бонусных баллов|&mdash;|нет
 |**organization**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|&mdash;|нет
 |**transactionType**              |Enum|Тип бонусной операции. Возможные значения: `EARNING`, `SPENDING`|Необходимое при создании|да
+|**transactionStatus**  |Enum |Статус бонусной операции. Возможные значения: `WAIT_PROCESSING`, `COMPLETED`, `CANCELED` |Только для чтения |да
+|**executionDate**      |DateTime |Дата начисления бонусной операции. |&mdash; |да
+|**categoryType**       |Enum |Категория бонусной операции. Возможные значения: `REGULAR`, `WELCOME` |Только для чтения |да
+
+##### Аттрибут "executionDate".
+При создании или редактировании бонусной операции начисления данный аттрибут позволяет указать дату обработки операции.
+Если аттрибут не указан, то операция будет обработана сразу, без задержки.
+
+Для возможности указания даты обработки в будущем должна быть включена тарифная опция "Расширенная бонусная программа".
 
 ##### Атрибуты доступные для фильтрации
 
@@ -143,7 +152,10 @@ curl -X GET
         }
       },
       "bonusValue": 15,
-      "transactionType": "EARNING"
+      "transactionType": "EARNING",
+      "transactionStatus": "COMPLETED",
+      "executionDate": "2021-05-03 12:20:32",
+      "categoryType": "REGULAR"
     },
     {
       "meta": {
@@ -198,7 +210,10 @@ curl -X GET
         }
       },
       "bonusValue": 1235,
-      "transactionType": "EARNING"
+      "transactionType": "EARNING",
+      "transactionStatus": "COMPLETED",
+      "executionDate": "2021-05-03 12:20:32",
+      "categoryType": "REGULAR"
     },
     {
       "meta": {
@@ -253,7 +268,10 @@ curl -X GET
         }
       },
       "bonusValue": 100500,
-      "transactionType": "SPENDING"
+      "transactionType": "SPENDING",
+      "transactionStatus": "COMPLETED",
+      "executionDate": "2021-05-03 12:20:32",
+      "categoryType": "REGULAR"
     }
   ]
 }
@@ -372,7 +390,10 @@ curl -X GET
     }
   },
   "bonusValue": 15,
-  "transactionType": "EARNING"
+  "transactionType": "EARNING",
+  "transactionStatus": "COMPLETED",
+  "executionDate": "2021-05-03 12:20:32",
+  "categoryType": "REGULAR"
 }
 ```
 
@@ -508,7 +529,10 @@ curl -X GET
       }
     },
     "bonusValue": 15,
-    "transactionType": "EARNING"
+    "transactionType": "EARNING",
+    "transactionStatus": "COMPLETED",
+    "executionDate": "2021-05-03 12:20:32",
+    "categoryType": "REGULAR"
   },
   {
     "meta": {
@@ -563,7 +587,10 @@ curl -X GET
       }
     },
     "bonusValue": 1235,
-    "transactionType": "EARNING"
+    "transactionType": "EARNING",
+    "transactionStatus": "COMPLETED",
+    "executionDate": "2021-05-03 12:20:32",
+    "categoryType": "REGULAR"
   },
   {
     "meta": {
@@ -618,7 +645,10 @@ curl -X GET
       }
     },
     "bonusValue": 100500,
-    "transactionType": "SPENDING"
+    "transactionType": "SPENDING",
+    "transactionStatus": "COMPLETED",
+    "executionDate": "2021-05-03 12:20:32",
+    "categoryType": "REGULAR"
   }
 ]
 ```
@@ -769,7 +799,10 @@ curl -X GET
     }
   },
   "bonusValue": 15,
-  "transactionType": "EARNING"
+  "transactionType": "EARNING",
+  "transactionStatus": "COMPLETED",
+  "executionDate": "2021-05-03 12:20:32",
+  "categoryType": "REGULAR"
 }
 ```
 
@@ -861,6 +894,9 @@ curl -X GET
     }
   },
   "bonusValue": 15524,
-  "transactionType": "SPENDING"
+  "transactionType": "SPENDING",
+  "transactionStatus": "COMPLETED",
+  "executionDate": "2021-05-03 12:20:32",
+  "categoryType": "REGULAR"
 }
 ```
