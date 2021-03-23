@@ -22,7 +22,7 @@
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true"
+  "https://online.moysklad.ru/api/remap/1.3/report/stock/bystore?async=true"
   -H "Authorization: Bearer <Access-Token>"
 ```
 
@@ -32,8 +32,8 @@ curl -X GET
 Без тела
 
 Заголовки:
-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result
-Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089
+Location: https://online.moysklad.ru/api/remap/1.3/async/498b8673-0308-11e6-9464-e4de00000089/result
+Content-Location: https://online.moysklad.ru/api/remap/1.3/async/498b8673-0308-11e6-9464-e4de00000089
 ```
 
 Делаем запрос остатков с параметром `async=true`. Параметры запроса **limit** и **offset** указывать не нужно, так как отчет будет построен полностью. 
@@ -47,7 +47,7 @@ Content-Location: https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-1
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089"
+  "https://online.moysklad.ru/api/remap/1.3/async/498b8673-0308-11e6-9464-e4de00000089"
   -H "Authorization: Bearer <Access-Token>"
 ```
 
@@ -59,15 +59,15 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/98fa7086-8aa1-11e8-7210-075e0000002c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/98fa7086-8aa1-11e8-7210-075e0000002c",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=98fa7086-8aa1-11e8-7210-075e0000002c"
       }
   },
   "state" : "PROCESSING",
-  "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true"
+  "request": "https://online.moysklad.ru/api/remap/1.3/report/stock/bystore?async=true"
 }
 ```
 
@@ -79,16 +79,16 @@ curl -X GET
   "accountId": "84e60e93-f504-11e5-8a84-bae500000008",
   "owner": {
       "meta": {
-          "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/98fa7086-8aa1-11e8-7210-075e0000002c",
-          "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/98fa7086-8aa1-11e8-7210-075e0000002c",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
           "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=98fa7086-8aa1-11e8-7210-075e0000002c"
       }
   },
   "state" : "DONE",
-  "request": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true",
-  "resultUrl": "https://online.moysklad.ru/api/remap/1.2/async/f97aa1fb-2e58-11e6-8a84-bae500000002/result",
+  "request": "https://online.moysklad.ru/api/remap/1.3/report/stock/bystore?async=true",
+  "resultUrl": "https://online.moysklad.ru/api/remap/1.3/async/f97aa1fb-2e58-11e6-8a84-bae500000002/result",
   "deletionDate": "2021-02-16 16:21:09" 
 }
 ```
@@ -104,40 +104,58 @@ curl -X GET
 
 ```shell
 curl -X GET
-  "https://online.moysklad.ru/api/remap/1.2/async/498b8673-0308-11e6-9464-e4de00000089/result"
+  "https://online.moysklad.ru/api/remap/1.3/async/498b8673-0308-11e6-9464-e4de00000089/result"
   -H "Authorization: Bearer <Access-Token>"
 ```
 
 > Ответ
 
+```shell
+Без тела
+
+Заголовки:
+Location: https://123.selcdn.ru/batch-prod/batch/002b9772-8583-11eb-ac12-000c00000001/apiasynctaskresult/4d363a5f-ae72-4a14-9951-7038a4a67060?temp_url_sig=a24e12250f7428c2cc212362cebc97ed43333491&temp_url_expires=1616516805&filename=asynctask_d1746c6c-8bf3-11eb-ac12-000b00000001_result.json
+```
+
+Когда статус задачи принимает значение `DONE`, запрос на получение статуса выполнения задачи содержит дополнительно 2 поля:
+
+* **resultUrl** - URL, по которому доступен результат выполненной задачи. 
+Совпадает с URL из заголовка **Location** ответа на запрос создания задачи.
+* **deletionDate** - дата, после которой результат задачи станет недоступен. Время жизни результата выполнения задачи составляет 1 час.
+
+Результат запроса по URL из поля **resultUrl** является перенаправлением со статусом `302 FOUND`, и в заголовке **Location** находится ссылка на файл результата задачи. 
+С момента получения ссылка действительна 5 минут. 
+
+> Пример полученного отчета
+
 ```json
 {
   "context": {
     "employee": {
-      "href": "https://online.moysklad.ru/api/remap/1.2/context/employee",
+      "href": "https://online.moysklad.ru/api/remap/1.3/context/employee",
       "type": "employee",
       "mediaType": "application/json"
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.2/report/stock/bystore?async=true",
+    "href": "https://online.moysklad.ru/api/remap/1.3/report/stock/bystore?async=true",
     "type": "stockbystore",
     "mediaType": "application/json",
-    "size": 3
+    "size": 2135
   },
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/c02e3a5c-007e-11e6-9464-e4de00000006?expand=supplier",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/c02e3a5c-007e-11e6-9464-e4de00000006?expand=supplier",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json"
       },
       "stockByStore": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/86c857d6-0302-11e6-9464-e4de00000072",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/store/86c857d6-0302-11e6-9464-e4de00000072",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json"
           },
@@ -148,8 +166,8 @@ curl -X GET
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json"
           },
@@ -160,18 +178,19 @@ curl -X GET
         }
       ]
     },
+    ...
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.2/entity/product/cc99c055-fa34-11e5-9464-e4de00000069?expand=supplier",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/product/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/cc99c055-fa34-11e5-9464-e4de00000069?expand=supplier",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
         "type": "product",
         "mediaType": "application/json"
       },
       "stockByStore": [
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/86c857d6-0302-11e6-9464-e4de00000072",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/store/86c857d6-0302-11e6-9464-e4de00000072",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json"
           },
@@ -182,8 +201,8 @@ curl -X GET
         },
         {
           "meta": {
-            "href": "https://online.moysklad.ru/api/remap/1.2/entity/store/850ee995-f504-11e5-8a84-bae500000160",
-            "metadataHref": "https://online.moysklad.ru/api/remap/1.2/entity/store/metadata",
+            "href": "https://online.moysklad.ru/api/remap/1.3/entity/store/850ee995-f504-11e5-8a84-bae500000160",
+            "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/store/metadata",
             "type": "store",
             "mediaType": "application/json"
           },
@@ -198,11 +217,5 @@ curl -X GET
 }
 ```
 
-Когда статус задачи принимает значение `DONE`, запрос на получение статуса выполнения задачи содержит дополнительно 2 поля:
-
-* **resultUrl** - URL, по которому доступен результат выполненной задачи. 
-Совпадает с URL из заголовка **Location** ответа на запрос создания задачи.
-* **deletionDate** - дата, после которой результат задачи станет недоступен. Время жизни результата выполнения задачи составляет 1 час.
-
-Результат запроса по URL из поля **resultUrl** содержит тело, которое является требуемым отчетом. 
+Теперь, чтобы получить требуемый отчет, остается отправить GET запрос на URL из заголовка **Location** (большинство HTTP клиентов делают это автоматически).
 Полученный отчет имеет незначительные отличия от синхронного варианта: **meta** не содержит полей **limit** и **offset**, а массив **rows** не ограничивается 1000 элементов. 
