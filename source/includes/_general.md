@@ -70,7 +70,7 @@ curl -X POST
 **Object**|Представляет сущность с вложенными полями.
 **Meta**|Представляет объект в формате [Метаданных](#mojsklad-json-api-obschie-swedeniq-metadannye).
 **Array(Type)**|Массив объектов/значений. Type - тип элементов массива.
-**MetaArray**|Объект с полями **meta** и **rows**, где **rows** - массив объектов. Значения **rows** можно получить с помощью параметра запроса **expand** соответствующего поля.
+**MetaArray**|Объект с полями **meta** и **rows**, где **rows** - массив объектов. Элементы массива **rows** можно запросить, используя [параметр запроса expand](../#mojsklad-json-api-obschie-swedeniq-zamena-ssylok-ob-ektami-s-pomosch-u-expand) соответствующего поля.
 **Enum**|Представляет строку, принимающую константное множество значений.
 
 ### Метаданные
@@ -206,7 +206,8 @@ curl -X GET
 
 ### Работа с дополнительными полями
 
-JSON API позволяет создавать, обновлять и удалять конкретные значения дополнительных полей, а также сами поля.
+Дополнительные поля позволяют расширить набор свойств некоторых сущностей путем добавления собственных типизированных полей.
+JSON API позволяет создавать, обновлять и удалять дополнительные поля и их значения.  
 
 Список сущностей, у которых есть доп. поля:
 
@@ -249,19 +250,19 @@ JSON API позволяет создавать, обновлять и удаля
   - [Полученный отчет комиссионера](documents/#dokumenty-poluchennyj-otchet-komissionera)
   - [Выданный отчет комиссионера](documents/#dokumenty-vydannyj-otchet-komissionera)
 
-Посмотреть все созданные в основном интерфейсе доп. поля можно с помощью запроса на получение метаданных Сущности.
-Если для объекта определены доп. поля, то ответ содержит описание доп. полей в виде коллекции **attributes**.
+Посмотреть все созданные доп. поля можно с помощью запроса на получение метаданных сущности.
+Ответ будет содержать описание доп. полей в виде коллекции **attributes**, если указанная сущность поддерживает работу с доп. полями.
 
 #### Атрибуты описания доп. поля
 
-| Название  | Тип | Описание                    | 
-| --------- |:----|:----------------------------|
-|**meta**|[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|
-|**id** |UUID|ID доп. поля|
-|**name**|String(255)|Наименование доп. поля|
-|**type**|Enum|Тип доп. поля|
-|**required**|Boolean|Является ли доп. поле обязательным|
-|**description**|String(4096)|Описание доп. поля|
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
+| --------- |:----|:----------------------------|:----------------|:------------------------|
+|**meta**|[Meta](#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на метаданные доп. поля|&mdash;|да
+|**id** |UUID|ID доп. поля|Только для чтения|да
+|**name**|String(255)|Наименование доп. поля|Необходимое при создании|да
+|**type**|Enum|Тип доп. поля|Необходимое при создании. После заполнения недоступен для изменения|да
+|**required**|Boolean|Является ли доп. поле обязательным|&mdash;|да
+|**description**|String(4096)|Описание доп. поля|&mdash;|нет
 
 #### Атрибуты доп. поля со значением
 
@@ -312,7 +313,7 @@ JSON API позволяет создавать, обновлять и удаля
 | [Сотрудник]               | employee                               |
 | Имя_пользовательского справочника| customentity                    |
 
-Если в качестве типа доп. поля выбран пользовательский справочник, то в составе объекта данного
+Если в качестве типа доп. поля выбран [Пользовательский справочник](../dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik), то в составе объекта данного
 доп. поля появится новый атрибут **customEntityMeta** являющийся ссылкой на метаданные этого справочника.
 Полный набор атрибутов доп. поля будет выглядеть следующим образом:
 
@@ -792,11 +793,11 @@ curl -X PUT
             "name": "обновленное доп. поле типа Сотрудник",
             "value": {
               "meta": {
-                "href": "http://localhost/api/remap/1.3/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
-                "metadataHref": "http://localhost/api/remap/1.3/entity/employee/metadata",
+                "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
                 "type": "employee",
                 "mediaType": "application/json",
-                "uuidHref": "http://localhost/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
+                "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
               }                    
             }
           },
@@ -829,7 +830,7 @@ curl -X PUT
   "attributes": [
     {
       "meta": {
-        "href": "http://localhost/api/remap/1.3/entity/demand/metadata/attributes/569a237e-96c9-11eb-c0a8-100c000000be",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/demand/metadata/attributes/569a237e-96c9-11eb-c0a8-100c000000be",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -838,17 +839,17 @@ curl -X PUT
       "type": "employee",
       "value": {
         "meta": {
-          "href": "http://localhost/api/remap/1.3/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
-          "metadataHref": "http://localhost/api/remap/1.3/entity/employee/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/employee/4266864a-96c9-11eb-c0a8-100c00000034",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/employee/metadata",
           "type": "employee",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
+          "uuidHref": "https://online.moysklad.ru/app/#employee/edit?id=4266864a-96c9-11eb-c0a8-100c00000034"
         }
       }
     },
     {
       "meta": {
-        "href": "http://localhost/api/remap/1.3/entity/demand/metadata/attributes/7bc555d8-6501-11e8-2134-433200000000",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/demand/metadata/attributes/7bc555d8-6501-11e8-2134-433200000000",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
@@ -859,7 +860,7 @@ curl -X PUT
     },
     {
       "meta": {
-        "href": "http://localhost/api/remap/1.3/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/demand/metadata/attributes/986314b4-6500-11e8-9464-e4de00000048",
         "type": "attributemetadata",
         "mediaType": "application/json"
       },
