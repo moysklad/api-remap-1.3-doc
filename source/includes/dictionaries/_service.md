@@ -29,6 +29,7 @@
 |**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да
 |**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да
 |**vat**         |Int|НДС %|&mdash;|нет
+|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет
@@ -215,6 +216,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 6,
+      "useParentVat": false,
       "effectiveVat": 6,
       "discountProhibited": false,
       "minPrice": {
@@ -354,6 +356,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 10,
+      "useParentVat": false,
       "effectiveVat": 10,
       "minPrice": {
         "value": 500,
@@ -461,6 +464,7 @@ curl -X GET
             "externalCode": "delCode",
             "description": "Доставка выбранного товара",
             "vat": 10,
+            "useParentVat": false,
             "effectiveVat": 10,
             "discountProhibited": false,
             "minPrice": {
@@ -575,6 +579,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 10,
+  "useParentVat": false,
   "effectiveVat": 10,
   "discountProhibited": false,
   "minPrice": {
@@ -747,7 +752,8 @@ curl -X GET
   "code": "pumpkin2",
   "externalCode": "5fZe-Qyji8mSwoHYs7kSA2",
   "archived": false,
-  "pathName": ""
+  "pathName": "",
+  "useParentVat": true
 }
 ```
 
@@ -899,6 +905,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 6,
+  "useParentVat": false,
   "effectiveVat": 6,
   "discountProhibited": false,
   "minPrice": {
@@ -1188,7 +1195,8 @@ curl -X GET
     "code": "pumpkin2",
     "externalCode": "5fZe-Qyji8mSwoHYs7kSA2",
     "archived": false,
-    "pathName": ""
+    "pathName": "",
+    "useParentVat": true
   },
   {
     "meta": {
@@ -1224,6 +1232,7 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 11,
+    "useParentVat": false,
     "effectiveVat": 11,
     "discountProhibited": false,
     "minPrice": {
@@ -1519,6 +1528,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 6,
+  "useParentVat": false,
   "effectiveVat": 6,
   "discountProhibited": false,
   "minPrice": {
@@ -1769,6 +1779,7 @@ curl -X GET
    "archived": false,
    "pathName": "",
    "vat": 11,
+   "useParentVat": false,
    "effectiveVat": 11,
    "discountProhibited": false,
    "minPrice": {
@@ -2005,6 +2016,7 @@ curl -X GET
   "archived": false,
   "pathName": "Услуги компании",
   "vat": 6,
+  "useParentVat": false,
   "effectiveVat": 6,
   "productFolder": {
     "meta": {
