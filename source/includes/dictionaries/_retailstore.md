@@ -57,6 +57,7 @@
 |**orderTaxSystem**      |Enum| Код системы налогообложения для заказов. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-kod-sistemy-nalogooblozheniq-dlq-zakazow)|&mdash;|да|
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да
+|**tobaccoMrcControlType** |Enum| Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii) |&mdash;|да|
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `AllowCreateProducts` имеет значение `true`|&mdash;|да
 |**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет
 |**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет
@@ -116,6 +117,14 @@
 | **ANY** | Любая мастер касса
 | **SAME_GROUP** | Только кассы из того же отдела
 | **CHOSEN** | Выбранные кассы из списка в поле `masterRetailStores`  
+
+##### Тип контроля МРЦ для табачной продукции
+
+| Название          | Описание                                                  |
+| ----------------- |:----------------------------------------------------------|
+| **USER_PRICE**    | Не контролировать МРЦ
+| **MRC_PRICE**     | Продавать по МРЦ указанной на пачке
+| **SAME_PRICE**    | Запрещать продажу, если цена продажи не совпадает с МРЦ
 
 ##### Приоритет отправки электронного чека
 
@@ -463,6 +472,7 @@ curl -X GET
       "priorityOfdSend" : "email",
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
+      "tobaccoMrcControlType" : "USER_PRICE",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -677,6 +687,7 @@ curl -X GET
       "priorityOfdSend" : "email",
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
+      "tobaccoMrcControlType" : "USER_PRICE",
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -814,6 +825,7 @@ curl -X GET
               "sellReserves" : true,
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
+              "tobaccoMrcControlType" : "USER_PRICE",
               "allowCreateProducts" : false,
               "productFolders" : [{
                 "meta": {
@@ -998,6 +1010,7 @@ curl -X GET
   "priorityOfdSend" : "email",
   "allowCustomPrice" : true,
   "allowSellTobaccoWithoutMRC" : true,
+  "tobaccoMrcControlType" : "USER_PRICE",
   "allowCreateProducts" : false,
   "productFolders" : {
     "meta" : {
@@ -1189,6 +1202,7 @@ curl -X GET
   "ofdEnabled" : true,
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
+  "tobaccoMrcControlType" : "SAME_PRICE",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
@@ -1362,6 +1376,7 @@ curl -X GET
     "ofdEnabled" : true,
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
+    "tobaccoMrcControlType" : "SAME_PRICE",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1485,6 +1500,7 @@ curl -X GET
     "ofdEnabled" : true,
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
+    "tobaccoMrcControlType" : "USER_PRICE",
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1894,6 +1910,7 @@ curl -X PUT
   "ofdEnabled" : true,
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
+  "tobaccoMrcControlType" : "SAME_PRICE",
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
