@@ -20,7 +20,3 @@
     - поле href переименовано в downloadHref
     - значение поле type изменено с `image` на `file`
 - Изображение [сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik) теперь не image, а avatar.
-- Для атрибутов
-  AttributeMetadata.required ,
-  AgentAccount.isDefault, WebHook.enabled, Product.weighed
-  при передаче null значения выводится ошибка 2016
