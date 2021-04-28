@@ -8,6 +8,14 @@
 
 Список изменений в версии 1.3 с момента её создания можно найти в [github репозитории](https://github.com/moysklad/api-remap-1.3-doc/blob/master/CHANGELOG.md)
 
+## Нотификация в изменениях API
+Чтобы узнавать об изменениях в документации и api, вы можете подписаться на нотификации об изменении документации в github.
+Для этого:
+
+- установите любой RSS reader (например, [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) для chromium или [FeedBro](https://addons.mozilla.org/en-US/firefox/addon/feedbroreader) для Firefox)
+- добавьте https://github.com/moysklad/api-remap-1.3-doc/commits/master.atom
+- при любом изменении документации придёт нотификация и можно посмотреть, что именно изменилось.
+
 ## Отличия API Remap 1.3 от API Remap 1.2
 ### Добавлено
 - В [изображениях](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-izobrazhenie) и

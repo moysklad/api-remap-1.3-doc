@@ -19,6 +19,7 @@ includes:
   - workbook/workbook_attributes
   - workbook/workbook_images
   - workbook/workbook_files
+  - workbook/workbook_async
   
 search: true
 ---  

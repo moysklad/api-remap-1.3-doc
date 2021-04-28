@@ -26,7 +26,7 @@
 |**name**               |String(255)|Наименование Юрлица|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий к Юрлицу |&mdash;|нет
 |**code**               |String(255)|Код Юрлица |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Юрлица |Только для чтения| да
+|**externalCode**       |String(255)|Внешний код Юрлица |&mdash;| да
 |**archived**           |Boolean|Добавлено ли Юрлицо в архив|&mdash;| да
 |**created**            |DateTime|Дата создания|&mdash;| да
 |**actualAddress**      |String(255)|Фактический адрес Юрлица  |&mdash;| нет
@@ -52,13 +52,13 @@
 |**ogrn**             |String(255)|ОГРН|&mdash;|нет
 |**ogrnip**           |String(255)|ОГРНИП|&mdash;|нет
 |**okpo**             |String(255)|ОКПО|&mdash;|нет
-|**certificateNumber**|[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Номер свидетельства|&mdash;|нет
+|**certificateNumber**|String(255)|Номер свидетельства|&mdash;|нет
 |**certificateDate**  |DateTime|Дата свидетельства|&mdash;|нет
 |**email**            |String(255)|Адрес электронной почты |&mdash;| нет
 |**phone**            |String(255)|Номер городского телефона |&mdash;| нет
 |**fax**              |String(255)|Номер факса |&mdash;| нет
-|**accounts**         |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Метаданные счетов юрлица|&mdash;| да
-|**attributes**       |Array([Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye))|Массив метаданных дополнительных полей юрлица|&mdash;|нет
+|**accounts**         |Array(Object)|Метаданные счетов юрлица|&mdash;| да
+|**attributes**       |Array(Object)|Массив метаданных дополнительных полей юрлица|&mdash;|нет
 |**isEgaisEnable**    |Boolean|Включен ли ЕГАИС для данного юрлица|&mdash;| нет
 |**fsrarId**          |String(255)|Идентификатор в ФСРАР|&mdash;|нет
 |**payerVat**         |Boolean|Является ли данное юрлицо плательщиком НДС|&mdash;| нет
@@ -80,7 +80,7 @@
 |**region**      |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет
 |**city**      |String(255)|Город|&mdash;|нет
 |**street**      |String(255)|Улица|&mdash;|нет
-|**house**      |String(30)|Дом|&mdash;|да
+|**house**      |String(30)|Дом|&mdash;|нет
 |**apartment**      |String(30)|Квартира|&mdash;|нет
 |**addInfo**      |String(255)|Другое|&mdash;|нет
 |**comment**      |String(255)|Комментарий|&mdash;|нет
@@ -621,7 +621,7 @@ curl -X GET
          "mediaType" : "application/octet-stream"
      },
      "miniature" : {
-       "href" : "https://online.moysklad.ru/api/remap/1.2/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
+       "href" : "https://online.moysklad.ru/api/remap/1.3/download/9cccb42b-652e-4e9d-b192-4eabe1823383?miniature=true",
        "mediaType" : "image/png"
      }
   }
@@ -1148,7 +1148,7 @@ curl -X POST
 | Название  | Тип | Описание                    |
 | --------- |:----|:----------------------------|
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)| Ссылка на метаданные юрлиц
-|**attributes** |Array(Meta)| Массив объектов доп. полей юрлиц в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
+|**attributes** |Array(Object)| Массив объектов доп. полей юрлиц в формате [Метаданных](../#mojsklad-json-api-obschie-swedeniq-metadannye)
 |**createShared** |Boolean| Создавать новые юрлица с меткой "Общий"
 
 Структура отдельного объекта, представляющего доп. поле подробно описана в разделе [Работа с дополнительными полями](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi).
