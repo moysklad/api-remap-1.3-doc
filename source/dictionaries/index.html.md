@@ -24,6 +24,7 @@ includes:
   - dictionaries/contract
   - dictionaries/project
   - dictionaries/companysettings
+  - dictionaries/companysubscription
   - dictionaries/usersettings
   - dictionaries/expenseitem
   - dictionaries/country

@@ -1,10 +1,36 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 19-04-2021
+## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+
+## 28-04-2021
+### Документация
+- Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-podpiska-kompanii)
+
+## 28-04-2021
+### Изменено
+- Для атрибутов
+  AttributeMetadata.required ,
+  AgentAccount.isDefault, WebHook.enabled, Product.weighed
+  при передаче null значения выводится ошибка 2016
+
+## 28-04-2021
+### Изменено
+- Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-postawschiku): 
+ добавлена проверка совпадения значения поля `vatEnabled` при создании и обновлении документа на основании [Приемки](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-priemka)
+
+## 28-04-2021
+### Изменено
+- Для документа [`Оприходования`](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-oprihodowanie)
+теперь учитывается пермиссия `Видеть себестоимость, цену закупки и прибыль товаров`. При отсутствии пермисcии в json представлении 
+документа будет отсутствовать поле `sum`, а в позициях не будет поля `price`.
+
+## 22-04-2021
+### Документация
+- Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
 
 ## 13-04-2021
 ### Добавлено
@@ -50,6 +76,11 @@
 ### Добавлено
 - Флаг `partialDisposal` для сущностей `Товар` и `Комплект`
 - Ошибка `16112` с описанием
+
+## 23-03-2021
+### Добавлено
+- Поле `postponedBonusesDelayDays` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
+- Поля `transactionStatus`, `executionDate` и `categoryType` в [Бонусные операции](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-operaciq)
 
 ## 01-03-2021
 ### Документация
