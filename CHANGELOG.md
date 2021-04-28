@@ -1,6 +1,11 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 29-04-2021
+### Добавлено
+- Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
+ [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+
 ## 28-04-2021
 ### Документация
 - Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-podpiska-kompanii)
