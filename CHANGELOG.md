@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 30-04-2021
+### Исправлено
+- Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
+
 ## 29-03-2021
 ### Добавлено
 - Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
