@@ -21,6 +21,10 @@
   AgentAccount.isDefault, WebHook.enabled, Product.weighed
   при передаче null значения выводится ошибка 2016
 
+## 06-05-2021
+### Изменено
+- Исправлены ошибки в обязательности полей в [Заказе покупателя](https://dev.moysklad.ru/doc/api/remap/1.2/documents/#dokumenty-zakaz-pokupatelq)
+
 ## 28-04-2021
 ### Изменено
 - Исправлена работа с документом [Возврат поставщику](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-postawschiku): 
