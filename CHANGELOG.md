@@ -4,6 +4,7 @@
 ## 20-05-2021
 ### Добавлено
 - Добавлена возможность редактировать поле discounts у контрагента
+- Раскомплектовывание комплектов на составляющие компоненты при создании [шаблона заказа поставщику на основе](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-postawschiku-shablon-zakaza-postawschiku-na-osnowe)
 
 ## 17-05-2021
 ### Документация
