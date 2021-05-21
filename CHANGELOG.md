@@ -1,6 +1,14 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 21-05-2021
+### Добавлено
+- Исправлена отметка об обязательности складов для части документов
+- Добавлен новый эндпоинт для системных ролей
+- Добавлен новый эндпоинт (crud) для пользовательских ролей
+- Новый ресурс [отмены асинхронной задачи](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-otmena-asinhronnoj-zadachi)
+- Ошибка [61007](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-asinhronnogo-obmena)
+
 ## 20-05-2021
 ### Добавлено
 - Добавлена возможность редактировать поле discounts у контрагента
@@ -15,11 +23,6 @@
 - Исправлено описание атрибута `images` в товарах, комплектах и модификациях
 - Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
 - Исправлено указание на обязательность в ответе поля `owner` в сущностях
-
-## 12-05-2021
-### Добавлено
-- Новый ресурс [отмены асинхронной задачи](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-otmena-asinhronnoj-zadachi)
-- Ошибка [61007](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-asinhronnogo-obmena)
 
 ## 27-04-2021
 ### Добавлено
@@ -47,11 +50,6 @@
  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
 
 ## 28-04-2021
-### Добавлено
-- Добавлен новый эндпоинт для системных ролей
-- Добавлен новый эндпоинт (crud) для пользовательских ролей
-
-## 28-04-2021
 ### Документация
 - Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-podpiska-kompanii)
 
@@ -61,10 +59,6 @@
   AttributeMetadata.required ,
   AgentAccount.isDefault, WebHook.enabled, Product.weighed
   при передаче null значения выводится ошибка 2016
-
-## 06-05-2021
-### Изменено
-- Исправлена отметка об обязательности складов для части документов
 
 ## 28-04-2021
 ### Изменено
