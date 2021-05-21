@@ -32,6 +32,10 @@
 ### Добавлено
 - Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
 
+## 12-05-2021
+### Исправлено
+- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt)
+  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
 ## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
