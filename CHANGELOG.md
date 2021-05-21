@@ -42,6 +42,11 @@
  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
 
 ## 28-04-2021
+### Добавлено
+- Добавлен новый эндпоинт для системных ролей
+- Добавлен новый эндпоинт (crud) для пользовательских ролей
+
+## 28-04-2021
 ### Документация
 - Добавлен новый раздел [Подписка компании](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-podpiska-kompanii)
 
