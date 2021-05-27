@@ -1,6 +1,11 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 27-05-2021
+### Добавлено
+- Добавлены новые поля `authorizedHosts`, `authorizedIpNetwork`, `authorizedIpNetmask` для ограничения доступа по ip в [эндпоинт для упралвения правами сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
+- Добавлена новая ошибка [3027](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
 ## 15-04-2021
 ### Добавлено
 - Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
@@ -48,6 +53,7 @@
 ### Исправлено
 - В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt)
   и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+  
 ## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
