@@ -16,12 +16,13 @@
 
 Запрос на печать этикеток и ценников по шаблону печатной формы.
 #### Атрибуты запроса
-| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**organization** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да
-|**count**        |Int|Количество ценников/термоэтикеток. Максимальное количество - `1000`|&mdash;|да
-|**salePrice**    |Object|Цена продажи. [Подробнее тут](../dictionaries/#suschnosti-pechat-atiketok-i-cennikow-zapros-na-pechat-atiketok-i-cennikow-atributy-zaprosa-cena-prodazhi)|&mdash;|да
-|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|&mdash;|да
+
+| Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**organization** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да|нет
+|**count**        |Int|Количество ценников/термоэтикеток. Максимальное количество - `1000`|&mdash;|да|нет
+|**salePrice**    |Object|Цена продажи. [Подробнее тут](../dictionaries/#suschnosti-pechat-atiketok-i-cennikow-zapros-na-pechat-atiketok-i-cennikow-atributy-zaprosa-cena-prodazhi)|&mdash;|да|нет
+|**template**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Шаблона печати|&mdash;|да|да
 
 ##### Цена продажи
 Атрибуты вложенной сущности
@@ -33,7 +34,7 @@
 **Параметры**
 
 |Параметр   |Описание   | 
-|:&mdash;|:&mdash;|
+|:----|:----|
 |**type**|  `string` (required) *Example: product* тип сущности, для которой запрашивается печать.|
 |**id** |  `string` (required) *Example: a86708d2-f8d3-4e67-8f04-6101158da808* id сущности, для которой запрашивается печать.|
 
