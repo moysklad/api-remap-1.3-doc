@@ -18,7 +18,7 @@
 |**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Юрлица|&mdash;|да
 |**id**                 |UUID|ID Юрлица|Только для чтения|да
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да
-|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да
+|**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|нет
 |**shared**             |Boolean|Общий доступ|&mdash;|да
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да
 |**syncId**             |UUID|ID синхронизации |После заполнения недоступен для изменения|нет
@@ -26,7 +26,7 @@
 |**name**               |String(255)|Наименование Юрлица|Необходимое при создании|да
 |**description**        |String(4096)|Комментарий к Юрлицу |&mdash;|нет
 |**code**               |String(255)|Код Юрлица |&mdash;| нет
-|**externalCode**       |String(255)|Внешний код Юрлица |Только для чтения| да
+|**externalCode**       |String(255)|Внешний код Юрлица |&mdash;| да
 |**archived**           |Boolean|Добавлено ли Юрлицо в архив|&mdash;| да
 |**created**            |DateTime|Дата создания|&mdash;| да
 |**actualAddress**      |String(255)|Фактический адрес Юрлица  |&mdash;| нет
