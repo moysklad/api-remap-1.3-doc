@@ -280,7 +280,7 @@ curl -X POST
 {
     "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.3/entity/bundle/63aa9594-d13f-11e8-ac12-000b00000047?expand=components",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/bundle/metadata",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/metadata",
         "type": "bundle",
         "mediaType": "application/json",
         "uuidHref": "https://online.moysklad.ru/app/#good/edit?id=63aa8826-d13f-11e8-ac12-000b00000045"

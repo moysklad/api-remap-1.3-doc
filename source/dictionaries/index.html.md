@@ -33,6 +33,7 @@ includes:
   - dictionaries/discount
   - dictionaries/uom  
   - dictionaries/employee
+  - dictionaries/custom_role
   - dictionaries/customentity
   - dictionaries/store
   - dictionaries/organization
