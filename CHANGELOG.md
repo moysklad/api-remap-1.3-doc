@@ -3,6 +3,10 @@
 
 ## 01-06-2021
 ### Добавлено
+- Новый ресурс [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
+
+## 01-06-2021
+### Добавлено
 - Возможность получать и изменять пользовательские роли от лица приложения
 - Исправлена ошибка: при изменении пермиссий у роли сотрудника, был невозможен вход в систему
 
@@ -12,7 +16,7 @@
 
 ## 15-04-2021
 ### Добавлено
-- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
+- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha)
 
 ## 21-05-2021
 ### Документация
@@ -64,8 +68,8 @@
 
 ## 12-05-2021
 ### Исправлено
-- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-komplekt)
-  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-usluga)
+- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-komplekt)
+  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga)
 ## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
@@ -222,7 +226,7 @@
 
 ## 12-11-2020
 ### Добавлено
-- Поле `tobaccoMrcControlType` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-tochka-prodazh)
+- Поле `tobaccoMrcControlType` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
 
 ## 05-11-2020
 ### Добавлено
