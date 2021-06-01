@@ -1,13 +1,21 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 26-05-2021
+## 01-06-2021
 ### Добавлено
 - Возможность получать и изменять пользовательские роли от лица приложения
+
+## 31-05-2021
+### Добавлено
+- Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
 
 ## 15-04-2021
 ### Добавлено
 - Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
+
+## 21-05-2021
+### Документация
+- Исправлено описание пермиссий при работе с пользовательскими справочниками
 
 ## 21-05-2021
 ### Добавлено
@@ -31,6 +39,11 @@
 - Исправлено описание атрибута `images` в товарах, комплектах и модификациях
 - Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
 - Исправлено указание на обязательность в ответе поля `owner` в сущностях
+
+## 11-05-2021
+### Добавлено
+- Возможность выполнять запрос [получения Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment)
+ [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
 
 ## 27-04-2021
 ### Добавлено
@@ -86,6 +99,10 @@
 ## 22-04-2021
 ### Документация
 - Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
+
+## 23-04-2021
+### Добавлено
+- Приложение как автор [Задач](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha) и [Событий Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta)
 
 ## 13-04-2021
 ### Добавлено
