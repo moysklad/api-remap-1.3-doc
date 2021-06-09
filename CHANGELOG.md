@@ -1,7 +1,7 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 01-06-2021
+## 09-06-2021
 ### Добавлено
 - Новый ресурс [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
 
