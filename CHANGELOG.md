@@ -5,6 +5,14 @@
 ### Добавлено
 - Новый ресурс [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
 
+## 03-06-2021
+### Документация
+- Исправлено описание атрибута `pack` у позиций документов
+
+## 03-06-2021
+### Добавлено
+- Возможность перехода к соответствующему разделу с описанием ошибки по ссылке в `errors.moreInfo`
+
 ## 01-06-2021
 ### Добавлено
 - Возможность получать и изменять пользовательские роли от лица приложения
@@ -13,6 +21,14 @@
 ## 31-05-2021
 ### Добавлено
 - Добавлены поля `welcomeBonusesEnabled`, `welcomeBonusesValue`, `welcomeBonusesEnabled` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
+
+## 28-05-2021
+### Документация
+- Добавлена колонка `Expand` в таблицы описания атрибутов сущностей в разделах: "Сущности" и "Документы"
+
+## 27-05-2021
+### Добавлено
+- Добавлены новые поля `authorizedHosts`, `authorizedIpNetwork`, `authorizedIpNetmask` для ограничения доступа по ip в [эндпоинте управления правами сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
 
 ## 15-04-2021
 ### Добавлено
@@ -70,6 +86,7 @@
 ### Исправлено
 - В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-komplekt)
   и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga)
+  
 ## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
