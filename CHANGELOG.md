@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 28-06-2021
+### Добавлено
+- Пермиссии на документы маркировки в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
+
 ## 25-06-2021
 ### Добавлено
 - Новый ресурс [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
