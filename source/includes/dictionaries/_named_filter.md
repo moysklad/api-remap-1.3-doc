@@ -14,7 +14,6 @@
 сущностей пользователя.
 Для каждого типа сущности будет свой набор параметров фильтрации.
 
-Запрос на печать этикеток и ценников по шаблону печатной формы.
 #### Атрибуты сущности
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
@@ -22,7 +21,7 @@
 |**meta** |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные фильтра|&mdash;|да|нет
 |**id**        |UUID|ID фильтра|Только для чтения|да|нет
 |**accountId**    |UUID|ID учетной записи|Только для чтения|да|нет
-|**owner**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|нет
+|**owner**     |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|Только для чтения|да|да
 |**name**    |String(255)|Название фильтра|Необходимое при создании|да|нет
 
 Примеры запросов:
@@ -33,7 +32,7 @@
 
 ### Получить список фильтров
 
-> Пример запроса на получение списка фильтров
+> Пример запроса на получение списка фильтров для товаров
 ```shell
   curl -X GET
     "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter"
@@ -56,7 +55,7 @@
     }
   },
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.3/entity/task/namedFilter/",
+    "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter/",
     "type": "namedFilter",
     "mediaType": "application/json",
     "size": 1,
@@ -66,8 +65,8 @@
   "rows": [
     {
       "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.3/entity/task/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/task/namedFilter/metadata",
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
+        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter/metadata",
         "type": "namedFilter",
         "mediaType": "application/json"
       },
@@ -97,7 +96,7 @@
 |**id** |  `string` (required) *Example: 736da682-ad8b-11eb-0a80-17ef000000d4* id Фильтра.|
 
 
-> Пример запроса на получение фильтра по id
+> Пример запроса на получение фильтра для товара по id
 ```shell
   curl -X GET
     "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019"
@@ -110,8 +109,8 @@
 ```json
   {
   "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.3/entity/task/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/task/namedFilter/metadata",
+    "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019",
+    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedFilter/metadata",
     "type": "namedFilter",
     "mediaType": "application/json"
   },
@@ -131,14 +130,15 @@
 ```
 ### Применение сохраненного фильтра
 
-Для применения сохраненного фильтра нужно передать в качестве параметра запроса `namedfilter` с идентификатором сохраненного фильтра.
+Средствами JSON API можно применять сохраненные фильтры ко всем [Сущностям](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/), кроме Ассортимента, и [Документам](https://dev.moysklad.ru/doc/api/remap/1.3/documents/).
+Результатом фильтрации будет список сущностей, удовлетворяющих набору условий, сохраненных в фильтре.
 
-Пример запроса на применение сохраненного фильтра
-+ `https://online.moysklad.ru/api/remap/1.2/entity/product?namedfilterid=https://online.moysklad.ru/api/remap/1.2/entity/product/namedfilter/12a8b923-692c-11e6-8a84-bae500000053`
+Для применения фильтрации необходимо в специальном параметре запроса `namedfilter` передать ссылку на нужный сохраненный фильтр.
 
-Особенности
-- нельзя применять сохраненный фильтр вместе со стандартными (определяемыми через параметр запроса `filter`)
-- только создатель может применить сохраненный фильтр (администратор не может применить фильтр, созданный другим сотрудником)
-- тип сущности, по которым идет фильтрация и тип ресурса применения должны совпадать
+Пример url с применением сохраненного фильтра:
+`https://online.moysklad.ru/api/remap/1.2/entity/product?namedfilter=https://online.moysklad.ru/api/remap/1.2/entity/product/namedFilter/b5863410-ca86-11eb-ac12-000d00000019`
 
-Применение сохраненного фильтра доступно для всех сущностей и документов
+Ограничения
+* Только создатель фильтра может его применять.
+* Сохраненный фильтр несовместим с другими средствами фильтрации, например параметром запроса `filter`.
+* Сохраненный фильтр не может быть примененн к ресурсу, который не соответствует фильтруемой сущности. Например, нельзя применить фильтр сотрудников к ресурсу продукта
