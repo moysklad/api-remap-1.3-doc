@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## XX-XX-2021
+### Добавлена
+- Возможность expand поля **masterRetailStores** у [точек продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
+
 ## 01-07-2021
 ### Исправлено
 - Исправлено описание обязательности полей отчета обороты при ответе
