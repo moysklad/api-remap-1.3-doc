@@ -49,6 +49,8 @@
 |**store** | ссылка на склад, по которому нужно произвести фильтрацию.
 |**retailStore** | ссылка на точку продаж, по которой нужно произвести фильтрацию.
 |**agentTag** | строка с названием группы контрагентов, по которой нужно произвести фильтрацию.
+|**withoutturnover** | параметр для фильтрации "Показывать товары без движения". Возможные значения: true, false.
+|**type** | строка с названием типа документа, по который нужно произвести фильтрацию. Возможные значения supply, purchasereturn, demand, salesreturn, loss, enter, move, processing, retaildemand, retailsalesreturn.
 
 Примеры фильтрации:
 
@@ -59,7 +61,8 @@
 - `filter=project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=contract=https://online.moysklad.ru/api/remap/1.3/entity/contract/7a5f0ed5-8552-11e6-8a84-bae500085742`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
-- `filter=agentTag=favorites`
+- `filter=withoutturnover=true`
+- `filter=type=supply`
 
 ### Получить Обороты по товарам
 
