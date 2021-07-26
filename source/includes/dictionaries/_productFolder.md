@@ -9,26 +9,26 @@
 + по коду Группы товаров (code)
 
 #### Атрибуты сущности
-| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|
-| --------- |:----|:----------------------------|:----------------|:------------------------|
-|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Группы товаров|&mdash;|да
-|**id**                |UUID|ID Группы товаров|Только для чтения|да
-|**accountId**         |UUID|ID учетной записи|Только для чтения|да
-|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|да
-|**shared**         |Boolean|Общий доступ|&mdash;|да
-|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да
-|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да
-|**name**         |String(255)|Наименование Группы товаров|Необходимое при создании|да
-|**description**        |String(4096)|Описание Группы товаров|&mdash;|нет
-|**code**         |String(255)|Код Группы товаров|&mdash;|нет
-|**externalCode**         |String(255)|Внешний код Группы товаров|&mdash;|да
-|**archived**        |Boolean|Добавлена ли Группа товаров в архив|Только для чтения|да
-|**pathName**         |String|Наименование Группы товаров, в которую входит данная Группа товаров|Только для чтения|да
-|**vat**         |Int|НДС %|&mdash;|нет
-|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да
-|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет
-|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на Группу товаров, в которую входит данная Группа товаров, в формате Метаданных|&mdash;|нет
-|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|&mdash;|нет
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
+|**meta**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Группы товаров|&mdash;|да|нет
+|**id**                |UUID|ID Группы товаров|Только для чтения|да|нет
+|**accountId**         |UUID|ID учетной записи|Только для чтения|да|нет
+|**owner**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные владельца (Сотрудника)|&mdash;|нет|да
+|**shared**         |Boolean|Общий доступ|&mdash;|да|нет
+|**group**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные отдела сотрудника|&mdash;|да|да
+|**updated**         |DateTime|Момент последнего обновления сущности|Только для чтения|да|нет
+|**name**         |String(255)|Наименование Группы товаров|Необходимое при создании|да|нет
+|**description**        |String(4096)|Описание Группы товаров|&mdash;|нет|нет
+|**code**         |String(255)|Код Группы товаров|&mdash;|нет|нет
+|**externalCode**         |String(255)|Внешний код Группы товаров|&mdash;|да|нет
+|**archived**        |Boolean|Добавлена ли Группа товаров в архив|Только для чтения|да|нет
+|**pathName**         |String|Наименование Группы товаров, в которую входит данная Группа товаров|Только для чтения|да|нет
+|**vat**         |Int|НДС %|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да|нет
+|**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
+|**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на Группу товаров, в которую входит данная Группа товаров, в формате Метаданных|&mdash;|нет|да
+|**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
 
 ### Код системы налогообложения
 Значения поля taxSystem.

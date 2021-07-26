@@ -8,6 +8,14 @@
 
 Список изменений в версии 1.3 с момента её создания можно найти в [github репозитории](https://github.com/moysklad/api-remap-1.3-doc/blob/master/CHANGELOG.md)
 
+## Нотификация в изменениях API
+Чтобы узнавать об изменениях в документации и api, вы можете подписаться на нотификации об изменении документации в github.
+Для этого:
+
+- установите любой RSS reader (например, [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) для chromium или [FeedBro](https://addons.mozilla.org/en-US/firefox/addon/feedbroreader) для Firefox)
+- добавьте https://github.com/moysklad/api-remap-1.3-doc/commits/master.atom
+- при любом изменении документации придёт нотификация и можно посмотреть, что именно изменилось.
+
 ## Отличия API Remap 1.3 от API Remap 1.2
 ### Добавлено
 - В [изображениях](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-izobrazhenie) и
@@ -20,6 +28,7 @@
     - поле href переименовано в downloadHref
     - значение поле type изменено с `image` на `file`
 - Изображение [сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik) теперь не image, а avatar.
+- Автором [Задач](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha), комментариев к задачам и [Событий Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta) может быть не только Сотрудник, но и Приложение
 - Поле `vat` в позициях [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/) сделано nullable для возможности различать null и 0.
 
 ### Удалено
