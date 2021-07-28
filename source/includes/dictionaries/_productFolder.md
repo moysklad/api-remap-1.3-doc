@@ -25,6 +25,7 @@
 |**archived**        |Boolean|Добавлена ли Группа товаров в архив|Только для чтения|да|нет
 |**pathName**         |String|Наименование Группы товаров, в которую входит данная Группа товаров|Только для чтения|да|нет
 |**vat**         |Int|НДС %|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Ссылка на Группу товаров, в которую входит данная Группа товаров, в формате Метаданных|&mdash;|нет|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#suschnosti-gruppa-towarow-kod-sistemy-nalogooblozheniq)|&mdash;|нет|нет
@@ -123,7 +124,8 @@ curl -X GET
       "code": "13321Fruits1",
       "externalCode": "mRQao-5IgY3soIY1EaI083",
       "archived": false,
-      "pathName": ""
+      "pathName": "",
+      "useParentVat": true
     },
     {
       "meta": {
@@ -141,6 +143,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 3,
+      "useParentVat": false,
       "effectiveVat": 3,
       "taxSystem": "GENERAL_TAX_SYSTEM"
     }
@@ -204,7 +207,8 @@ curl -X GET
   "code": "13321Fruits1",
   "externalCode": "mRQao-5IgY3soIY1EaI083",
   "archived": false,
-  "pathName": ""
+  "pathName": "",
+  "useParentVat": true
 }
 ```
 
@@ -261,6 +265,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 3,
+  "useParentVat": false,
   "effectiveVat": 3
 }
 ```
@@ -333,7 +338,8 @@ curl -X GET
     "code": "13321Fruits1",
     "externalCode": "mRQao-5IgY3soIY1EaI083",
     "archived": false,
-    "pathName": ""
+    "pathName": "",
+    "useParentVat": true
   },
   {
     "meta": {
@@ -368,6 +374,7 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 5,
+    "useParentVat": false,
     "effectiveVat": 5
   }
 ]
@@ -563,7 +570,8 @@ curl -X GET
   "code": "13321Fruits1",
   "externalCode": "mRQao-5IgY3soIY1EaI083",
   "archived": false,
-  "pathName": ""
+  "pathName": "",
+  "useParentVat": true,
 }
 ```
 
@@ -634,6 +642,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 5,
+  "useParentVat": false,
   "effectiveVat": 5
 }
 ```
