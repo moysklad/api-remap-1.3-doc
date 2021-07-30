@@ -29,3 +29,7 @@
     - значение поле type изменено с `image` на `file`
 - Изображение [сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik) теперь не image, а avatar.
 - Автором [Задач](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha), комментариев к задачам и [Событий Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta) может быть не только Сотрудник, но и Приложение
+- Поле `vat` в позициях [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/) сделано nullable для возможности различать null и 0.
+
+### Удалено
+- В сущностях [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow), [Товары](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar), [Комплекты](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/№suschnosti-komplekt), [Услуги](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga), позиции [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/) удалено поле `vatEnabled`, которое являлось способом обойти обязательность поля `vat`
