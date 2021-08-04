@@ -1,6 +1,11 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 04-08-2021
+### Добавлено
+- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-teh-karta). 
+Для этого введено новое поле **assortment**.
+
 ## 30-07-2021
 ### Добавлено
 - Добавлены атрибуты фильтрации type и withoutturnover для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
