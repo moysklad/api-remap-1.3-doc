@@ -145,15 +145,15 @@
 
 ## 27-04-2021
 ### Добавлена
-- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi) 
-
-## 22-04-2021
-### Документация
-- Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
+- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi)
 
 ## 23-04-2021
 ### Добавлено
 - Приложение как автор [Задач](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha) и [Событий Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta)
+
+## 22-04-2021
+### Документация
+- Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
 
 ## 15-04-2021
 ### Добавлено
