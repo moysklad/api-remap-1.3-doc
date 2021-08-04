@@ -67,10 +67,6 @@
 ### Добавлено
 - Добавлены новые поля `authorizedHosts`, `authorizedIpNetwork`, `authorizedIpNetmask` для ограничения доступа по ip в [эндпоинте управления правами сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
 
-## 15-04-2021
-### Добавлено
-- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha)
-
 ## 21-05-2021
 ### Документация
 - Исправлено описание пермиссий при работе с пользовательскими справочниками
@@ -98,10 +94,19 @@
 - Исправлено указание на обязательность в ответе полей `uom.accountId`, `uom.group`, `product.minimumBalance`, `country.accountId`, `demand.vatSum`, `counterparty.state`
 - Исправлено указание на обязательность в ответе поля `owner` в сущностях
 
+## 12-05-2021
+### Исправлено
+- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-komplekt)
+  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga)
+
 ## 11-05-2021
 ### Добавлено
 - Возможность выполнять запрос [получения Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment)
  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+
+## 05-05-2021
+### Добавлено
+- Информация о новом типе маркированной продукции (Молочная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 ## 27-04-2021
 ### Добавлено
@@ -111,18 +116,9 @@
 - Эндпоинт получения [списка статусов асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
 - Поле **meta** для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
 
-## 05-05-2021
+## 15-04-2021
 ### Добавлено
-- Информация о новом типе маркированной продукции (Молочная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
-
-## 29-03-2021
-### Добавлено
-- Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
-
-## 12-05-2021
-### Исправлено
-- В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-komplekt)
-  и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga)
+- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha)
   
 ## 29-04-2021
 ### Добавлено
@@ -203,15 +199,19 @@
 - Cтатья в [воркбук](https://dev.moysklad.ru/doc/api/remap/1.3/workbook/#workbook-rabota-s-asinhronnym-obmenom) 
 - Описание ошибок [61000-61006](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-asinhronnogo-obmena)
 
-## 02-03-2021
+## 29-03-2021
 ### Добавлено
-- Флаг `partialDisposal` для сущностей `Товар` и `Комплект`
-- Ошибка `16112` с описанием
+- Поле `earnWhileRedeeming` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
 
 ## 23-03-2021
 ### Добавлено
 - Поле `postponedBonusesDelayDays` в [Бонусную программу](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-programma)
 - Поля `transactionStatus`, `executionDate` и `categoryType` в [Бонусные операции](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-bonusnaq-operaciq)
+
+## 02-03-2021
+### Добавлено
+- Флаг `partialDisposal` для сущностей `Товар` и `Комплект`
+- Ошибка `16112` с описанием
 
 ## 01-03-2021
 ### Документация
@@ -245,7 +245,7 @@
 ### Изменено
 - Добавлены поля `printed` и `published` в [документах](https://dev.moysklad.ru/doc/api/remap/1.3/documents/)
 
-## 18-01-2020
+## 18-01-2021
 ### Изменено
 - Для доступа к аудиту не нужно быть администратором
 
@@ -306,6 +306,14 @@
 ### Изменено
 - Добавлена возможность создавать, изменять и удалять [Отделы](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-otdel)
 
+## 21-10-2020
+### Добавлено
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie
+
+## 21-10-2020
+### Изменено
+- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
+
 ## 20-10-2020
 ### Добавлено
 - Поля `qrPayEnabled`, `qrBankPercent` и `qrAcquire` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
@@ -317,25 +325,16 @@
 - Описание [работы с полями оплаты розничной продажи](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-prodazha-roznichnye-prodazhi-rabota-s-polqmi-oplaty-roznichnoj-prodazhi)
 - Текст ошибок `18000` и `19002`
 
-## 21-10-2020
-### Добавлено
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
-
 ## 16-10-2020
 ### Добавлено
  - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
  - Описание ошибок [1084 и 56000](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki)
 
-## 21-10-2020
-### Изменено
-- Описание ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
-
 ## 19-09-2020
 ### Добавлено
 - Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
-
-## 8-10-2020
+## 08-10-2020
 ### Изменено
 - Исправлены опечатки
 
@@ -402,7 +401,7 @@
 ### Добавлено
  - Поле `ppeType` (код средства индивидуальной защиты) [в сущность `Товары`](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar-towary-atributy-suschnosti).
 
-## 7-07-2020
+## 07-07-2020
 ### Добавлено
  - [Фильтрация комплектов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-udalit-sobytie-atributy-dostupnye-dlq-fil-tracii) по артикулу в ассортименте
 
