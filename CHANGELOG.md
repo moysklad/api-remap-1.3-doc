@@ -334,10 +334,6 @@
 ### Изменено
 - Исправлены опечатки
 
-## 19-09-2020
-### Добавлено
-- Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
-
 ## 22-09-2020
 ### Исправлено
 - Описание поля `productFolder` у [Групп товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow)
@@ -345,6 +341,10 @@
 ## 20-09-2020
 ### Изменено
 - Изменено описание установленных ограничений в [Общих сведениях](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq)
+
+## 19-09-2020
+### Добавлено
+- Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 ## 18-09-2020
 ### Добавлены
