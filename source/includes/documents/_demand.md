@@ -41,6 +41,9 @@
 |**positions**          |MetaArray|Метаданные позиций Отгрузки|&mdash;|да|да
 |**overhead**           |Object|Накладные расходы. [Подробнее тут](../dictionaries/#dokumenty-otgruzka-otgruzki-nakladnye-rashody). Если Позиции Отгрузки не заданы, то накладные расходы нельзя задать|&mdash;|нет|нет
 |**payedSum**            |Float|Сумма входящих платежей по Отгрузке |Только для чтения|да|нет
+|**shipmentAddress**      |String(255)|Адрес доставки Отгрузки |&mdash;| нет|нет
+|**shipmentAddressFull**  |Object|Адрес доставки Отгрузки с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-otgruzka-otgruzki-attributy-suschnosti-adres-dostawki) |&mdash;|нет|нет
+
 
 #### Накладные расходы
 Описание полей overhead
@@ -147,6 +150,25 @@
 |**limit** |  `number` (optional) **Default: 1000** *Example: 1000* Максимальное количество сущностей для извлечения.`Допустимые значения 1 - 1000`.|
 |**offset** |  `number` (optional) **Default: 0** *Example: 40* Отступ в выдаваемом списке сущностей.|
 |**search** |  `string` (optional) *Example: 0001* Фильтр документов по указанной поисковой строке.|
+
+#### Аттрибуты сущности Адрес доставки
+
+| Название  | Тип | Описание                    | Свойство поля в запросе | Обязательное при ответе|Expand|
+| --------- |:----|:----------------------------|:---------------|:-----------------------|:-----------------------|
+|**postalCode**      |String(6)|Почтовый индекс|&mdash;|нет|нет
+|**country**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные страны|&mdash;|нет|нет
+|**region**          |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные региона|&mdash;|нет|нет
+|**city**            |String(255)|Город|&mdash;|нет|нет
+|**street**          |String(255)|Улица|&mdash;|нет|нет
+|**house**           |String(30)|Дом|&mdash;|нет|нет
+|**apartment**       |String(30)|Квартира|&mdash;|нет|нет
+|**addInfo**         |String(255)|Другое|&mdash;|нет|нет
+|**comment**         |String(255)|Комментарий|&mdash;|нет|нет
+
+Строка адреса является конкатенацией полей структурированного адреса в следующем порядке: postalCode -> country -> region -> city -> street -> house -> apartment -> addInfo, используя запятую в качестве разделителя.
+При передаче в МойСклад сущностей с адресом используйте либо строковый адрес, либо структурированный.
+При передаче обоих адресов строковый будет игнорирован.
+При передаче только строкового он будет отражаться как в строковом поле так и в addInfo структурированного адреса.
 
 > Получить список Отгрузок
 
@@ -300,6 +322,32 @@ curl -X GET
       "overhead": {
         "sum": 200,
         "distribution": "price"
+      },
+      "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+      "shipmentAddressFull":{
+        "postalCode":"125009",
+        "country":{
+          "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+            "type":"country",
+            "mediaType":"application/json"
+          }
+        },
+        "region":{
+          "meta":{
+            "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+            "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+            "type":"region",
+            "mediaType":"application/json"
+          }
+        },
+        "city":"Москва",
+        "street":"ул Тверская",
+        "house":"1",
+        "apartment":"123",
+        "addInfo":"addinfo",
+        "comment":"some words about address"
       }
     },
     {
@@ -618,7 +666,32 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "stateContractId": "s11233dsasd233"
+            "stateContractId": "s11233dsasd233",
+            "shipmentAddressFull":{  
+              "postalCode":"125009",
+              "country":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                  "type":"country",
+                  "mediaType":"application/json"
+                }
+              },
+              "region":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                  "type":"region",
+                  "mediaType":"application/json"
+                }
+              },
+              "city":"Москва",
+              "street":"ул Тверская",
+              "house":"1",
+              "apartment":"123",
+              "addInfo":"addinfo",
+              "comment":"some words about address"
+            }
           }
 '  
 ```
@@ -725,7 +798,33 @@ curl -X GET
     }
   },
   "payedSum": 0,
-  "stateContractId": "s11233dsasd233"
+  "stateContractId": "s11233dsasd233",
+  "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "shipmentAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  }
 }
 ```
 
@@ -2176,6 +2275,32 @@ curl -X GET
   "overhead": {
     "sum": 200,
     "distribution": "price"
+  },
+  "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 123, addInfo",
+  "shipmentAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"123",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
   }
 }
 ```
@@ -2235,7 +2360,32 @@ curl -X GET
                 "mediaType": "application/json"
               }
             },
-            "stateContractId": "s11233dsasd233"
+            "stateContractId": "s11233dsasd233",
+            "shipmentAddressFull":{  
+              "postalCode":"125009",
+              "country":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+                  "type":"country",
+                  "mediaType":"application/json"
+                }
+              },
+              "region":{  
+                "meta":{  
+                  "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+                  "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+                  "type":"region",
+                  "mediaType":"application/json"
+                }
+              },
+              "city":"Москва",
+              "street":"ул Тверская",
+              "house":"1",
+              "apartment":"111",
+              "addInfo":"addinfo",
+              "comment":"some words about address"
+            }
           }'  
 ```
 
@@ -2370,7 +2520,33 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
-  "stateContractId": "s11233dsasd233"
+  "stateContractId": "s11233dsasd233",
+  "shipmentAddress":"125009, Россия, г Москва, Москва, ул Тверская, 1, 111, addInfo",
+  "shipmentAddressFull":{
+    "postalCode":"125009",
+    "country":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/country/9df7c2c3-7782-4c5c-a8ed-1102af611608",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/country/metadata",
+        "type":"country",
+        "mediaType":"application/json"
+      }
+    },
+    "region":{
+      "meta":{
+        "href":"https://online.moysklad.ru/api/remap/1.2/entity/region/00000000-0000-0000-0000-000000000077",
+        "metadataHref":"https://online.moysklad.ru/api/remap/1.2/entity/region/metadata",
+        "type":"region",
+        "mediaType":"application/json"
+      }
+    },
+    "city":"Москва",
+    "street":"ул Тверская",
+    "house":"1",
+    "apartment":"111",
+    "addInfo":"addinfo",
+    "comment":"some words about address"
+  }
 }
 ```
 
