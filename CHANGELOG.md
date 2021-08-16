@@ -107,18 +107,6 @@
 ### Добавлено
 - Информация о новом типе маркированной продукции (Молочная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
-## 27-04-2021
-### Добавлено
-- Очередь для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
-- Обновлен список [ограничений](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
-- Новый статус `PENDING` для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
-- Эндпоинт получения [списка статусов асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
-- Поле **meta** для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
-
-## 15-04-2021
-### Добавлено
-- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha)
-
 ## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
@@ -150,6 +138,14 @@
 ### Добавлена
 - Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi) 
 
+## 27-04-2021
+### Добавлено
+- Очередь для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+- Обновлен список [ограничений](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-ogranicheniq) (добавлена информация про размер очереди асинхронных задач)
+- Новый статус `PENDING` для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+- Эндпоинт получения [списка статусов асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-statusy-asinhronnyh-zadach)
+- Поле **meta** для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+
 ## 22-04-2021
 ### Документация
 - Добавлено описание поля **code** для ряда сущностей. Где оно было, убран атрибут `Только для чтения`
@@ -157,6 +153,10 @@
 ## 23-04-2021
 ### Добавлено
 - Приложение как автор [Задач](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha) и [Событий Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-sobytiq-kontragenta)
+
+## 15-04-2021
+### Добавлено
+- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha)
 
 ## 13-04-2021
 ### Добавлено
