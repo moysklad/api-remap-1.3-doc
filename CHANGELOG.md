@@ -328,14 +328,14 @@
 ### Добавлено
  - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
  - Описание ошибок [1084 и 56000](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki)
- 
-## 19-09-2020
-### Добавлено
-- Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 ## 08-10-2020
 ### Изменено
 - Исправлены опечатки
+
+## 19-09-2020
+### Добавлено
+- Информация о новом типе маркированной продукции (Шины и покрышки) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
 
 ## 22-09-2020
 ### Исправлено
