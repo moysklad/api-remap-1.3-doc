@@ -33,3 +33,4 @@
 
 ### Удалено
 - В сущностях [Группа товаров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-gruppa-towarow), [Товары](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar), [Комплекты](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/№suschnosti-komplekt), [Услуги](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga), позиции [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/) удалено поле `vatEnabled`, которое являлось способом обойти обязательность поля `vat`
+- Поле **product** у материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-teh-karta)
