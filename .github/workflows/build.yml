@@ -37,6 +37,7 @@ jobs:
         APP_PREFIX: api-remap-1.3
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
+        echo $DEPLOY_KEY
         echo $DEPLOY_KEY > ./deploy_key && chmod 600 ./deploy_key
         eval "$(ssh-agent -s)"
         mkdir -p ~/.ssh && chmod 700 ~/.ssh
