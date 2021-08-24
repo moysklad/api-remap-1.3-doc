@@ -1,10 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
-
 name: Build
 
 on: push
@@ -35,23 +28,21 @@ jobs:
       with:
         ruby-version: '2.3.3'
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
     - name: Build
       run:
         bundle exec middleman build --build-dir=site
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
     - name: Deploy
       if: github.ref == 'refs/heads/master'
+      env:
+        SERVER_IP_ADDRESS: dev.moysklad.ru
+        APP_PREFIX: api-remap-1.3
       run: |
-        openssl aes-256-cbc -K $encrypted_fd0bb6467860_key -iv $encrypted_fd0bb6467860_iv
-        in deploy_key.enc -out deploy_key -d
+        echo $DEPLOY_KEY > ./deploy_key && chmod 600 ./deploy_key
         eval "$(ssh-agent -s)"
-        chmod 600 ./deploy_key
         echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\nPort 22\n" >> ~/.ssh/config
         ssh-add ./deploy_key
         ssh -i ./deploy_key app@${SERVER_IP_ADDRESS} pwd
-        rm deploy_key.enc deploy_key
+        rm deploy_key
+        rsync -r --delete-after --quiet site/ app@${SERVER_IP_ADDRESS}:./${APP_PREFIX}
