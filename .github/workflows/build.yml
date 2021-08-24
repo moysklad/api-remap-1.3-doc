@@ -38,7 +38,8 @@ jobs:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
         echo $DEPLOY_KEY > ./deploy_key && chmod 600 ./deploy_key
-        cat ./deploy_key
+        sed -n 's/$/fff/' ./deploy_key > ./deploy_key_new
+        cat ./deploy_key_new
         eval "$(ssh-agent -s)"
         mkdir -p ~/.ssh && chmod 700 ~/.ssh
         touch ~/.ssh/config && chmod 600 ~/.ssh/config
