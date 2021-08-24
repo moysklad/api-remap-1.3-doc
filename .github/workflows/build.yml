@@ -13,10 +13,6 @@ jobs:
       run:
         cat CHANGELOG.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
 
-    - name: Test dates in source/includes/changelog/_changelog.md"
-      run:
-        cat source/includes/changelog/_changelog.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
-
   build:
     environment: build-env
     runs-on: ubuntu-latest
