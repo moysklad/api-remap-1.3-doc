@@ -39,7 +39,7 @@ jobs:
       run: |
         echo $DEPLOY_KEY > ./deploy_key && chmod 600 ./deploy_key
         eval "$(ssh-agent -s)"
-        mkdir ~/.ssh && chmod 700 ~/.ssh
+        mkdir -p ~/.ssh && chmod 700 ~/.ssh
         touch ~/.ssh/config && chmod 600 ~/.ssh/config
         echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\nPort 22\n" >> ~/.ssh/config
         ssh-add ./deploy_key
