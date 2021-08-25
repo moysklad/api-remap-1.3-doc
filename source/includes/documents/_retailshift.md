@@ -157,9 +157,6 @@ curl -X GET
         }
       },
       "moment": "2016-04-18 15:06:51",
-      "created": "2016-08-25 19:55:00",
-      "printed": true,
-      "published": true,
       "vatEnabled": true,
       "vatIncluded": true,
       "organization": {
@@ -210,14 +207,14 @@ curl -X GET
       },
       "acquire": {
         "meta": {
-          "href": "http://localhost/api/remap/1.3/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
-          "metadataHref": "http://localhost/api/remap/1.3/entity/organization/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
         }
       },
-      "bankPercent": 21.3231,
+      "bankPercent": 21.2231,
       "bankComission": 0.0,
       "qrBankPercent": 0.0,
       "qrBankComission": 0.0,
@@ -383,14 +380,14 @@ curl -X GET
       },
       "acquire": {
         "meta": {
-          "href": "http://localhost/api/remap/1.3/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
-          "metadataHref": "http://localhost/api/remap/1.3/entity/organization/metadata",
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/741b9bbb-0016-11ec-ac12-000b0000007e",
+          "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/organization/metadata",
           "type": "organization",
           "mediaType": "application/json",
-          "uuidHref": "http://localhost/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
+          "uuidHref": "https://online.moysklad.ru/app/#mycompany/edit?id=741b9bbb-0016-11ec-ac12-000b0000007e"
         }
       },
-      "bankPercent": 21.3231,
+      "bankPercent": 21.2231,
       "bankComission": 0.0,
       "qrBankPercent": 0.0,
       "qrBankComission": 0.0,
