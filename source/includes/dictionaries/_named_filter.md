@@ -27,8 +27,6 @@
 Пример запросa:
 Сущности и документы - ```/entity/[entityType]/namedfilter```
 
-
-
 ### Получить список фильтров
 
 > Пример запроса на получение списка фильтров для товаров
@@ -66,7 +64,6 @@
     {
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
-        "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedfilter/metadata",
         "type": "namedfilter",
         "mediaType": "application/json"
       },
@@ -111,7 +108,6 @@
   {
   "meta": {
     "href": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedfilter/b5863410-ca86-11eb-ac12-000d00000019",
-    "metadataHref": "https://online.moysklad.ru/api/remap/1.3/entity/product/namedfilter/metadata",
     "type": "namedfilter",
     "mediaType": "application/json"
   },
@@ -129,6 +125,7 @@
   "name": "filterName"
 }
 ```
+
 ### Применение сохраненного фильтра
 
 Средствами JSON API можно применять сохраненные фильтры ко всем [Сущностям](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/), кроме Ассортимента, и [Документам](https://dev.moysklad.ru/doc/api/remap/1.2/documents/). 
@@ -147,5 +144,4 @@
 - В одном запрос можно применять только один сохраненный фильтр
 - Сохраненный фильтр несовместим с параметром запроса `filter`
 - На эндпоинте можно применять только тот сохраненный фильтр, который можно получить через `/entity/[entityType]/namedfilter`
- 
  
