@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 01-09-2021
+### Добавлено
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+
 ## 17-08-2021
 ### Добавлено
 - Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-teh-karta). 
@@ -13,7 +17,7 @@
 
 ## 29-07-2021
 ### Добавлено
-- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
+- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
 
 ## 28-07-2021
 ### Добавлено
