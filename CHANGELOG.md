@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 15-09-2021
+### Добавлено
+- Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
+
 ## 19-08-2021
 ### Добавлено
 - Создание розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-sozdat-roznichnuu-smenu)
