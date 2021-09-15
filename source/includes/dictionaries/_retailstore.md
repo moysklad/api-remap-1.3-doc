@@ -59,6 +59,7 @@
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет|нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да|нет
 |**tobaccoMrcControlType** |Enum| Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii) |&mdash;|да|нет
+|**sendMarksForCheck**   |Boolean|Передавать коды маркировки для проверки в облачную кассу|&mdash;|да|нет
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да|нет
 |**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет|да
 |**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет|нет
@@ -474,6 +475,7 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
+      "sendMarksForCheck" : false,"sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -689,6 +691,7 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
+      "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -827,6 +830,7 @@ curl -X GET
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
               "tobaccoMrcControlType" : "USER_PRICE",
+              "sendMarksForCheck" : false,
               "allowCreateProducts" : false,
               "productFolders" : [{
                 "meta": {
@@ -1012,6 +1016,7 @@ curl -X GET
   "allowCustomPrice" : true,
   "allowSellTobaccoWithoutMRC" : true,
   "tobaccoMrcControlType" : "USER_PRICE",
+  "sendMarksForCheck" : false,
   "allowCreateProducts" : false,
   "productFolders" : {
     "meta" : {
@@ -1204,6 +1209,7 @@ curl -X GET
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
+  "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
@@ -1378,6 +1384,7 @@ curl -X GET
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
     "tobaccoMrcControlType" : "SAME_PRICE",
+    "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1502,6 +1509,7 @@ curl -X GET
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
     "tobaccoMrcControlType" : "USER_PRICE",
+    "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "productFolders" : {
       "meta" : {
@@ -1912,6 +1920,7 @@ curl -X PUT
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
+  "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "productFolders" : {
     "meta" : {
