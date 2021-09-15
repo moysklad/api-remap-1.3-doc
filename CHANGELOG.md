@@ -1,8 +1,8 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 15-09-2021
-### Добавлено
+#### 15-09-2021
+##### Добавлено
 - Поле `markingSellingMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
 
 ### 15-09-2021
