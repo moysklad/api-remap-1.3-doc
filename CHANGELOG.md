@@ -1,9 +1,58 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 27-07-2021
+## 15-09-2021
 ### Добавлено
 - Поле `markingSellingMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
+
+### 15-09-2021
+#### Добавлено
+- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду упаковок модификаций.
+
+## 15-09-2021
+### Добавлено
+- Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+
+## 19-08-2021
+### Добавлено
+- Создание розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-sozdat-roznichnuu-smenu)
+- Редактирование розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-izmenit-roznichnuu-smenu)
+- Добавлены поля `acquire`, `qrAcquire`, `bankPercent`, `qrBankPercent`,
+  `bankComission`, `qrBankComission`   в розничную смену [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
+- Добавлен объект `cheque` с полями **start**, **end**
+- Добавлен объект `start` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
+  **shiftNumber**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-smeny-kkt)
+- Добавлен объект `end` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
+  **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **fiscalDocsTotal**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-smeny-kkt)
+- Добавлен тип ошибок с кодом 12011, 12026 [ошибки](https://dev.moysklad.ru/mojsklad-json-api-oshibki-kody-oshibok-dlq-roznichnyh-smen-pos)
+
+### Изменено
+- Удалено поле `agent` в розничной смене [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
+- Исправлено описание `updated`, `name`, `description`, `externalCode`, `moment`, `organization`, `store`,
+  `attributes`, `published`, `closeDate`, `retailStore` в атрибутах розничной смены [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
+  
+## 17-08-2021
+### Добавлено
+- Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-teh-karta). 
+Для этого введено новое поле **assortment**.
+- Новая ошибка [3028](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-obschie-oshibki-walidacii)
+
+## 30-07-2021
+### Добавлено
+- Добавлены атрибуты фильтрации type и withoutturnover для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
+
+## 29-07-2021
+### Добавлено
+- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
+
+## 28-07-2021
+### Добавлено
+- Возможность работать с файлами в комментариях к [задачам](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-zadacha)
+
+## 28-07-2021
+### Добавлена
+- Возможность expand поля **masterRetailStores** у [точек продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
 
 ## 26-07-2021
 ### Изменено
@@ -29,10 +78,6 @@
 ### Документация
 - Добавлено описание параметров фильтрации выборки `momentFrom` и `momentTo` в отчетах прибыльности
 
-## 08-06-2021
-### Изменено
-- Изменены лимиты по [вебхукам](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki): выделены отдельные лимиты для приложений
-
 ## 03-06-2021
 ### Документация
 - Исправлено описание атрибута `pack` у позиций документов
@@ -40,10 +85,6 @@
 ## 03-06-2021
 ### Добавлено
 - Возможность перехода к соответствующему разделу с описанием ошибки по ссылке в `errors.moreInfo`
-
-## 02-06-2021
-### Добавлено
-- По остаткам комплектов в позициях документа, добавлена возможность получения cost, quantity и available.
 
 ## 01-06-2021
 ### Добавлено
@@ -93,7 +134,7 @@
 ### Исправлено
 - В примерах исправлен url получения метаданных [Комплектов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-komplekt)
   и [Услуг](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-usluga)
-  
+
 ## 11-05-2021
 ### Добавлено
 - Возможность выполнять запрос [получения Ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment)
@@ -102,11 +143,11 @@
 ## 05-05-2021
 ### Добавлено
 - Информация о новом типе маркированной продукции (Молочная продукция) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
-
+  
 ## 29-04-2021
 ### Добавлено
 - Возможность выполнять запрос [получения списка Контрагентов](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent-poluchit-spisok-kontragentow)
-  [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
+ [асинхронно](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen)
 
 ## 28-04-2021
 ### Документация
@@ -140,7 +181,7 @@
 
 ## 27-04-2021
 ### Добавлена
-- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi) 
+- Возможность создавать [вебхуки](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) для [асинхронных задач](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-asinhronnyj-obmen-vebhuki-asinhronnoj-zadachi)
 
 ## 23-04-2021
 ### Добавлено
@@ -303,7 +344,7 @@
 
 ## 21-10-2020
 ### Добавлено
-- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+- Добавлено заполнение себестоимости в эндпоинт [Автозаполнения](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie
 
 ## 21-10-2020
 ### Изменено
@@ -322,8 +363,8 @@
 
 ## 16-10-2020
 ### Добавлено
-- Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
-- Описание ошибок [1084 и 56000](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki)
+ - Эндпоинт [Автозаполнения цен, скидок, ндс позиций](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#pereschet-raschetnogo-ostatka-w-inwentarizacii-awtozapolnenie)
+ - Описание ошибок [1084 и 56000](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki)
 
 ## 08-10-2020
 ### Изменено
