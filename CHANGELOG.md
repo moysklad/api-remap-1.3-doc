@@ -1,9 +1,41 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 26-08-2021
+## 16-09-2021
 ### Добавлено
 - Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-pokupatelq) и [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka)
+
+#### 15-09-2021
+##### Добавлено
+- Поле `markingSellingMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
+
+### 15-09-2021
+#### Добавлено
+- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду упаковок модификаций.
+
+## 15-09-2021
+### Добавлено
+- Добавлена фильтрация по Доп. полям. и атрибут фильтрации supplier для [Отчет обороты](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty)
+- Документ [Корректировка баланса контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-korrektirowka-balansa-kontragenta)
+
+## 19-08-2021
+### Добавлено
+- Создание розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-sozdat-roznichnuu-smenu)
+- Редактирование розничной смены в позиции документов [Документов](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-izmenit-roznichnuu-smenu)
+- Добавлены поля `acquire`, `qrAcquire`, `bankPercent`, `qrBankPercent`,
+  `bankComission`, `qrBankComission`   в розничную смену [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
+- Добавлен объект `cheque` с полями **start**, **end**
+- Добавлен объект `start` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
+  **shiftNumber**, **fiscalDocNumber**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-ob-otkrytii-smeny-kkt)
+- Добавлен объект `end` с полями **fnNumber**, **kktRegNumber**, **fiscalDocSign**,
+  **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **fiscalDocsTotal**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-smeny-kkt)
+- Добавлен тип ошибок с кодом 12011, 12026 [ошибки](https://dev.moysklad.ru/mojsklad-json-api-oshibki-kody-oshibok-dlq-roznichnyh-smen-pos)
+
+## 19-08-2021
+### Изменено
+- Удалено поле `agent` в розничной смене [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
+- Исправлено описание `updated`, `name`, `description`, `externalCode`, `moment`, `organization`, `store`,
+  `attributes`, `published`, `closeDate`, `retailStore` в атрибутах розничной смены [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
 
 ## 17-08-2021
 ### Добавлено
@@ -17,7 +49,7 @@
 
 ## 29-07-2021
 ### Добавлено
-- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
+- [Фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду, наименованию группы товаров, типу и использованию серийных номеров
 
 ## 28-07-2021
 ### Добавлено
