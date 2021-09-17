@@ -1,7 +1,7 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 16-09-2021
+## 21-09-2021
 ### Добавлено
 - Ошибка [2028](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata)
 
