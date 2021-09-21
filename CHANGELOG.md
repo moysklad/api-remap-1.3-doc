@@ -1,9 +1,17 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 16-09-2021
+## 20-09-2021
 ### Добавлено
 - Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-pokupatelq) и [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka)
+
+## 20-09-2021
+### Исправлено
+- Исправлен список возможных атрибутов у документа [Списание](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-spisanie)
+
+## 16-09-2021
+### Изменено
+- Дополнено описание раздела webhook.
 
 ## 15-09-2021
 ### Добавлено
@@ -36,7 +44,7 @@
 - Удалено поле `agent` в розничной смене [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
 - Исправлено описание `updated`, `name`, `description`, `externalCode`, `moment`, `organization`, `store`,
   `attributes`, `published`, `closeDate`, `retailStore` в атрибутах розничной смены [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
-
+  
 ## 17-08-2021
 ### Добавлено
 - Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-teh-karta). 
