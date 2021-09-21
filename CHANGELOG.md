@@ -1,8 +1,12 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-### 20-09-2021
-#### Исправлено
+## 20-09-2021
+### Добавлено
+- Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-pokupatelq) и [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka)
+
+## 20-09-2021
+### Исправлено
 - Исправлен список возможных атрибутов у документа [Списание](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-spisanie)
 
 ## 16-09-2021
