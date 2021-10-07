@@ -1,7 +1,7 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 01-10-2021
+## 07-10-2021
 ### Документация
 - Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika)
 
