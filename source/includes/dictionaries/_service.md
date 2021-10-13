@@ -1,6 +1,6 @@
 ## Услуга
 Средствами JSON API можно создавать и обновлять сведения об Услугах, запрашивать списки Услуг и сведения по отдельным Услугам. Кодом сущности для Услуги в составе JSON API является ключевое слово **service**. Услуга - специальная разновидность товара, без закупочной цены и упаковок. Больше о Товарах и работе с ними в основном интерфейсе вы можете прочитать в нашей службе поддержки в разделе
- [Товары и склад](https://support.moysklad.ru/hc/ru/sections/200564973-%D0%A2%D0%BE%D0%B2%D0%B0%D1%80%D1%8B-%D0%B8-%D1%81%D0%BA%D0%BB%D0%B0%D0%B4).
+ [Товары и склад](https://support.moysklad.ru/hc/ru/articles/115006310327).
 
 По данной сущности можно осуществлять контекстный поиск с помощью специального параметра `search`. Подробнее можно узнать по [ссылке](../#mojsklad-json-api-obschie-swedeniq-kontextnyj-poisk).
 
@@ -29,6 +29,7 @@
 |**archived**        |Boolean|Добавлена ли Услуга в архив|&mdash;|да|нет
 |**pathName**         |String|Наименование группы, в которую входит Услуга|Только для чтения|да|нет
 |**vat**         |Int|НДС %|&mdash;|нет|нет
+|**useParentVat**   |Boolean|Использует ли товар НДС с родительской группы|&mdash;|да|нет
 |**effectiveVat**         |Int|Реальный НДС %|Только для чтения|нет|нет
 |**productFolder**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные группы Комплекта|&mdash;|нет|да
 |**uom**         |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Единицы измерения|&mdash;|нет|да
@@ -209,6 +210,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 6,
+      "useParentVat": false,
       "effectiveVat": 6,
       "discountProhibited": false,
       "minPrice": {
@@ -348,6 +350,7 @@ curl -X GET
       "archived": false,
       "pathName": "",
       "vat": 10,
+      "useParentVat": false,
       "effectiveVat": 10,
       "minPrice": {
         "value": 500,
@@ -455,6 +458,7 @@ curl -X GET
             "externalCode": "delCode",
             "description": "Доставка выбранного товара",
             "vat": 10,
+            "useParentVat": false,
             "effectiveVat": 10,
             "discountProhibited": false,
             "minPrice": {
@@ -569,6 +573,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 10,
+  "useParentVat": false,
   "effectiveVat": 10,
   "discountProhibited": false,
   "minPrice": {
@@ -741,7 +746,8 @@ curl -X GET
   "code": "pumpkin2",
   "externalCode": "5fZe-Qyji8mSwoHYs7kSA2",
   "archived": false,
-  "pathName": ""
+  "pathName": "",
+  "useParentVat": true
 }
 ```
 
@@ -893,6 +899,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 6,
+  "useParentVat": false,
   "effectiveVat": 6,
   "discountProhibited": false,
   "minPrice": {
@@ -1182,7 +1189,8 @@ curl -X GET
     "code": "pumpkin2",
     "externalCode": "5fZe-Qyji8mSwoHYs7kSA2",
     "archived": false,
-    "pathName": ""
+    "pathName": "",
+    "useParentVat": true
   },
   {
     "meta": {
@@ -1218,6 +1226,7 @@ curl -X GET
     "archived": false,
     "pathName": "",
     "vat": 11,
+    "useParentVat": false,
     "effectiveVat": 11,
     "discountProhibited": false,
     "minPrice": {
@@ -1425,6 +1434,7 @@ curl -X GET
   "archived": false,
   "pathName": "",
   "vat": 6,
+  "useParentVat": false,
   "effectiveVat": 6,
   "discountProhibited": false,
   "minPrice": {
@@ -1675,6 +1685,7 @@ curl -X GET
    "archived": false,
    "pathName": "",
    "vat": 11,
+   "useParentVat": false,
    "effectiveVat": 11,
    "discountProhibited": false,
    "minPrice": {
@@ -1911,6 +1922,7 @@ curl -X GET
   "archived": false,
   "pathName": "Услуги компании",
   "vat": 6,
+  "useParentVat": false,
   "effectiveVat": 6,
   "productFolder": {
     "meta": {
