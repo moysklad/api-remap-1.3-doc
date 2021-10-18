@@ -3,7 +3,7 @@
 
 ## 12-10-2021
 ### Добавлено
-- Возможность изменения полей [Элементов пользовательского справочника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik-jelementy-pol-zowatel-skogo-sprawochnika): `group`, `owner`, `shared`
+- Возможность изменения и отображения полей [Элементов пользовательского справочника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-pol-zowatel-skij-sprawochnik-jelementy-pol-zowatel-skogo-sprawochnika): `group`, `owner`, `shared`
 
 ## 08-10-2021
 ### Добавлено
