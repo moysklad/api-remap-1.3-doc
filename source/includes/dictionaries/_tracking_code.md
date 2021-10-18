@@ -16,7 +16,7 @@
 |**trackingCodes**    |Array(Object)|Массив вложенных кодов маркировки|-|нет|нет
 
 Пример запроса:
-Сущности и документы - ```/entity/[entityType]/[entityId]/positions[positionId]/trackingCodes```
+Сущности и документы - ```/entity/[entityType]/[entityId]/positions/[positionId]/trackingCodes```
 
 ### Получить Коды маркировки позиции документа
 
@@ -151,7 +151,7 @@
 
 ```shell
   curl -X POST
-    "https://online.moysklad.ru/api/remap/1.3/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes"
+    "https://online.moysklad.ru/api/remap/1.3/entity/supply/161d0246-1477-11ec-ac18-000b00000001/positions/161d25a8-1477-11ec-ac18-000b00000002/trackingCodes/delete"
     -H "Authorization: Basic <Credentials>
     -H "Content-Type: application/json"
       -d '[
