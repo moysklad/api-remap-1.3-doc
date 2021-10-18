@@ -5,6 +5,24 @@
 ### Добавлено
 - Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
 
+## 15-10-2021
+### Добавлено
+- Фильтрация по полю `paymentPlannedMoment` у [Счета покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-pokupatelu)
+- Фильтрация по полю `supplier` в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-pribyl-nost)
+- Фильтрация по номеру счета [Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent) `filter=accounts.accountnumber`. [Описание](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter)
+
+## 08-10-2021
+### Добавлено
+- Ошибка [2028](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata)
+
+## 07-10-2021
+### Документация
+- Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika)
+
+## 30-09-2021
+### Изменено
+- Информация о новом типе маркированной продукции (Упакованная вода) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
+
 ## 23-09-2021
 ### Добавлено
 - Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
@@ -83,6 +101,10 @@
 ## 09-07-2021
 ### Добавлено
 - Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
+
+## 05-07-2021
+### Добавлено
+- Новый тип уведомлений о скором окончании действия доступа к аккаунту Facebook
 
 ## 01-07-2021
 ### Исправлено
