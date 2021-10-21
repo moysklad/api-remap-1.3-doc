@@ -59,7 +59,8 @@
 |**demandPrefix**        |String(255)|Префикс номера продаж|&mdash;| нет|нет
 |**allowSellTobaccoWithoutMRC** |Boolean|Разрешить продавать табачную продукцию не по МРЦ|&mdash;|да|нет
 |**tobaccoMrcControlType** |Enum| Контроль МРЦ для табачной продукции. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-tip-kontrolq-mrc-dlq-tabachnoj-produkcii) |&mdash;|да|нет
-|**sendMarksForCheck**   |Boolean|Передавать коды маркировки для проверки в облачную кассу|&mdash;|да|нет
+|**markingSellingMode**  |Enum| Режим продажи маркированной продукции, если используется формат фискальных документов версии 1.2. [Подробнее тут](../dictionaries/#suschnosti-tochka-prodazh-tochki-prodazh-atributy-suschnosti-prodazha-markirowannyh-towarow) |&mdash;|да|нет
+|**sendMarksForCheck**   |Boolean|Для облачных точек — до продажи отправлять коды маркировки на проверку на точку с ККТ|&mdash;|да|нет
 |**allowCreateProducts** |Boolean|Контроль остатков. Не может быть `true`, если `controlShippingStock` имеет значение `true`|&mdash;|да|нет
 |**productFolders**      |Array(Object)|Коллекция Метаданных групп товаров, из которых можно выгружать товары|&mdash;| нет|да
 |**createAgentsTags**    |Array(Object)|Коллекция групп покупателей, представленных в формате строк. Определяет группы, в которые добавляются новые покупатели. Значения `null` игнорируются|&mdash;| нет|нет
@@ -127,6 +128,14 @@
 | **USER_PRICE**    | Не контролировать МРЦ
 | **MRC_PRICE**     | Продавать по МРЦ указанной на пачке
 | **SAME_PRICE**    | Запрещать продажу, если цена продажи не совпадает с МРЦ
+
+##### Продажа маркированных товаров:
+
+| Название                    | Описание                                                   |
+| --------------------------- |:-----------------------------------------------------------|
+| **CORRECT_MARKS_ONLY**      |  Только с правильными кодами маркировки
+| **WITHOUT_ERRORS**          |  С правильными кодами и те, которые не удалось проверить
+| **ALL**                     |  Все – независимо от результатов проверки кодов маркировки
 
 ##### Приоритет отправки электронного чека
 
@@ -475,7 +484,8 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
-      "sendMarksForCheck" : false,"sendMarksForCheck" : false,
+      "markingSellingMode" : "CORRECT_MARKS_ONLY",
+      "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "productFolders" : {
         "meta" : {
@@ -691,6 +701,7 @@ curl -X GET
       "allowCustomPrice" : true,
       "allowSellTobaccoWithoutMRC" : true,
       "tobaccoMrcControlType" : "USER_PRICE",
+      "markingSellingMode" : "CORRECT_MARKS_ONLY",
       "sendMarksForCheck" : false,
       "allowCreateProducts" : false,
       "productFolders" : {
@@ -830,6 +841,7 @@ curl -X GET
               "allowCustomPrice" : true,
               "allowSellTobaccoWithoutMRC" : true,
               "tobaccoMrcControlType" : "USER_PRICE",
+              "markingSellingMode" : "CORRECT_MARKS_ONLY",
               "sendMarksForCheck" : false,
               "allowCreateProducts" : false,
               "productFolders" : [{
@@ -1016,6 +1028,7 @@ curl -X GET
   "allowCustomPrice" : true,
   "allowSellTobaccoWithoutMRC" : true,
   "tobaccoMrcControlType" : "USER_PRICE",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : false,
   "productFolders" : {
@@ -1209,6 +1222,7 @@ curl -X GET
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "productFolders" : {
@@ -1384,6 +1398,7 @@ curl -X GET
     "allowCustomPrice" : false,
     "allowSellTobaccoWithoutMRC" : false,
     "tobaccoMrcControlType" : "SAME_PRICE",
+    "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "productFolders" : {
@@ -1509,6 +1524,7 @@ curl -X GET
     "allowCustomPrice" : true,
     "allowSellTobaccoWithoutMRC" : true,
     "tobaccoMrcControlType" : "USER_PRICE",
+    "markingSellingMode" : "CORRECT_MARKS_ONLY",
     "sendMarksForCheck" : false,
     "allowCreateProducts" : true,
     "productFolders" : {
@@ -1920,6 +1936,7 @@ curl -X PUT
   "allowCustomPrice" : false,
   "allowSellTobaccoWithoutMRC" : false,
   "tobaccoMrcControlType" : "SAME_PRICE",
+  "markingSellingMode" : "CORRECT_MARKS_ONLY",
   "sendMarksForCheck" : false,
   "allowCreateProducts" : true,
   "productFolders" : {

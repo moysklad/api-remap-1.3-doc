@@ -1,6 +1,53 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 21-10-2021
+### Добавлено
+- Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
+
+## 15-10-2021
+### Добавлено
+- Фильтрация по полю `paymentPlannedMoment` у [Счета покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-pokupatelu)
+- Фильтрация по полю `supplier` в [Отчетах прибыльность](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-pribyl-nost)
+- Фильтрация по номеру счета [Контрагента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kontragent) `filter=accounts.accountnumber`. [Описание](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-fil-traciq-wyborki-s-pomosch-u-parametra-filter)
+
+## 08-10-2021
+### Добавлено
+- Ошибка [2028](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-oshibki-formata)
+
+## 07-10-2021
+### Документация
+- Добавлено описание [Контекста запроса сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-obschie-swedeniq-kontext-sotrudnika)
+
+## 30-09-2021
+### Изменено
+- Информация о новом типе маркированной продукции (Упакованная вода) в [Товарах](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-towar)
+
+## 23-09-2021
+### Добавлено
+- Описание полей посылаемых [веб-хуков](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-veb-huki) и добавлены поля `auditContext`, `updatedFields`, `moment`, `uid`
+- Новая ошибка [30009](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-veb-hukow)
+
+## 20-09-2021
+### Добавлено
+- Добавлены поля `shipmentAddress` и `shipmentAddressFull` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-pokupatelq) и [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka)
+
+## 20-09-2021
+### Исправлено
+- Исправлен список возможных атрибутов у документа [Списание](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-spisanie)
+
+## 16-09-2021
+### Изменено
+- Дополнено описание раздела webhook.
+
+## 15-09-2021
+### Добавлено
+- Поле `markingSellingMode` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
+
+## 15-09-2021
+### Добавлено
+- Возможность работы с упаковками [Модификаций](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-modifikaciq), [фильтрация ассортимента](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment-izmenit-nastrojki-sprawochnika-kontragentow-atributy-dostupnye-dlq-fil-tracii) по штрихкоду упаковок модификаций.
+
 ## 15-09-2021
 ### Добавлено
 - Поле `sendMarksForCheck` в [Точку продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-tochka-prodazh)
@@ -23,6 +70,7 @@
   **shiftNumber**,  **chequesTotal**, **fiscalDocNumber**, **fiscalDocsTotal**, **time** в розничную смену [Поля объекта](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-informaciq-o-zakrytii-smeny-kkt)
 - Добавлен тип ошибок с кодом 12011, 12026 [ошибки](https://dev.moysklad.ru/mojsklad-json-api-oshibki-kody-oshibok-dlq-roznichnyh-smen-pos)
 
+## 19-08-2021
 ### Изменено
 - Удалено поле `agent` в розничной смене [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
 - Исправлено описание `updated`, `name`, `description`, `externalCode`, `moment`, `organization`, `store`,
@@ -57,6 +105,10 @@
 ## 09-07-2021
 ### Добавлено
 - Новый ресурс [Обороты по товару с детализацией по документам](https://dev.moysklad.ru/doc/api/remap/1.3/reports/#otchety-otchet-oboroty-oboroty-po-towaru-s-detalizaciej-po-dokumentam)
+
+## 05-07-2021
+### Добавлено
+- Новый тип уведомлений о скором окончании действия доступа к аккаунту Facebook
 
 ## 01-07-2021
 ### Исправлено
