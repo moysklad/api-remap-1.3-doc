@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 20-10-2021
+### Добавлено
+- Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kanal-prodazh)
+
 ## 15-10-2021
 ### Добавлено
 - Фильтрация по полю `paymentPlannedMoment` у [Счета покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-schet-pokupatelu)
