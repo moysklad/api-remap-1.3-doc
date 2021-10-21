@@ -923,6 +923,7 @@ curl -X GET
 |**accountAdjustment**    |DICTIONARY|Все ALL|Корректировка остатков на счете
 |**counterpartyAdjustment**    |DICTIONARY|Все ALL|Корректировка баланса контрагента
 |**emissionOrder**    |DICTIONARY|Все NO|Заказ кодов маркировки
+|**utilizationReport**    |DICTIONARY|Все NO|Отчет об использовании
 |**enrollOrder**    |DICTIONARY|Все NO|Ввод в оборот кодов маркировки
 |**retireOrder**    |DICTIONARY|Все NO|Возврат в оборот
 |**remarkingOrder**    |DICTIONARY|Все NO|Перемаркировка
@@ -1115,6 +1116,13 @@ curl -X GET
                 "create": "NO",
                 "update": "NO",
                 "delete": "NO"
+            },
+            "utilizationReport": {
+              "view": "NO",
+              "print": "NO",
+              "create": "NO",
+              "update": "NO",
+              "delete": "NO"
             },
             "commissionReportOut": {
                 "view": "ALL",
