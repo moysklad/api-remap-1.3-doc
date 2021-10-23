@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 25-10-2021
+### Добавлено
+- Фильтрация по доп полям в [Ассортименте](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-assortiment)
+
 ## 21-10-2021
 ### Добавлено
 - Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
