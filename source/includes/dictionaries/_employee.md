@@ -923,6 +923,7 @@ curl -X GET
 |**accountAdjustment**    |DICTIONARY|Все ALL|Корректировка остатков на счете
 |**counterpartyAdjustment**    |DICTIONARY|Все ALL|Корректировка баланса контрагента
 |**emissionOrder**    |DICTIONARY|Все NO|Заказ кодов маркировки
+|**atkAggregation**    |DICTIONARY|Все NO|Формирование АТК
 |**enrollOrder**    |DICTIONARY|Все NO|Ввод в оборот кодов маркировки
 |**retireOrder**    |DICTIONARY|Все NO|Возврат в оборот
 |**remarkingOrder**    |DICTIONARY|Все NO|Перемаркировка
@@ -1110,6 +1111,13 @@ curl -X GET
                 "approve": "ALL"
             },
             "emissionOrder": {
+                "view": "NO",
+                "print": "NO",
+                "create": "NO",
+                "update": "NO",
+                "delete": "NO"
+            },
+            "atkAggregation": {
                 "view": "NO",
                 "print": "NO",
                 "create": "NO",
