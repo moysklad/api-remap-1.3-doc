@@ -1,6 +1,10 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
+## 27-10-2021
+### Добавлено
+- Пермиссии для документа формирование АТК в [правах сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
+
 ## 21-10-2021
 ### Добавлено
 - Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
