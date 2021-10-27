@@ -71,6 +71,7 @@
 |**assortment**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные товара/услуги/серии/модификации, которую представляет собой позиция|&mdash;|да|да
 |**pack**            |Object|Упаковка Товара. [Подробнее тут](../dictionaries/#suschnosti-towar-towary-atributy-wlozhennyh-suschnostej-upakowki-towara)|&mdash;|нет|нет
 |**shipped**        |Int|Принято|&mdash;|да|нет
+|**inTransit**        |Int|Ожидание|&mdash;|да|нет
 |**wait**        |Boolean|Ожидается данной позиции|&mdash;|нет|нет
 
 С позициями можно работать с помощью специальных ресурсов для управления позициями Заказа,
