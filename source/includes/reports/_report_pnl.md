@@ -44,6 +44,7 @@
 |**store** | ссылка на склад, по которому нужно произвести фильтрацию.
 |**project** | ссылка на проект, по которому нужно произвести фильтрацию.
 |**retailStore** | ссылка на точку продаж, по которой нужно произвести фильтрацию.
+| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
 
 Примеры фильтрации:
 
@@ -53,6 +54,7 @@
 - `filter=store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=supplier=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=product=https://online.moysklad.ru/api/remap/1.3/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.3/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 
 ### Получить Прибыльность по товарам
@@ -249,6 +251,7 @@ curl -X GET
 |**store** | ссылка на склад, по которому нужно произвести фильтрацию.
 |**project** | ссылка на проект, по которому нужно произвести фильтрацию.
 |**retailStore** | ссылка на точку продаж, по которой нужно произвести фильтрацию.
+| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
 
 Примеры фильтрации:
 
@@ -258,6 +261,7 @@ curl -X GET
 - `filter=store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=supplier=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=product=https://online.moysklad.ru/api/remap/1.3/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.3/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 
 ### Получить Прибыльность по модификациям
@@ -449,6 +453,7 @@ curl -X GET
 |**store** | ссылка на склад, по которому нужно произвести фильтрацию.
 |**project** | ссылка на проект, по которому нужно произвести фильтрацию.
 |**retailStore** | ссылка на точку продаж, по которой нужно произвести фильтрацию.
+| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
 
 Примеры фильтрации:
 
@@ -458,6 +463,7 @@ curl -X GET
 - `filter=store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=supplier=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=product=https://online.moysklad.ru/api/remap/1.3/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.3/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 
 ### Получить Прибыльность по сотрудникам
@@ -567,6 +573,7 @@ curl -X GET
 |**store** | ссылка на склад, по которому нужно произвести фильтрацию.
 |**project** | ссылка на проект, по которому нужно произвести фильтрацию.
 |**retailStore** | ссылка на точку продаж, по которой нужно произвести фильтрацию.
+| **supplier**                   | параметр для фильтрации по поставщику. Значение параметра - ссылка на контрагента или организацию. В выборку будут включены товары с указанным поставщиком.                                                                |
 
 Примеры фильтрации:
 
@@ -576,6 +583,7 @@ curl -X GET
 - `filter=store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321`
 - `filter=project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046`
 - `filter=retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
+- `filter=supplier=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000`
 - `filter=product=https://online.moysklad.ru/api/remap/1.3/entity/product/656c4032-8552-11e6-8a84-bae500000044;counterparty=https://online.moysklad.ru/api/remap/1.3/entity/counterparty/f8f729a5-a784-11e9-ac12-000800000000;organization=https://online.moysklad.ru/api/remap/1.3/entity/organization/0347beb0-a785-11e9-ac12-000800000003;store=https://online.moysklad.ru/api/remap/1.3/entity/store/656c4032-8667-11e6-8a84-bae500003321;project=https://online.moysklad.ru/api/remap/1.3/entity/project/7a5f0ed5-8552-11e6-8a84-bae500000046;retailStore=https://online.moysklad.ru/api/remap/1.3/entity/retailstore/9ca74859-85c7-11e9-ac12-000d00000030`
 
 ### Получить Прибыльность по покупателям
