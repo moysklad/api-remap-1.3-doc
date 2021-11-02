@@ -5,17 +5,17 @@
 
 | Название  | Тип | Описание                    | Свойство поля в запросе| Обязательное при ответе|Expand|
 | --------- |:----|:----------------------------|:----------------|:------------------------|:------------------------|
-|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Списания|&mdash;|да|нет
-|**id**                 |UUID|ID Списания|Только для чтения|да|нет
+|**meta**               |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные Перемещения|&mdash;|да|нет
+|**id**                 |UUID|ID Перемещения|Только для чтения|да|нет
 |**accountId**          |UUID| ID учетной записи|Только для чтения|да|нет
 |**syncId**             |UUID|ID синхронизации. После заполнения недоступен для изменения|&mdash;|нет|нет
-|**updated**            |DateTime|Момент последнего обновления Списания|Только для чтения|да|нет
-|**deleted**            |DateTime|Момент последнего удаления Списания|Только для чтения|нет|нет
-|**name**               |String(255)|Наименование Списания|&mdash;|да|нет
-|**description**        |String(4096)|Комментарий Списания|&mdash;|нет|нет
-|**code**               |String(255)|Код Списания|&mdash;| нет|нет
-|**externalCode**       |String(255)|Внешний код Списания|&mdash;| да|нет
-|**moment**             |DateTime|Дата Списания|&mdash;|да|нет
+|**updated**            |DateTime|Момент последнего обновления Перемещения|Только для чтения|да|нет
+|**deleted**            |DateTime|Момент последнего удаления Перемещения|Только для чтения|нет|нет
+|**name**               |String(255)|Наименование Перемещения|&mdash;|да|нет
+|**description**        |String(4096)|Комментарий Перемещения|&mdash;|нет|нет
+|**code**               |String(255)|Код Перемещения|&mdash;| нет|нет
+|**externalCode**       |String(255)|Внешний код Перемещения|&mdash;| да|нет
+|**moment**             |DateTime|Дата Перемещения|&mdash;|да|нет
 |**applicable**         |Boolean|Отметка о проведении|&mdash;|да|нет
 |**sum**                |Int|Сумма Перемещения в копейках|Только для чтения|да|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
@@ -24,7 +24,7 @@
 |**shared**             |Boolean|Общий доступ|&mdash;|да|нет
 |**group**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Отдел сотрудника|&mdash;|да|да
 |**organization**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные юрлица|Необходимое при создании|да|да
-|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Списания|&mdash;|нет|да
+|**state**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные статуса Перемещения|&mdash;|нет|да
 |**attributes**         |Array(Object)|Коллекция метаданных доп. полей. [Поля объекта](../#mojsklad-json-api-obschie-swedeniq-rabota-s-dopolnitel-nymi-polqmi) |&mdash;|нет|нет
 |**files**              |MetaArray|Метаданные массива [Файлов](../dictionaries/#suschnosti-fajly) (Максимальное количество файлов - 100)|&mdash;|да|да
 |**created**            |DateTime|Дата создания|Только для чтения|да|нет

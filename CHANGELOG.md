@@ -1,9 +1,19 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 20-10-2021
+## 02-11-2021
 ### Добавлено
 - Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kanal-prodazh)
+
+## 02-11-2021
+### Добавлено
+- Добавлен эндпоинт получения списка [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sohranennye-fil-try)
+  для сущностей, документов
+- Добавлено применение [сохраненного фильтра](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sohranennye-fil-try) для сущностей и документов
+
+## 21-10-2021
+### Добавлено
+- Добавлен [эндпоинт](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kody-markirowki) для работы с Кодами маркировки в позиции документа
 
 ## 15-10-2021
 ### Добавлено
@@ -71,7 +81,7 @@
 - Удалено поле `agent` в розничной смене [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
 - Исправлено описание `updated`, `name`, `description`, `externalCode`, `moment`, `organization`, `store`,
   `attributes`, `published`, `closeDate`, `retailStore` в атрибутах розничной смены [Атрибуты розничной смены](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-roznichnaq-smena-roznichnye-smeny-atributy-smeny)
-  
+
 ## 17-08-2021
 ### Добавлено
 - Возможность работы с модификациями для материалов и продуктов [Тех. карт](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-teh-karta). 
@@ -146,6 +156,10 @@
 ## 27-05-2021
 ### Добавлено
 - Добавлены новые поля `authorizedHosts`, `authorizedIpNetwork`, `authorizedIpNetmask` для ограничения доступа по ip в [эндпоинте управления правами сотрудника](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sotrudnik-rabota-s-prawami-sotrudnika)
+
+## 21-05-2021
+### Добавлено
+- Возможность работы с файлами, прикрепленными к [Задаче](https://dev.moysklad.ru/doc/api/remap/1.2/dictionaries/#suschnosti-zadacha)
 
 ## 21-05-2021
 ### Документация
