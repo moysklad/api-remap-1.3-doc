@@ -21,6 +21,7 @@
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
 |**sum**                |Int|Сумма Возврата Покупателя в копейках|Только для чтения|да|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
+|**salesChannel**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные канала продаж|&mdash;|нет|да
 |**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да|нет
@@ -204,6 +205,13 @@ curl -X GET
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.3/entity/organization/fae3561a-2e58-11e6-8a84-bae50000004e/accounts/fae39d66-2e58-11e6-8a84-bae50000004f",
           "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "salesChannel": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+          "type": "saleschannel",
           "mediaType": "application/json"
         }
       },
@@ -924,6 +932,13 @@ curl -X GET
         "mediaType": "application/json"
       }
     },
+    "salesChannel": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+        "type": "saleschannel",
+        "mediaType": "application/json"
+      }
+    },
     "attributes": [
       {
         "meta": {
@@ -1450,6 +1465,13 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
+      "mediaType": "application/json"
+    }
+  },
   "vatEnabled": true,
   "vatIncluded": true,
   "positions": {
@@ -1628,6 +1650,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/147c1f1b-32ca-11e6-8a84-bae500000004/accounts/147c3231-32ca-11e6-8a84-bae500000005",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
