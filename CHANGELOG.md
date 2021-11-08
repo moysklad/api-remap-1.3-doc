@@ -3,6 +3,11 @@
 
 ## 02-11-2021
 ### Добавлено
+- Возможность получения и применения [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sohranennye-fil-try) других сотрудников для администраторов
+- Описание ошибок [63004 и 63005](https://dev.moysklad.ru/doc/api/remap/1.3/#mojsklad-json-api-oshibki-kody-oshibok-dlq-sohranennogo-fil-tra)
+
+## 02-11-2021
+### Добавлено
 - Добавлен эндпоинт получения списка [сохраненных фильтров](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sohranennye-fil-try)
   для сущностей, документов
 - Добавлено применение [сохраненного фильтра](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-sohranennye-fil-try) для сущностей и документов
