@@ -22,6 +22,7 @@ includes:
   - dictionaries/variant
   - dictionaries/consignment
   - dictionaries/contract
+  - dictionaries/saleschannel
   - dictionaries/project
   - dictionaries/companysettings
   - dictionaries/companysubscription
