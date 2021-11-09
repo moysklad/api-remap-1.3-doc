@@ -1,7 +1,7 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 02-11-2021
+## 08-11-2021
 ### Добавлено
 - Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kanal-prodazh)
 
