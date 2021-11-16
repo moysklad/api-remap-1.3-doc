@@ -44,6 +44,7 @@
 |**invoicedSum**            |Float|Сумма счетов покупателю |Только для чтения|да|да|нет
 |**reservedSum**            |Float|Сумма товаров в резерве |Только для чтения|да|да|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да|да
+|**salesChannel**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные канала продаж|&mdash;|нет|нет|да
 |**taxSystem**         |Enum|Код системы налогообложения. [Подробнее тут](../dictionaries/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-atributy-suschnosti-kod-sistemy-nalogooblozheniq)|&mdash;|нет|да|нет
 |**shipmentAddress**      |String(255)|Адрес доставки Заказа покупателя |&mdash;| нет|да|нет
 |**shipmentAddressFull**  |Object|Адрес доставки Заказа покупателя с детализацией по отдельным полям. [Подробнее тут](../documents/#dokumenty-zakaz-pokupatelq-zakazy-pokupatelej-attributy-suschnosti-adres-dostawki) |&mdash;|нет|да|нет
@@ -264,6 +265,13 @@ curl -X GET
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
           "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "salesChannel": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+          "type": "saleschannel",
           "mediaType": "application/json"
         }
       },
@@ -1692,6 +1700,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
