@@ -1,11 +1,11 @@
 # JSON API 1.3 Changelog
 Изменения в JSON API 1.3 будут описаны в данном документе.
 
-## 08-11-2021
+## 15-11-2021
 ### Добавлено
 - Добавлено поле `salesChannel` в [Заказ покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-zakaz-pokupatelq), [Отгрузку](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-otgruzka) и [Возврат покупателя](https://dev.moysklad.ru/doc/api/remap/1.3/documents/#dokumenty-vozwrat-pokupatelq)
 
-## 02-11-2021
+## 08-11-2021
 ### Добавлено
 - Эндпоинт для [Каналов продаж](https://dev.moysklad.ru/doc/api/remap/1.3/dictionaries/#suschnosti-kanal-prodazh)
 
