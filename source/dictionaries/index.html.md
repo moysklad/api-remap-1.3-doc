@@ -22,6 +22,7 @@ includes:
   - dictionaries/variant
   - dictionaries/consignment
   - dictionaries/contract
+  - dictionaries/saleschannel
   - dictionaries/project
   - dictionaries/companysettings
   - dictionaries/companysubscription
@@ -49,6 +50,7 @@ includes:
   - dictionaries/bonus_program
   - dictionaries/states  
   - dictionaries/characteristic
+  - dictionaries/named_filter
   - dictionaries/tracking_code
   
 search: true

@@ -21,6 +21,7 @@
 |**vatIncluded**        |Boolean| Включен ли НДС в цену|&mdash;|нет|нет
 |**sum**                |Int|Сумма Отгрузки в копейках|Только для чтения|да|нет
 |**project**            |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные проекта|&mdash;|нет|да
+|**salesChannel**       |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Метаданные канала продаж|&mdash;|нет|да
 |**rate**               |Object|Валюта. [Подробнее тут](../documents/#dokumenty-obschie-swedeniq-valuta-w-dokumentah)|&mdash;|да|нет
 |**owner**              |[Meta](../#mojsklad-json-api-obschie-swedeniq-metadannye)|Владелец (Сотрудник)|&mdash;|да|да
 |**shared**             |Boolean|Общий доступ|&mdash;|да|нет
@@ -283,6 +284,13 @@ curl -X GET
         "meta": {
           "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/850efc5f-f504-11e5-8a84-bae500000161/accounts/850f0617-f504-11e5-8a84-bae500000162",
           "type": "account",
+          "mediaType": "application/json"
+        }
+      },
+      "salesChannel": {
+        "meta": {
+          "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+          "type": "saleschannel",
           "mediaType": "application/json"
         }
       },
@@ -1381,6 +1389,13 @@ curl -X GET
       "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
         "type": "account",
+        "mediaType": "application/json"
+      }
+    },
+    "salesChannel": {
+      "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+        "type": "saleschannel",
         "mediaType": "application/json"
       }
     },
@@ -2496,6 +2511,13 @@ curl -X GET
       "mediaType": "application/json"
     }
   },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
+      "mediaType": "application/json"
+    }
+  },
   "created": "2016-08-25 19:55:00",
   "printed": true,
   "published": true,
@@ -2735,6 +2757,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
@@ -3003,6 +3032,13 @@ curl -X GET
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.3/entity/counterparty/9794d400-f689-11e5-8a84-bae500000078/accounts/9794f7a0-f689-11e5-8a84-bae500000079",
       "type": "account",
+      "mediaType": "application/json"
+    }
+  },
+  "salesChannel": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.3/entity/saleschannel/56446e7f-3633-11ec-ac13-000d00000000",
+      "type": "saleschannel",
       "mediaType": "application/json"
     }
   },
